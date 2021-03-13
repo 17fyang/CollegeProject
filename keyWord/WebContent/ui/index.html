@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>智能系统</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="layui/css/layui.css"  media="all">
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+    <style type="text/css">
+        #keyword{
+            margin-top:30px ;
+        }
+        #dispaly{
+            margin-top: 60px;
+        }
+        #whole{
+            height: 670px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="layui-bg-gray" id="whole">
+<div class="layui-row">
+    <div class="layui-upload-drag layui-col-md-offset4 layui-col-md4 layui-col-xs3" id="test10">
+        <i class="layui-icon"></i>
+        <p>点击上传，或将文件拖拽到此处</p>
+    </div>
+</div>
+    <div class="layui-row layui-bg-gray layui-col-space12">
+        <div class="layui-col-md-offset3 layui-col-md6 ">
+            <input id="inputKeyword" type="text" name="title" required lay-verify="required" placeholder="请输入关键词" autocomplete="off" class="layui-input">
+        </div>
+        <div class="layui-col-md1 ">
+            <button id="tijiao"  class="layui-btn layui-btn-radius layui-btn-primary">
+                <i class="layui-icon layui-icon-search"></i>
+            </button>
+        </div>
+    </div>
+    <div class="layui-row" id="keyword"><!--关键词-->
+        <button class="layui-btn  layui-col-md1 layui-btn-normal layui-col-md-offset1" id="keyword1">关键词一</button>
+        <button class="layui-btn  layui-col-md1 layui-btn-normal" id="keyword2">关键词二</button>
+        <button class="layui-btn  layui-col-md1 layui-btn-normal" id="keyword3">关键词三</button>
+        <button class="layui-btn  layui-col-md1 layui-btn-normal" id="keyword4">关键词四</button>
+        <button class="layui-btn  layui-col-md1 layui-btn-normal" id="keyword5">关键词五</button>
+        <button class="layui-btn  layui-col-md1 layui-btn-normal" id="keyword6">关键词六</button>
+        <button class="layui-btn  layui-col-md1 layui-btn-normal" id="keyword7">关键词七</button>
+        <button class="layui-btn  layui-col-md1 layui-btn-normal" id="keyword8">关键词八</button>
+        <button class="layui-btn  layui-col-md1 layui-btn-normal" id="keyword9">关键词九</button>
+        <button class="layui-btn  layui-col-md1 layui-btn-normal" id="keyword10">关键词十</button>
+    </div>
+    <div class="layui-row" id="dispaly" style="height: 80px"><!--下面显示内容-->
+        <div class="layui-col-md2 layui-col-md-offset1">
+            <i class="layui-icon layui-icon-website" style="font-size: 30px; color: #5FB878;"></i>
+            <a style="font-size: 20px; color: #01AAED;" id="word1">文本框</a>
+
+        </div>
+        <div class="layui-col-md2 layui-col-md-offset2">
+            <i class="layui-icon layui-icon-read " style="font-size: 30px; color: #5FB878;"></i>
+            <a style="font-size: 20px; color: #01AAED;" id="word2">文本框</a>
+        </div>
+        <div class="layui-col-md2 layui-col-md-offset2">
+            <i class="layui-icon layui-icon-component " style="font-size: 30px; color: #5FB878;"></i>
+            <a style="font-size: 20px; color: #01AAED;" id="word3">文本框</a>
+        </div>
+    </div>
+
+    <div class="layui-row"  style="height: 80px"><!--下面显示内容-->
+        <div class="layui-col-md2 layui-col-md-offset1">
+            <i class="layui-icon layui-icon-website" style="font-size: 30px; color: #5FB878;"></i>
+            <a style="font-size: 20px; color: #01AAED;" id="word4">文本框</a>
+        </div>
+        <div class="layui-col-md2 layui-col-md-offset2">
+            <i class="layui-icon layui-icon-read " style="font-size: 30px; color: #5FB878;"></i>
+            <a style="font-size: 20px; color: #01AAED;" id="word5">文本框</a>
+        </div>
+        <div class="layui-col-md2 layui-col-md-offset2">
+            <i class="layui-icon layui-icon-component " style="font-size: 30px; color: #5FB878;"></i>
+            <a style="font-size: 20px; color: #01AAED;" id="word6">文本框</a>
+        </div>
+    </div>
+    <div class="layui-row"  style="height: 80px"><!--下面显示内容-->
+        <div class="layui-col-md2 layui-col-md-offset1">
+            <i class="layui-icon layui-icon-website" style="font-size: 30px; color: #5FB878;"></i>
+            <a style="font-size: 20px; color: #01AAED;" id="word7">文本框</a>
+        </div>
+        <div class="layui-col-md2 layui-col-md-offset2">
+            <i class="layui-icon layui-icon-read " style="font-size: 30px; color: #5FB878;"></i>
+            <a style="font-size: 20px; color: #01AAED;" id="word8">文本框</a>
+        </div>
+        <div class="layui-col-md2 layui-col-md-offset2">
+            <i class="layui-icon layui-icon-component " style="font-size: 30px; color: #5FB878;"></i>
+            <a style="font-size: 20px; color: #01AAED;" id="word9" >文本框</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("keyword6").innerHTML="改正";
+    document.getElementById("word1").innerHTML="乌尔求你";
+    document.getElementById("word1").href="http://hosdafoew";
+
+</script>
+<script src="layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+
+    layui.use('upload', function() {
+        var $ = layui.jquery
+            , upload = layui.upload
+            , click = layui.click;
+        //拖拽上传
+        upload.render({
+            elem: '#test10'
+            , url: 'http://172.16.83.38:8080/keyWord/upload'
+            //,url:"http://localhost:8080/softwareSystem/upload"
+            , method: "post"
+            , accept: 'file'
+            // ,progress: function(n){
+            //     var percent = n + '%' //获取进度百分比
+            //     element.progress('demo', percent); //可配合 layui 进度条元素使用
+            // }
+            , done: function (res) {
+                //alert(":hjhckjhc");
+                // var str='{"a":"ASD","DATA":[{"name":"cxh","sex":"man"},{"name":"cxh1","sex":"man1"}]}';
+                // console.log(res);
+                var str = '{"code":0,"count":98,"data":[{"name":"cha","sex":"name"}]}';
+                var obj = res;
+                // var obj=JSON.parse(str);
+                var b = obj.data;
+                var relation = b.relation;
+                b = b.linkData;
+
+                /*console.log(res);
+                console.log(relation);
+                console.log(b);*/
+                for (var i = 1; i < b.length; i++) {
+                    if (i > 9) {
+                        break;
+                    }
+                    // document.getElementById("keyword").innerHTML="改正";
+                    document.getElementById("keyword"+i).innerHTML = relation[i].keyword;
+                    document.getElementById("word"+i).innerHTML = b[i].title;
+                    document.getElementById("word"+i).href = b[i].link;
+                }
+
+                if(relation.length>9){
+                    document.getElementById("keyword"+i).innerHTML = relation[9].keyword;
+                }
+
+
+            }
+            , error: function (res) {
+                console.log(res);
+                console.log(res.code);
+                console.log(res.msg);
+            }
+        });
+    });
+
+
+        $('#keyword1').click(function(){
+            console.log(document.getElementById("keyword1").innerHTML);
+            f(document.getElementById("keyword1").innerHTML);
+        });
+
+    $('#keyword2').click(function(){
+        console.log(document.getElementById("keyword2").innerHTML);
+        f(document.getElementById("keyword2").innerHTML);
+    });
+
+    $('#keyword3').click(function(){
+        console.log(document.getElementById("keyword1").innerHTML);
+        f(document.getElementById("keyword3").innerHTML);
+    });
+
+    $('#keyword4').click(function(){
+        console.log(document.getElementById("keyword1").innerHTML);
+        f(document.getElementById("keyword4").innerHTML);
+    });
+
+    $('#keyword5').click(function(){
+        console.log(document.getElementById("keyword1").innerHTML);
+        f(document.getElementById("keyword5").innerHTML);
+    });
+
+    $('#keyword6').click(function(){
+        console.log(document.getElementById("keyword1").innerHTML);
+        f(document.getElementById("keyword6").innerHTML);
+    });
+
+    $('#keyword7').click(function(){
+        console.log(document.getElementById("keyword1").innerHTML);
+        f(document.getElementById("keyword7").innerHTML);
+    });
+
+    $('#keyword8').click(function(){
+        console.log(document.getElementById("keyword1").innerHTML);
+        f(document.getElementById("keyword8").innerHTML);
+    });
+
+    $('#keyword9').click(function(){
+        console.log(document.getElementById("keyword1").innerHTML);
+        f(document.getElementById("keyword9").innerHTML);
+    });
+
+    $('#keyword10').click(function(){
+        console.log(document.getElementById("keyword1").innerHTML);
+        f(document.getElementById("keyword10").innerHTML);
+    });
+
+
+    $('#tijiao').click(function () {
+        console.log(document.getElementById("inputKeyword").value);
+        f(document.getElementById("inputKeyword").value);
+    })
+
+    function f(keyword) {
+        var url='http://172.16.83.38:8080/keyWord/selfKeyword?keyword='+keyword;
+        $.ajax({
+            url:url,
+            type:'get',
+            beforeSend:function () {
+                this.layerIndex = layer.load(0, { shade: [0.5, '#393D49'] });
+            },
+            success:function(data){
+                if(data.status == 'error'){
+                    layer.msg(data.msg,{icon: 5});//失败的表情
+                    return;
+                }else {
+                    console.log(data);
+                    f1(data);
+                    layer.msg(data.msg, {
+                        icon: 6,//成功的表情
+                        time: 1000 //1秒关闭（如果不配置，默认是3秒）
+                    });
+                }
+            },
+            complete: function () {
+                layer.close(this.layerIndex);
+            },
+        });
+    }
+
+    function f1(res) {
+        var obj = res;
+         var obj=eval('('+obj+')');
+        var b = obj.data;
+        var relation = b.relation;
+        b = b.linkData;
+
+        console.log(res);
+        console.log(relation);
+        console.log(b);
+        for (var i = 1; i < b.length; i++) {
+            if (i > 9) {
+                break;
+            }
+            // document.getElementById("keyword").innerHTML="改正";
+            document.getElementById("keyword"+i).innerHTML = relation[i].keyword;
+            document.getElementById("word"+i).innerHTML = b[i].title;
+            document.getElementById("word"+i).href = b[i].link;
+        }
+
+        if(relation.length>9){
+            document.getElementById("keyword"+i).innerHTML = relation[9].keyword;
+        }
+    }
+
+</script>
+</body>
+</html>
