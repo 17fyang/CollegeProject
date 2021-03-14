@@ -3,14 +3,14 @@ package item_jack.item11_20.utils;
 import java.io.File;
 
 public class Config {
-	private File dataDeal_source;//dataDealÊı¾İÔ´
-	private File dataDeal_aim;//dataDealÉú³ÉµÄ½á¹ûÎÄ¼ş
-	private int lineNumber;//dataDealÆ¥ÅäĞĞÊı
-	private File screen_source;//screenÊı¾İÔ´	
-	private File screen_aim;//screenÉú³ÉµÄ½á¹ûÎÄ¼ş
-	private File screen_table2;//±í2Êı¾İÔ´	
-	private File screen_table3;//±í3Êı¾İÔ´	
-	private File screen_table4;//±í4Êı¾İÔ´	
+	private File dataDeal_source;//dataDealæ•°æ®æº
+	private File dataDeal_aim;//dataDealç”Ÿæˆçš„ç»“æœæ–‡ä»¶
+	private int lineNumber;//dataDealåŒ¹é…è¡Œæ•°
+	private File screen_source;//screenæ•°æ®æº	
+	private File screen_aim;//screenç”Ÿæˆçš„ç»“æœæ–‡ä»¶
+	private File screen_table2;//è¡¨2æ•°æ®æº	
+	private File screen_table3;//è¡¨3æ•°æ®æº	
+	private File screen_table4;//è¡¨4æ•°æ®æº	
 	
 	public File getDataDeal_source() {
 		return dataDeal_source;

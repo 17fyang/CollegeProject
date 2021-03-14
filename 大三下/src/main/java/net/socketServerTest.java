@@ -12,7 +12,7 @@ import java.sql.Time;
  * Description:
  * date: 2020/6/14 0:52
  *
- * @author :乌鸦坐飞机亠
+ * @author :涔岄甫鍧愰鏈轰籂
  * @version:
  */
 public class socketServerTest {
@@ -23,7 +23,7 @@ public class socketServerTest {
         int len=in.read(buf);
         System.out.println(new String(buf,0,len));
         OutputStream out=socket.getOutputStream();
-        out.write("服务机 2017101101 朱孟成".getBytes());
+        out.write("鏈嶅姟鏈� 2017101101 鏈卞瓱鎴�".getBytes());
         Thread.sleep(1050);
     }
 }

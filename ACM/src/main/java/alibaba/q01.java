@@ -3,7 +3,7 @@ package alibaba;
 import java.util.Scanner;
 
 /*
- * ������Ե�һ��
+ * 锟斤拷锟斤拷锟斤拷缘锟揭伙拷锟�
  * date:2020.3.25
  * author:yf
  */
@@ -45,7 +45,7 @@ public class q01 {
         func(arr, 2, j + 1, arr[i][j], total);
     }
 
-    //����
+    //锟斤拷锟斤拷
     public static void solution() {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();

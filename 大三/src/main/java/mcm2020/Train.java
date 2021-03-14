@@ -7,11 +7,11 @@ import java.util.List;
 public class Train {
 	private final static double resultThreshold[]=Main.resultThreshold;
 	private  final static int neuronLength=Main.neuronLength;
-	private final static double learnSpeed=Main.learnSpeed;//Ñ§Ï°ËÙ¶È
+	private final static double learnSpeed=Main.learnSpeed;//å­¦ä¹ é€Ÿåº¦
 	private int totalNumber=0;
 	private int successNumber=0;
 	
-	//µ¥¸öÑµÁ·
+	//å•ä¸ªè®­ç»ƒ
 	public double[] activation(Flower flower, List<Neuron> neuronList) {
 		List<Double> neuronResult=new LinkedList<Double>();
 		for(int i=0;i<neuronLength;i++) {
@@ -23,9 +23,9 @@ public class Train {
 			double result=1.0/(1+Math.pow(Math.E, total*-1));
 			neuronResult.add(result);
 		}
-		double[] trueResult=new double[resultThreshold.length];//Êµ¼ÊÊä³ö
-		double[] hopeResult=new double[resultThreshold.length];//ÆÚÍûÊä³ö
-		double[] errorDouble=new double[resultThreshold.length];//Îó²î
+		double[] trueResult=new double[resultThreshold.length];//å®é™…è¾“å‡º
+		double[] hopeResult=new double[resultThreshold.length];//æœŸæœ›è¾“å‡º
+		double[] errorDouble=new double[resultThreshold.length];//è¯¯å·®
 		hopeResult[flower.getType()]=1;
 		double errorGradient=0;
 
@@ -39,7 +39,7 @@ public class Train {
 			double result=1.0/(1+Math.pow(Math.E, total*-1));
 			trueResult[i]=result;
 			errorDouble[i]=hopeResult[i]-trueResult[i];
-			//µ÷ÕûÈ¨ÖØ
+			//è°ƒæ•´æƒé‡
 			errorGradient=result*(hopeResult[i]-result)*(1-result);
 			resultThreshold[i]+=errorGradient*(-1)*learnSpeed;
 			for(int j=0;j<neuronLength;j++) {
@@ -59,7 +59,7 @@ public class Train {
 		}
 		return errorDouble;
 	}
-	//ÅúÁ¿ÑµÁ·
+	//æ‰¹é‡è®­ç»ƒ
 	public List<double[] > activationAll(List<Flower> trainList,List<Neuron> neuronList){
 		List<double[]> errorList=new ArrayList<double[]>(trainList.size());
 		for(int i=0;i<trainList.size();i++) errorList.add(activation(trainList.get(i),neuronList));
@@ -67,7 +67,7 @@ public class Train {
 	}
 
 
-	//¶Ô²âÊÔÊı¾İ½øĞĞ²âÊÔ
+	//å¯¹æµ‹è¯•æ•°æ®è¿›è¡Œæµ‹è¯•
 	public double[] test(List<Neuron> neuronList, Flower flower) {
 		List<Double> neuronResult=new LinkedList<Double>();
 		for(int i=0;i<neuronLength;i++) {
@@ -90,7 +90,7 @@ public class Train {
 		}
 		return realResult;
 	}
-	//Í³¼Æ³É¹¦¸öÊı
+	//ç»Ÿè®¡æˆåŠŸä¸ªæ•°
 	public void caculateSuccessNumber(Flower flower, double[] result) {
 		totalNumber++;
 		int type=flower.getType();
@@ -103,11 +103,11 @@ public class Train {
 				predictType=i;
 			}
 		}
-//		System.out.print("Ô¤²âÖµ£º"+predictType+"    ");
-//		System.out.println("ÕæÊµÖµ£º"+type+"    ");
+//		System.out.print("é¢„æµ‹å€¼ï¼š"+predictType+"    ");
+//		System.out.println("çœŸå®å€¼ï¼š"+type+"    ");
 		
 	}
-	//»ñÈ¡³É¹¦ÂÊ
+	//è·å–æˆåŠŸç‡
 	public double getSuccessRate() {
 		return successNumber*1.0/totalNumber;
 	}

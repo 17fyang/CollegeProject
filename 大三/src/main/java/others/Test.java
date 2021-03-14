@@ -8,7 +8,7 @@ public class Test {
 	public static void main(String[] args) {
 		Calendar d=Calendar.getInstance();
 	    System.out.println(d);
-	    //»ñÈ¡µ±Ç°µÄÄê·İ¡£
+	    //è·å–å½“å‰çš„å¹´ä»½ã€‚
 	    System.out.println(d.get(Calendar.YEAR));
 	    System.out.println(d.get(Calendar.MONTH));
 	    System.out.println(d.get(Calendar.DAY_OF_MONTH));

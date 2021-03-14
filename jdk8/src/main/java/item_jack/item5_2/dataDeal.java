@@ -24,20 +24,20 @@ import jxl.write.WritableWorkbook;
 public class dataDeal {
 	public static void main(String[] args) {
 		System.out.println("item4_27");
-		System.out.println("version£º1.0");
+		System.out.println("versionï¼š1.0");
 		System.out.println("date:2020.4.27\r\n" + 
-				"±í1ÖĞÕıºÃ6Ìõ»òÒÔÉÏÌõÊı¾İ×é³ÉÒ»´ÎÁù¸öÊı¾İÅÅÁĞ£¬¸ù¾İÃ¿¸öÊı¾İµÄÃ°ºÅºóÃæµÄÊı×ÖÅÅĞò£¬×îĞ¡µÄÅÅ1ºÅ£¬È»ºó2ºÅ¡£¡£¡£¡£¡£\r\n" + 
-				"* 1¡¢ÓĞ1ĞĞ»òÒÔÉÏµÄĞĞÖĞ£¬ÕıºÃÓĞ4¸öÊı¾İÔÚÍ¬Ò»ĞĞÉÏ\r\n" + 
-				"* 2¡¢ÓĞ1ĞĞ»òÒÔÉÏµÄĞĞÖĞ£¬ÕıºÃÓĞ3¸öÊı¾İÔÚÍ¬Ò»ĞĞÉÏ\r\n" + 
-				"* 3¡¢Õâ4¸öÊı¾İºÍ3¸öÊı¾İ±ØĞëÊÇÔÚËùÓĞÅÅĞòÖĞÅÅÔÚÇ°6Î»£¬¶øÇÒ¶¼Òª³öÏÖ¡£\r\n\r\n");
+				"è¡¨1ä¸­æ­£å¥½6æ¡æˆ–ä»¥ä¸Šæ¡æ•°æ®ç»„æˆä¸€æ¬¡å…­ä¸ªæ•°æ®æ’åˆ—ï¼Œæ ¹æ®æ¯ä¸ªæ•°æ®çš„å†’å·åé¢çš„æ•°å­—æ’åºï¼Œæœ€å°çš„æ’1å·ï¼Œç„¶å2å·ã€‚ã€‚ã€‚ã€‚ã€‚\r\n" + 
+				"* 1ã€æœ‰1è¡Œæˆ–ä»¥ä¸Šçš„è¡Œä¸­ï¼Œæ­£å¥½æœ‰4ä¸ªæ•°æ®åœ¨åŒä¸€è¡Œä¸Š\r\n" + 
+				"* 2ã€æœ‰1è¡Œæˆ–ä»¥ä¸Šçš„è¡Œä¸­ï¼Œæ­£å¥½æœ‰3ä¸ªæ•°æ®åœ¨åŒä¸€è¡Œä¸Š\r\n" + 
+				"* 3ã€è¿™4ä¸ªæ•°æ®å’Œ3ä¸ªæ•°æ®å¿…é¡»æ˜¯åœ¨æ‰€æœ‰æ’åºä¸­æ’åœ¨å‰6ä½ï¼Œè€Œä¸”éƒ½è¦å‡ºç°ã€‚\r\n\r\n");
 		try {
 			run();
-			System.out.print("Êı¾İ´¦ÀíÍê±Ï£¬");
+			System.out.print("æ•°æ®å¤„ç†å®Œæ¯•ï¼Œ");
 		}catch(Exception e) {
 			e.printStackTrace();
-			System.out.print("Êı¾İ´¦Àí³ö´í£¬");
+			System.out.print("æ•°æ®å¤„ç†å‡ºé”™ï¼Œ");
 		}
-		System.out.println("°´ÈÎÒâ¼üÍË³ö£¡");
+		System.out.println("æŒ‰ä»»æ„é”®é€€å‡ºï¼");
 		Scanner sc = new Scanner(System.in); 
 		sc.next();
 		sc.close();
@@ -45,20 +45,20 @@ public class dataDeal {
 	public static void run() throws Exception {
 		List<OutData> outList=new ArrayList<OutData>();
 		Collections.synchronizedList(outList);
-		System.out.println("½á¹û¼¯Í¬²½³É¹¦...");
+		System.out.println("ç»“æœé›†åŒæ­¥æˆåŠŸ...");
 		List<Line> lineList=Config.getConfig().getLineList();
 		Record[] originalList=Config.getConfig().getSourceList();
 
-		//´´½¨Ïß³Ì³Ø
+		//åˆ›å»ºçº¿ç¨‹æ± 
 		int corePoolSize=lineList.size()/2;
 		int maxSize=lineList.size()*lineList.size();
 		LinkedBlockingQueue<Runnable> queue=new LinkedBlockingQueue<Runnable>();
 		ExecutorService pool = new ThreadPoolExecutor(corePoolSize, maxSize,
 				3L, TimeUnit.HOURS,queue);
 
-		System.out.println("Ïß³Ì³Ø³õÊ¼»¯³É¹¦...");
-		System.out.println("¿ªÊ¼Ö´ĞĞÏß³Ì³ØÈÎÎñ...");
-		System.out.println("ÓĞĞ§ĞĞÊı£º"+lineList.size());
+		System.out.println("çº¿ç¨‹æ± åˆå§‹åŒ–æˆåŠŸ...");
+		System.out.println("å¼€å§‹æ‰§è¡Œçº¿ç¨‹æ± ä»»åŠ¡...");
+		System.out.println("æœ‰æ•ˆè¡Œæ•°ï¼š"+lineList.size());
 		for(int i=0;i<lineList.size();i++) {
 			for(int j=i+1;j<lineList.size();j++) {
 				DealThread thread=new DealThread(lineList.get(i),lineList.get(j),outList);
@@ -68,16 +68,16 @@ public class dataDeal {
 		}
 		while(!queue.isEmpty()) {
 			Thread.sleep(2000);
-			System.out.println("µÈ´ıÈÎÎñÍ¶·Å£¬Ê£Óà£º"+queue.size()+"...");
+			System.out.println("ç­‰å¾…ä»»åŠ¡æŠ•æ”¾ï¼Œå‰©ä½™ï¼š"+queue.size()+"...");
 		}
 		Thread.sleep(2000);
-		System.out.println("Ïß³Ì³ØÍ¶·ÅÍê³É£¬µÈ´ıÈÎÎñÍê³É...");
+		System.out.println("çº¿ç¨‹æ± æŠ•æ”¾å®Œæˆï¼Œç­‰å¾…ä»»åŠ¡å®Œæˆ...");
 		pool.shutdown();
 		while(!pool.isTerminated()) {
 			Thread.sleep(2000);
-			System.out.println("µÈ´ıÈÎÎñÍê³É...");
+			System.out.println("ç­‰å¾…ä»»åŠ¡å®Œæˆ...");
 		}
-		System.out.println("Ïß³Ì³Ø¹Ø±ÕÍê³É£¬¿ªÊ¼Ğ´Èë...");
+		System.out.println("çº¿ç¨‹æ± å…³é—­å®Œæˆï¼Œå¼€å§‹å†™å…¥...");
 		writeResult(outList,Config.getConfig().getDataDeal_aim());
 	}
 
@@ -85,15 +85,15 @@ public class dataDeal {
 		WritableWorkbook workbook=Workbook.createWorkbook(f);
 		WritableSheet sheet=workbook.createSheet("result", 0);
 
-		int firstSpilt=2;//µÚÒ»ÁĞ¿Õ¸ñ
-		int secondSpilt=2;//µÚ¶şÁĞ¿Õ¸ñ
+		int firstSpilt=2;//ç¬¬ä¸€åˆ—ç©ºæ ¼
+		int secondSpilt=2;//ç¬¬äºŒåˆ—ç©ºæ ¼
 		for(int i=0;i<outList.size();i++) {
 			OutData out=outList.get(i);
-			//Ğ´»Ø×îÖÕÅÅÁĞ
+			//å†™å›æœ€ç»ˆæ’åˆ—
 			String arrange=setToString(out.getOutSet());
 			sheet.addCell(new Label(0,i,arrange));
 
-			//Ğ´»ØÔ­Ê¼Êı¾İ
+			//å†™å›åŸå§‹æ•°æ®
 			List<Record> list=out.getOutList();
 			for(int j=0;j<list.size();j++) {
 				secondSpilt=Math.max(secondSpilt, list.size()+firstSpilt+1);
@@ -102,7 +102,7 @@ public class dataDeal {
 		}
 		for(int i=0;i<outList.size();i++) {
 			OutData out=outList.get(i);
-			//Ğ´»ØÒªÇóÖĞµÄÌõ¼şÊı¾İ
+			//å†™å›è¦æ±‚ä¸­çš„æ¡ä»¶æ•°æ®
 			List<List<Record>> satisfyList=out.getSatisfyList();
 			int point=secondSpilt+1;
 			for(int j=0;j<satisfyList.size();j++) {
@@ -119,12 +119,12 @@ public class dataDeal {
 			sheet.setColumnView(i, 24);
 		}
 		sheet.setColumnView(firstSpilt-1, 8);
-		//Ğ´Èë²¢¹Ø±Õ
+		//å†™å…¥å¹¶å…³é—­
 		workbook.write();
 		workbook.close();
 	}
 
-	//°ÑsetÖĞµÄÅÅĞòÕûÀí³ÉÊä³ö¸ñÊ½
+	//æŠŠsetä¸­çš„æ’åºæ•´ç†æˆè¾“å‡ºæ ¼å¼
 	private static String setToString(Set<String> set) {
 		StringBuilder sb=new StringBuilder();
 		sb.append("(");

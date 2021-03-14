@@ -5,17 +5,17 @@ package prestige;
  * Description:
  * date: 2020/7/7 0:30
  *
- * @author :乌鸦坐飞机亠
+ * @author :涔岄甫鍧愰鏈轰籂
  * @version:
  */
 public class adaDemo {
     public static void main(String[] args) {
         Thread hospital=new Thread(()-> System.out.println("tell doctor"));
-        hospital.setPriority(9);//设置优先级
+        hospital.setPriority(9);//璁剧疆浼樺厛绾�
         Thread electric=new Thread(()-> System.out.println("electric shock"));
-        electric.setPriority(10);//设置为最高优先级
+        electric.setPriority(10);//璁剧疆涓烘渶楂樹紭鍏堢骇
 
-        //开启观察者线程
+        //寮�鍚瀵熻�呯嚎绋�
         Integer heart=60;
         new Thread(new Observer(hospital,electric,heart)).start();
     }
@@ -34,7 +34,7 @@ class Observer implements Runnable{
         int interval=3000;
         while(true){
             if(heart==0){
-                //如果心脏衰竭则启动两个线程并让出cpu
+                //濡傛灉蹇冭剰琛扮鍒欏惎鍔ㄤ袱涓嚎绋嬪苟璁╁嚭cpu
                 this.electric.start();
                 this.hospital.start();
                 Thread.yield();

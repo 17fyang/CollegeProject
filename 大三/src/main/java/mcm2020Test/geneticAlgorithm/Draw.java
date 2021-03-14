@@ -1,170 +1,163 @@
 package mcm2020Test.geneticAlgorithm;
 
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.axis.NumberAxis;
+import org.jfree.chart.axis.ValueAxis;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.plot.XYPlot;
+import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 import org.jfree.data.xy.DefaultXYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
-import java.awt.BasicStroke;  
-import java.awt.Color;
-import java.util.LinkedList;
-import java.util.List;
+import javax.swing.*;
+import java.awt.*;
 
-import javax.swing.JFrame;
-
-import org.jfree.chart.ChartFactory;  
-import org.jfree.chart.ChartFrame;  
-import org.jfree.chart.JFreeChart;  
-import org.jfree.chart.axis.NumberAxis;  
-import org.jfree.chart.axis.ValueAxis;
-import org.jfree.chart.plot.PlotOrientation;  
-import org.jfree.chart.plot.XYPlot;
-import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;  
 
 /*
- * »­Í¼Àà
+ * ç”»å›¾ç±»
  */
 public class Draw {
-	private int number=50;
-	CLS cls=new CLS();
-	XYSeries serie=new XYSeries("test",false,true);
-	double radius=CLS.radius;
-	
-	
-	
-	
-	public void DrawGroup(String group[]) {
-		XYSeries series[]=new XYSeries[group.length];
-		for(int i=0;i<series.length;i++) {
-			double[] xy=cls.decode(group[i]);
-			series[i]=this.getCircle(xy[0], xy[1], radius);
-		}
-		this.drawCircle(series);
-	}
-	
-	public XYSeries getCircle(double x,double y,double radius){
-		XYSeries series=new XYSeries("test"+x+"."+y,false,true);
-		for(int i=0;i<number;i++) {
-			double xx= Math.sin(i*1.0/number*2*Math.PI)*radius+x;
-			double yy= Math.cos(i*1.0/number*2*Math.PI)*radius+y;
-			series.add(xx, yy);
-		}
-		return series;
-	}
-	
-	public void drawCircle(XYSeries[] series) {
-		XYSeriesCollection dataset = new XYSeriesCollection();
-		for(int i=0;i<series.length;i++)			dataset.addSeries(series[i]);
+    private int number = 50;
+    CLS cls = new CLS();
+    XYSeries serie = new XYSeries("test", false, true);
+    double radius = CLS.radius;
+
+
+    public void DrawGroup(String group[]) {
+        XYSeries series[] = new XYSeries[group.length];
+        for (int i = 0; i < series.length; i++) {
+            double[] xy = cls.decode(group[i]);
+            series[i] = this.getCircle(xy[0], xy[1], radius);
+        }
+        this.drawCircle(series);
+    }
+
+    public XYSeries getCircle(double x, double y, double radius) {
+        XYSeries series = new XYSeries("test" + x + "." + y, false, true);
+        for (int i = 0; i < number; i++) {
+            double xx = Math.sin(i * 1.0 / number * 2 * Math.PI) * radius + x;
+            double yy = Math.cos(i * 1.0 / number * 2 * Math.PI) * radius + y;
+            series.add(xx, yy);
+        }
+        return series;
+    }
+
+    public void drawCircle(XYSeries[] series) {
+        XYSeriesCollection dataset = new XYSeriesCollection();
+        for (int i = 0; i < series.length; i++) dataset.addSeries(series[i]);
 //		for(int i=0;i<series.length;i++)	dataset.addSeries(series[i]);
-		JFreeChart chart = ChartFactory.createXYLineChart(
-				" ", // chart title
-				"x", // x axis label
-				" y", // y axis label
-				dataset, // data
-				PlotOrientation.VERTICAL,
-				false, // include legend
-				false, // tooltips
-				false // urls
-				);		
-		
-		ChartFrame frame = new ChartFrame("testName", chart);
-		frame.pack();
-		frame.setVisible(true);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
-	
-	
-	
-	
-	//´«ÈëgroupÊý¾Ý£¬×ª»»Êý¾Ý¸ñÊ½
-	public void dataTransfer(String[] group){
-		double result[][]=new double[2][group.length];
-		for(int i=0;i<group.length;i++) {
-			String str=group[i];
-			double d[]=cls.decode(str);
-			result[0][i]=d[0];
-			result[1][i]=d[1];
-		}
-		
-		try {
-			this.showChart(result);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
-	//ÕÛÏßÍ¼(´«ÈëgroupÊý×é)
-		public  void addGroupData(int x,String[] group) {
-			double result=0;
-			double[] fit=cls.fitAll(group).fitness;
-			for(int i=0;i<fit.length;i++) 		result+=fit[i];
-			serie.add(x,result);
-		}
-	//ÕÛÏßÍ¼
-	public void drawLine(String name) {
-		XYSeriesCollection dataset = new XYSeriesCollection();
-		dataset.addSeries(serie);
+        JFreeChart chart = ChartFactory.createXYLineChart(
+                " ", // chart title
+                "x", // x axis label
+                " y", // y axis label
+                dataset, // data
+                PlotOrientation.VERTICAL,
+                false, // include legend
+                false, // tooltips
+                false // urls
+        );
+
+        ChartFrame frame = new ChartFrame("testName", chart);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+
+    //ä¼ å…¥groupæ•°æ®ï¼Œè½¬æ¢æ•°æ®æ ¼å¼
+    public void dataTransfer(String[] group) {
+        double result[][] = new double[2][group.length];
+        for (int i = 0; i < group.length; i++) {
+            String str = group[i];
+            double d[] = cls.decode(str);
+            result[0][i] = d[0];
+            result[1][i] = d[1];
+        }
+
+        try {
+            this.showChart(result);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    //æŠ˜çº¿å›¾(ä¼ å…¥groupæ•°ç»„)
+    public void addGroupData(int x, String[] group) {
+        double result = 0;
+        double[] fit = cls.fitAll(group).fitness;
+        for (int i = 0; i < fit.length; i++) result += fit[i];
+        serie.add(x, result);
+    }
+
+    //æŠ˜çº¿å›¾
+    public void drawLine(String name) {
+        XYSeriesCollection dataset = new XYSeriesCollection();
+        dataset.addSeries(serie);
 //		for(int i=0;i<series.length;i++)	dataset.addSeries(series[i]);
-		JFreeChart chart = ChartFactory.createXYLineChart(
-				" ", // chart title
-				"x", // x axis label
-				" y", // y axis label
-				dataset, // data
-				PlotOrientation.VERTICAL,
-				false, // include legend
-				false, // tooltips
-				false // urls
-				);		
-		
-		ChartFrame frame = new ChartFrame(name, chart);
-		frame.pack();
-		frame.setVisible(true);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
+        JFreeChart chart = ChartFactory.createXYLineChart(
+                " ", // chart title
+                "x", // x axis label
+                " y", // y axis label
+                dataset, // data
+                PlotOrientation.VERTICAL,
+                false, // include legend
+                false, // tooltips
+                false // urls
+        );
 
-	//É¢µãÍ¼
-	public void showChart(double[][] data) throws Exception {  
-		DefaultXYDataset xydataset = new DefaultXYDataset();  
-		xydataset.addSeries("Charging Pile Position", data);  
-		JFreeChart chart = ChartFactory.createScatterPlot("Driving record", "x-axis", "y-axis",
-				xydataset, 
-				PlotOrientation.VERTICAL,
-				true, 
-				false,
-				false);  
-		ChartFrame frame = new ChartFrame("É¢µãÍ¼", chart, true);  
-		chart.setBackgroundPaint(Color.white);    
-		chart.setBorderPaint(Color.GREEN);    
-		chart.setBorderStroke(new BasicStroke(1.5f));    
-		XYPlot xyplot = (XYPlot) chart.getPlot();    
+        ChartFrame frame = new ChartFrame(name, chart);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
 
-		xyplot.setBackgroundPaint(new Color(255, 253, 246));    
-		ValueAxis vaaxis = xyplot.getDomainAxis();    
-		vaaxis.setAxisLineStroke(new BasicStroke(1.5f));    
+    //æ•£ç‚¹å›¾
+    public void showChart(double[][] data) throws Exception {
+        DefaultXYDataset xydataset = new DefaultXYDataset();
+        xydataset.addSeries("Charging Pile Position", data);
+        JFreeChart chart = ChartFactory.createScatterPlot("Driving record", "x-axis", "y-axis",
+                xydataset,
+                PlotOrientation.VERTICAL,
+                true,
+                false,
+                false);
+        ChartFrame frame = new ChartFrame("æ•£ç‚¹å›¾", chart, true);
+        chart.setBackgroundPaint(Color.white);
+        chart.setBorderPaint(Color.GREEN);
+        chart.setBorderStroke(new BasicStroke(1.5f));
+        XYPlot xyplot = (XYPlot) chart.getPlot();
 
-		ValueAxis va = xyplot.getDomainAxis(0);    
-		va.setAxisLineStroke(new BasicStroke(1.5f));    
+        xyplot.setBackgroundPaint(new Color(255, 253, 246));
+        ValueAxis vaaxis = xyplot.getDomainAxis();
+        vaaxis.setAxisLineStroke(new BasicStroke(1.5f));
 
-		va.setAxisLineStroke(new BasicStroke(1.5f)); // ×ø±êÖá´ÖÏ¸    
-		va.setAxisLinePaint(new Color(215, 215, 215)); // ×ø±êÖáÑÕÉ«    
-		xyplot.setOutlineStroke(new BasicStroke(1.5f)); // ±ß¿ò´ÖÏ¸    
-		va.setLabelPaint(new Color(10, 10, 10)); // ×ø±êÖá±êÌâÑÕÉ«    
-		va.setTickLabelPaint(new Color(102, 102, 102)); // ×ø±êÖá±ê³ßÖµÑÕÉ«    
-		ValueAxis axis = xyplot.getRangeAxis();    
-		axis.setAxisLineStroke(new BasicStroke(1.5f));    
+        ValueAxis va = xyplot.getDomainAxis(0);
+        va.setAxisLineStroke(new BasicStroke(1.5f));
 
-		XYLineAndShapeRenderer xylineandshaperenderer = (XYLineAndShapeRenderer) xyplot    
-				.getRenderer();    
-		xylineandshaperenderer.setSeriesOutlinePaint(0, Color.WHITE); 
-		xylineandshaperenderer.setUseOutlinePaint(true);    
-		NumberAxis numberaxis = (NumberAxis) xyplot.getDomainAxis();    
-		numberaxis.setAutoRangeIncludesZero(false);    
-		numberaxis.setTickMarkInsideLength(2.0F);    
-		numberaxis.setTickMarkOutsideLength(0.0F);    
-		numberaxis.setAxisLineStroke(new BasicStroke(1.5f));    
-		xylineandshaperenderer.setSeriesOutlineStroke(0, new BasicStroke(2.5F));//ÉèÖÃµã´óÐ¡
+        va.setAxisLineStroke(new BasicStroke(1.5f)); // åæ ‡è½´ç²—ç»†
+        va.setAxisLinePaint(new Color(215, 215, 215)); // åæ ‡è½´é¢œè‰²
+        xyplot.setOutlineStroke(new BasicStroke(1.5f)); // è¾¹æ¡†ç²—ç»†
+        va.setLabelPaint(new Color(10, 10, 10)); // åæ ‡è½´æ ‡é¢˜é¢œè‰²
+        va.setTickLabelPaint(new Color(102, 102, 102)); // åæ ‡è½´æ ‡å°ºå€¼é¢œè‰²
+        ValueAxis axis = xyplot.getRangeAxis();
+        axis.setAxisLineStroke(new BasicStroke(1.5f));
 
-		frame.pack();  
-		frame.setVisible(true);  
-	} 
+        XYLineAndShapeRenderer xylineandshaperenderer = (XYLineAndShapeRenderer) xyplot
+                .getRenderer();
+        xylineandshaperenderer.setSeriesOutlinePaint(0, Color.WHITE);
+        xylineandshaperenderer.setUseOutlinePaint(true);
+        NumberAxis numberaxis = (NumberAxis) xyplot.getDomainAxis();
+        numberaxis.setAutoRangeIncludesZero(false);
+        numberaxis.setTickMarkInsideLength(2.0F);
+        numberaxis.setTickMarkOutsideLength(0.0F);
+        numberaxis.setAxisLineStroke(new BasicStroke(1.5f));
+        xylineandshaperenderer.setSeriesOutlineStroke(0, new BasicStroke(2.5F));//è®¾ç½®ç‚¹å¤§å°
+
+        frame.pack();
+        frame.setVisible(true);
+    }
 }

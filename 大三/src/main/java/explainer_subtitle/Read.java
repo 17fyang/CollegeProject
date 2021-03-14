@@ -33,14 +33,14 @@ public class Read {
 		Time2 endTime=null;
 		String content="";
 		String split_s[]=s.split("\r\n");
-		//µÚÒ»ÐÐ
+		//ç¬¬ä¸€è¡Œ
 		split_s[0]=split_s[0].trim();
 		sid=Integer.parseInt(split_s[0]);
-		//µÚ¶þÐÐ
+		//ç¬¬äºŒè¡Œ
 		String timeSplit[]=split_s[1].split(" --> ");
 		startTime=StringToTime(timeSplit[0]);
 		endTime=StringToTime(timeSplit[1]);
-		//Ê£ÏÂÐÐ
+		//å‰©ä¸‹è¡Œ
 		for(int i=2;i<split_s.length;i++) 	content=content.concat(split_s[i]+"\r\n");
 		return new Subt(sid,startTime,endTime,content);
 	}
@@ -63,7 +63,7 @@ public class Read {
 		return new Time2(hour,minute,second,msecond);
 	}
 
-	//ÎÄ¼þ×ªstring
+	//æ–‡ä»¶è½¬string
 	private String FileToString(File f) throws Exception{
 		int len=0;
 		byte[] buf=new  byte[1024];

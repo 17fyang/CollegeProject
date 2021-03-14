@@ -40,8 +40,8 @@ public class Test {
 }
 
 class Parameter{
-	public int neuronLength=15;//Òşº¬²ãÊıÁ¿
-	public double learnSpeed=0.06;//Ñ§Ï°ËÙ¶È
-	public  int trainNumber=15;//ÑµÁ·¼¯ÊıÁ¿
-	public double activationTimes=10000;//µü´ú´ÎÊı
+	public int neuronLength=15;//éšå«å±‚æ•°é‡
+	public double learnSpeed=0.06;//å­¦ä¹ é€Ÿåº¦
+	public  int trainNumber=15;//è®­ç»ƒé›†æ•°é‡
+	public double activationTimes=10000;//è¿­ä»£æ¬¡æ•°
 }

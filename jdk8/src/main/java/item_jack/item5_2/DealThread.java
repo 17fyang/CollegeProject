@@ -26,11 +26,11 @@ public class DealThread extends Thread{
 		this.line2=line2;
 		this.outList=list;
 
-		//ÕûºÏÁ½ĞĞÖĞµÄÌØÊâÖµ
+		//æ•´åˆä¸¤è¡Œä¸­çš„ç‰¹æ®Šå€¼
 		stringList=new ArrayList<String>(line1.getOtherData());
 		stringList.addAll(line2.getOtherData());
 
-		//µÚÒ»´ÎÌí¼Ó
+		//ç¬¬ä¸€æ¬¡æ·»åŠ 
 		Set<String> set=new HashSet<String>();
 		set.addAll(line1.getPublicData());
 		set.addAll(line2.getPublicData());
@@ -63,22 +63,22 @@ public class DealThread extends Thread{
 		Queue<Set<String>> queue=new LinkedList<Set<String>>(finalSet);
 		chooseResult(queue,line1,line2);
 	}
-	//¸ù¾İ¹æÔòÉ¸Ñ¡ÅÅÁĞ
+	//æ ¹æ®è§„åˆ™ç­›é€‰æ’åˆ—
 	private void chooseResult(Queue<Set<String>> queue,Line line1,Line line2) {
 		while(!queue.isEmpty()) {
 			Set<String> single=queue.poll();
 			List<Record> son1=sonRecord(single,line1.getData());
 			List<Record> son2=sonRecord(single,line2.getData());
-			if(son1.size()<3 || son2.size()<3)	continue;//³õ²½ÅĞ¶Ï
+			if(son1.size()<3 || son2.size()<3)	continue;//åˆæ­¥åˆ¤æ–­
 			OutData out=conditionScreen(single,son1,son2);
 			if(out!=null)	outList.add(out);
 		}
 	}
 
-	//Ìõ¼şÉ¸Ñ¡
+	//æ¡ä»¶ç­›é€‰
 	private OutData conditionScreen(Set<String> set,List<Record> son1,List<Record> son2) {
 		if(condition1(son1,son2)==false)	return null;
-		//Ìí¼Ó×Ó¼¯
+		//æ·»åŠ å­é›†
 		List<Record> list=new LinkedList<Record>();
 		for(int i=0;i<originalList.length;i++) {
 			Record record=originalList[i];
@@ -125,7 +125,7 @@ public class DealThread extends Thread{
 		return list;
 	}
 	
-	//ÊÇ·ñÂú×ãÈ«²¿ÔÚÇ°ÁùÇÒÒ»¸ö3Ò»¸ö4
+	//æ˜¯å¦æ»¡è¶³å…¨éƒ¨åœ¨å‰å…­ä¸”ä¸€ä¸ª3ä¸€ä¸ª4
 	private boolean condition2(List<Record> list,Set<String> set, List<Record> son1,List<Record> son2) {
 		if(list.size()<rankedTimes)	return false;	
 		List<Record> temp=new LinkedList<Record>(list.subList(0, rankedTimes));
@@ -139,18 +139,18 @@ public class DealThread extends Thread{
 			if(son2.get(i).getIndex()>maxIndex)	son2.remove(i--);
 			else temp.remove(son2.get(i));
 		}
-		if(!temp.isEmpty())	return false;//²»È«ÔÚÇ°Áù
+		if(!temp.isEmpty())	return false;//ä¸å…¨åœ¨å‰å…­
 		if(son1.size()>son2.size()) {
 			List<Record> t=son1;
 			son1=son2;
 			son2=t;
 		}
-		if(son1.size()!=3 || son2.size()!=4)		return false;//Ò»¸ö3Ò»¸ö4
+		if(son1.size()!=3 || son2.size()!=4)		return false;//ä¸€ä¸ª3ä¸€ä¸ª4
 		return true;
 	}
 	
 	private boolean condition1(List<Record> son1,List<Record> son2) {
-		//¼ì²âÓĞÃ»ÓĞ³öÏÖÒ»ĞĞÏàÍ¬Êı¾İ
+		//æ£€æµ‹æœ‰æ²¡æœ‰å‡ºç°ä¸€è¡Œç›¸åŒæ•°æ®
 		for(Record record:son1) {
 			for(Record r:son2) {
 				if(record.getDataSet().equals(r.getDataSet()))	return true;
@@ -159,7 +159,7 @@ public class DealThread extends Thread{
 		return false;
 	}
 
-	//¶ÔÒ»¸ö¼¯ºÏÅÅĞò
+	//å¯¹ä¸€ä¸ªé›†åˆæ’åº
 	private void sortRecord(List<Record> list) {
 		for(int i=0;i<list.size();i++) {
 			for(int j=1;j<list.size()-i;j++) {

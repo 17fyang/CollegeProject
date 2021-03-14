@@ -1,11 +1,11 @@
 package leetCode;
 
 /*
- * ¼ÙÉèÄãÕıÔÚÅÀÂ¥Ìİ¡£ĞèÒª n ½×Äã²ÅÄÜµ½´ïÂ¥¶¥¡£
+ * å‡è®¾ä½ æ­£åœ¨çˆ¬æ¥¼æ¢¯ã€‚éœ€è¦ n é˜¶ä½ æ‰èƒ½åˆ°è¾¾æ¥¼é¡¶ã€‚
  * 
- * Ã¿´ÎÄã¿ÉÒÔÅÀ 1 »ò 2 ¸öÌ¨½×¡£ÄãÓĞ¶àÉÙÖÖ²»Í¬µÄ·½·¨¿ÉÒÔÅÀµ½Â¥¶¥ÄØ£¿
+ * æ¯æ¬¡ä½ å¯ä»¥çˆ¬ 1 æˆ– 2 ä¸ªå°é˜¶ã€‚ä½ æœ‰å¤šå°‘ç§ä¸åŒçš„æ–¹æ³•å¯ä»¥çˆ¬åˆ°æ¥¼é¡¶å‘¢ï¼Ÿ
  * 
- * ×¢Òâ£º¸ø¶¨ n ÊÇÒ»¸öÕıÕûÊı¡£
+ * æ³¨æ„ï¼šç»™å®š n æ˜¯ä¸€ä¸ªæ­£æ•´æ•°ã€‚
  */
 public class Q70 {
 	private static int cishu=0;
@@ -14,7 +14,7 @@ public class Q70 {
 		System.out.println(result);
 	}
 	
-	//Ñ­»·½â·¨
+	//å¾ªç¯è§£æ³•
 	public static int climbStairs(int n) {
         int stair[] = new int[n+1];
         stair[0] = stair[1] = 1;
@@ -25,7 +25,7 @@ public class Q70 {
         return stair[n];
     }
 	/*
-	 * µİ¹é½â·¨
+	 * é€’å½’è§£æ³•
 	 
 	public static int climbStairs(int n) {
 		int cen=0;

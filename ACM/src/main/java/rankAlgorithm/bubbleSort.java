@@ -1,12 +1,12 @@
 package rankAlgorithm;
 /*
- * 冒泡排序
+ * 鍐掓场鎺掑簭
  * 
- * 平均时间复杂度：O(N2)
- * 最好时间复杂度：O(N)
- * 最坏时间复杂度：O(N2)
- * 空间复杂度：O(1)
- * 稳定排序
+ * 骞冲潎鏃堕棿澶嶆潅搴︼細O(N2)
+ * 鏈�濂芥椂闂村鏉傚害锛歄(N)
+ * 鏈�鍧忔椂闂村鏉傚害锛歄(N2)
+ * 绌洪棿澶嶆潅搴︼細O(1)
+ * 绋冲畾鎺掑簭
  */
 public class bubbleSort {
 	public static void main(String[] args) {
@@ -23,7 +23,7 @@ public class bubbleSort {
 			if(i==0)	continue;
 			if(arr[i]<arr[i-1])	isPass=false;
 		}
-		System.out.println("\r\n\r\n冒泡排序\r\nresult:"+isPass);
+		System.out.println("\r\n\r\n鍐掓场鎺掑簭\r\nresult:"+isPass);
 	}
 	static void func(int arr[]) {
 		for(int i=0;i<arr.length;i++) {

@@ -1,15 +1,15 @@
 package rankAlgorithm;
 /*
- * ϣ�������˼���ǲ��ò�������ķ�����
- * ����������������Ϊ h ��Ԫ������
- * �տ�ʼ h �Ĵ�С������ h = n / 2,������ h = n / 4���� h һֱ��С��
- * �� h = 1 ʱ��Ҳ���Ǵ�ʱ������������Ϊ1��Ԫ�����򣬴�ʱ����������������
+ * 希尔排序的思想是采用插入排序的方法，
+ * 先让数组中任意间隔为 h 的元素有序，
+ * 刚开始 h 的大小可以是 h = n / 2,接着让 h = n / 4，让 h 一直缩小，
+ * 当 h = 1 时，也就是此时数组中任意间隔为1的元素有序，此时的数组就是有序的了
  * 
- * ƽ��ʱ�临�Ӷȣ�O(N1.3)
- * ���ʱ�临�Ӷȣ�O(N)
- * �ʱ�临�Ӷȣ�O(N2)
- * �ռ临�Ӷȣ�O(1)
- * ���ȶ�����
+ * 平均时间复杂度：O(N1.3)
+ * 最好时间复杂度：O(N)
+ * 最坏时间复杂度：O(N2)
+ * 空间复杂度：O(1)
+ * 非稳定排序
  */
 public class shellSort {
 	public static void main(String[] args) {
@@ -26,7 +26,7 @@ public class shellSort {
 			if(i==0)	continue;
 			if(arr[i]<arr[i-1])	isPass=false;
 		}
-		System.out.println("\r\n\r\nϣ������\r\nresult:"+isPass);
+		System.out.println("\r\n\r\n希尔排序\r\nresult:"+isPass);
 	}
 	static void func(int arr[]) {
 		int n=arr.length;

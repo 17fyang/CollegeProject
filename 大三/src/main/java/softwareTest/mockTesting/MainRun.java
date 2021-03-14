@@ -29,7 +29,7 @@ public class MainRun implements  MainRunInterface{
 	public void command() {
 		String comm;
 		while(true) {
-			System.out.println("ÇëÊäÈëÃüÁî£º");
+			System.out.println("è¯·è¾“å…¥å‘½ä»¤ï¼š");
 			Scanner sca=new Scanner(System.in);
 			System.gc();
 			comm=sca.next();
@@ -42,21 +42,21 @@ public class MainRun implements  MainRunInterface{
 						String name=sca.next();
 						System.out.println(ih.in(roomNo,name));
 					}else
-						System.out.println("·¿¼äºÅ³ö´í");
+						System.out.println("æˆ¿é—´å·å‡ºé”™");
 				}catch(Exception e) {
-					System.out.println("·¿¼äºÅ³ö´í£¡");
+					System.out.println("æˆ¿é—´å·å‡ºé”™ï¼");
 				}
 			}else if("out".equalsIgnoreCase(comm)) {
 				int roomNo=sca.nextInt();
 				if(validRoomNo(roomNo)) {
 					System.out.println(oh.out(roomNo));
 				}else
-					System.out.println("·¿¼äºÅ³ö´í£¡");
+					System.out.println("æˆ¿é—´å·å‡ºé”™ï¼");
 			}else if("exit".equalsIgnoreCase(comm)) {
-				System.out.println("³ÌĞòÍË³ö£¡");
+				System.out.println("ç¨‹åºé€€å‡ºï¼");
 				break;
 			}else {
-				System.out.println("ÃüÁîÊäÈë´íÎó£¬ÇëÖØĞÂÊäÈë£¡");
+				System.out.println("å‘½ä»¤è¾“å…¥é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ï¼");
 			}
 		}
 	}

@@ -18,18 +18,18 @@ import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 
 public class homework_1117 {
-	private static String sourceFile="C:\\Users\\Administrator\\Desktop\\°¢ÈøµÂ.xls";
+	private static String sourceFile="C:\\Users\\Administrator\\Desktop\\é˜¿è¨å¾·.xls";
 	public static void main(String[] args) {
 		question1();
 	}
 
-	//Êı¾İÀëÉ¢»¯-stl
+	//æ•°æ®ç¦»æ•£åŒ–-stl
 	public static void question1() {
 		File resource=new File(sourceFile);
 		try {
-			//1:´´½¨excelÎÄ¼ş
+			//1:åˆ›å»ºexcelæ–‡ä»¶
 			File fileResult=new File("File/h1117_1.xls");
-			//2:´´½¨¹¤×÷²¾
+			//2:åˆ›å»ºå·¥ä½œç°¿
 			WritableWorkbook workbookResult=Workbook.createWorkbook(fileResult);
 			WritableSheet sheetResult=workbookResult.createSheet("result", 0);
 
@@ -37,8 +37,8 @@ public class homework_1117 {
 			Sheet sheet=workbook.getSheet(0);
 			int arr[]={8,14,16};
 
-			System.out.println("ĞĞ£º"+sheet.getRows());
-			System.out.println("ÁĞ£º"+sheet.getColumns());
+			System.out.println("è¡Œï¼š"+sheet.getRows());
+			System.out.println("åˆ—ï¼š"+sheet.getColumns());
 			
 			for(int j=0;j<3;j++) {
 				List<Double> list=new LinkedList<Double>();
@@ -63,14 +63,14 @@ public class homework_1117 {
 				for(int i=0;i<list.size();i++) {
 					String resultString=String.valueOf(map.get(list.get(i)));
 					Label label=new Label(arr[j],i,resultString);
-					//7£ºÌí¼Óµ¥Ôª¸ñ
+					//7ï¼šæ·»åŠ å•å…ƒæ ¼
 					sheetResult.addCell(label);
 				}
 				
 			}
-			//Ğ´ÈëÊı¾İ£¬Ò»¶¨¼ÇµÃĞ´ÈëÊı¾İ£¬²»È»Äã¶¼¿ªÊ¼»³ÒÉÊÀ½çÁË£¬excelÀïÃæÉ¶¶¼Ã»ÓĞ
+			//å†™å…¥æ•°æ®ï¼Œä¸€å®šè®°å¾—å†™å…¥æ•°æ®ï¼Œä¸ç„¶ä½ éƒ½å¼€å§‹æ€€ç–‘ä¸–ç•Œäº†ï¼Œexcelé‡Œé¢å•¥éƒ½æ²¡æœ‰
 			workbookResult.write();
-			//×îºóÒ»²½£¬¹Ø±Õ¹¤×÷²¾
+			//æœ€åä¸€æ­¥ï¼Œå…³é—­å·¥ä½œç°¿
 			workbookResult.close();
 
 			workbook.close();

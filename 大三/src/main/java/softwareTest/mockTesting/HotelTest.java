@@ -14,9 +14,9 @@ public class HotelTest {
 		OutHotel oh=new OutHotel(iData);
 		context.checking(new Expectations() {{
 			oneOf(iData).in_Out_Room(701,"EMPTY");
-			will(returnValue("701ÍË·¿³É¹¦£¡"));
+			will(returnValue("701é€€æˆ¿æˆåŠŸï¼"));
 		}});
-		assertEquals("701ÍË·¿³É¹¦£¡",oh.out(701));
+		assertEquals("701é€€æˆ¿æˆåŠŸï¼",oh.out(701));
 	}
 	
 	@Test
@@ -25,9 +25,9 @@ public class HotelTest {
 		InHotel ih=new InHotel(iData);
 		context.checking(new Expectations() {{
 			oneOf(iData).in_Out_Room(405,"test");
-			will(returnValue("test³É¹¦Èë×¡405·¿¼ä"));
+			will(returnValue("testæˆåŠŸå…¥ä½405æˆ¿é—´"));
 		}});
-		assertEquals("test³É¹¦Èë×¡405·¿¼ä",ih.in(405, "test"));
+		assertEquals("testæˆåŠŸå…¥ä½405æˆ¿é—´",ih.in(405, "test"));
 	}
 	
 	@Test
@@ -49,20 +49,20 @@ public class HotelTest {
 	
 //	@Test
 	public void MainRunTest() {
-		//InHotelÒÀÀµ
+		//InHotelä¾èµ–
 		IData iData=context.mock(IData.class);
 		InHotel ih=new InHotel(iData);
 		context.checking(new Expectations() {{
 			exactly(10).of(iData).in_Out_Room(405,"test");
-			will(returnValue("test³É¹¦Èë×¡405·¿¼ä"));
+			will(returnValue("testæˆåŠŸå…¥ä½405æˆ¿é—´"));
 		}});
-		//OutHotelÒÀÀµ
+		//OutHotelä¾èµ–
 		OutHotel oh=new OutHotel(iData);
 		context.checking(new Expectations() {{
 			exactly(10).of(iData).in_Out_Room(701,"EMPTY");
-			will(returnValue("701ÍË·¿³É¹¦£¡"));
+			will(returnValue("701é€€æˆ¿æˆåŠŸï¼"));
 		}});
-		//ListHomeÒÀÀµ
+		//ListHomeä¾èµ–
 		String roomsTest[][]=new String[2][3];
 		for(int i=0;i<roomsTest.length;i++) {
 			for(int j=0;j<roomsTest[0].length;j++) {
@@ -75,7 +75,7 @@ public class HotelTest {
 			exactly(480).of(mrInterface).getRoom();
 			will(returnValue(roomsTest));
 		}});
-		//¿ªÊ¼²âÊÔ
+		//å¼€å§‹æµ‹è¯•
 		MainRun mr=new MainRun(lh,ih,oh);
 		mr.command();
 		

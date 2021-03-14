@@ -2,11 +2,11 @@ package otherTest;
 
 /**
  * ClassName: LambdaTest
- * Description:测试在lambda能不能修改外面的内容
- * 答：不能，因为
+ * Description:娴嬭瘯鍦╨ambda鑳戒笉鑳戒慨鏀瑰闈㈢殑鍐呭
+ * 绛旓細涓嶈兘锛屽洜涓�
  * date: 2020/8/14 23:49
  *
- * @author :乌鸦坐飞机亠
+ * @author :涔岄甫鍧愰鏈轰籂
  * @version:
  */
 public class LambdaTest {

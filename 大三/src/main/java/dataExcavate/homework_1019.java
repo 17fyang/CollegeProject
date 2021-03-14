@@ -9,7 +9,7 @@ import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 
 public class homework_1019 {
-	//¹Û²â´°¿Ú×Ü»ù±¾»ı·Ö,¹Û²â´°¿Ú×Ü·ÉĞĞ¹«ÀïÊı,¹Û²â´°¿Ú×Ü¼ÓÈ¨·ÉĞĞ¹«ÀïÊı,¹Û²â´°¿Ú¼¾¶ÈÆ½¾ù»ù±¾»ı·ÖÀÛ»ı,Æ½¾ùÕÛ¿ÛÂÊ
+	//è§‚æµ‹çª—å£æ€»åŸºæœ¬ç§¯åˆ†,è§‚æµ‹çª—å£æ€»é£è¡Œå…¬é‡Œæ•°,è§‚æµ‹çª—å£æ€»åŠ æƒé£è¡Œå…¬é‡Œæ•°,è§‚æµ‹çª—å£å­£åº¦å¹³å‡åŸºæœ¬ç§¯åˆ†ç´¯ç§¯,å¹³å‡æŠ˜æ‰£ç‡
 	static double min[]= {200,760,267.96,25,0.14};
 	static double max[]= {286164,234721,240843.6,35770.5,1.026084586};
 	static int row[]= {2,8,10,12,14};
@@ -23,21 +23,21 @@ public class homework_1019 {
 		question4_2();
 	}
 	
-	//µÚËÄÎÊµÚ¶şĞ¡ÎÊÁã¹æ»®
+	//ç¬¬å››é—®ç¬¬äºŒå°é—®é›¶è§„åˆ’
 		public static void question4_2() {
 			File resource=new File("File/f1.xls");
 			try {
 				
-				 //1:´´½¨excelÎÄ¼ş
+				 //1:åˆ›å»ºexcelæ–‡ä»¶
 				 File fileResult=new File("File/result_zero.xls");
-				//2:´´½¨¹¤×÷²¾
+				//2:åˆ›å»ºå·¥ä½œç°¿
 				WritableWorkbook workbookResult=Workbook.createWorkbook(fileResult);
 				WritableSheet sheetResult=workbookResult.createSheet("result", 0);
 				
 				Workbook workbook=Workbook.getWorkbook(resource);
 				Sheet sheet=workbook.getSheet(1);
-				System.out.println("ĞĞ£º"+sheet.getRows());
-				System.out.println("ÁĞ£º"+sheet.getColumns());
+				System.out.println("è¡Œï¼š"+sheet.getRows());
+				System.out.println("åˆ—ï¼š"+sheet.getColumns());
 				for(int j=0;j<5;j++) {
 					for(int i=2;i<sheet.getRows()-1;i++) {
 						Cell cell=sheet.getCell(row[j],i);
@@ -48,14 +48,14 @@ public class homework_1019 {
 		               String resultString= String.valueOf(result);
 		                
 		                Label label=new Label(row[j],i,resultString);
-		   			 //7£ºÌí¼Óµ¥Ôª¸ñ
+		   			 //7ï¼šæ·»åŠ å•å…ƒæ ¼
 		   			sheetResult.addCell(label);
 					}
 				}
 				
-				//Ğ´ÈëÊı¾İ£¬Ò»¶¨¼ÇµÃĞ´ÈëÊı¾İ£¬²»È»Äã¶¼¿ªÊ¼»³ÒÉÊÀ½çÁË£¬excelÀïÃæÉ¶¶¼Ã»ÓĞ
+				//å†™å…¥æ•°æ®ï¼Œä¸€å®šè®°å¾—å†™å…¥æ•°æ®ï¼Œä¸ç„¶ä½ éƒ½å¼€å§‹æ€€ç–‘ä¸–ç•Œäº†ï¼Œexcelé‡Œé¢å•¥éƒ½æ²¡æœ‰
 				workbookResult.write();
-				//×îºóÒ»²½£¬¹Ø±Õ¹¤×÷²¾
+				//æœ€åä¸€æ­¥ï¼Œå…³é—­å·¥ä½œç°¿
 				workbookResult.close();
 				
 		        workbook.close();
@@ -64,27 +64,27 @@ public class homework_1019 {
 			}
 		}
 	
-	//µÚËÄÎÊ
+	//ç¬¬å››é—®
 	public static void question4() {
 		File resource=new File("File/f1.xls");
 		try {
 			
-			 //1:´´½¨excelÎÄ¼ş
+			 //1:åˆ›å»ºexcelæ–‡ä»¶
 			 File fileResult=new File("File/result.xls");
-			//2:´´½¨¹¤×÷²¾
+			//2:åˆ›å»ºå·¥ä½œç°¿
 			WritableWorkbook workbookResult=Workbook.createWorkbook(fileResult);
 			WritableSheet sheetResult=workbookResult.createSheet("result", 0);
 			
 //			Label label=new Label(2,5,"ds");
-//			 //7£ºÌí¼Óµ¥Ôª¸ñ
+//			 //7ï¼šæ·»åŠ å•å…ƒæ ¼
 //			sheetResult.addCell(label);
 			
 			
 			
 			Workbook workbook=Workbook.getWorkbook(resource);
 			Sheet sheet=workbook.getSheet(1);
-			System.out.println("ĞĞ£º"+sheet.getRows());
-			System.out.println("ÁĞ£º"+sheet.getColumns());
+			System.out.println("è¡Œï¼š"+sheet.getRows());
+			System.out.println("åˆ—ï¼š"+sheet.getColumns());
 			for(int j=0;j<5;j++) {
 				for(int i=2;i<sheet.getRows()-1;i++) {
 					Cell cell=sheet.getCell(row[j],i);
@@ -95,14 +95,14 @@ public class homework_1019 {
 	               String resultString= String.valueOf(result);
 	                
 	                Label label=new Label(row[j],i,resultString);
-	   			 //7£ºÌí¼Óµ¥Ôª¸ñ
+	   			 //7ï¼šæ·»åŠ å•å…ƒæ ¼
 	   			sheetResult.addCell(label);
 				}
 			}
 			
-			//Ğ´ÈëÊı¾İ£¬Ò»¶¨¼ÇµÃĞ´ÈëÊı¾İ£¬²»È»Äã¶¼¿ªÊ¼»³ÒÉÊÀ½çÁË£¬excelÀïÃæÉ¶¶¼Ã»ÓĞ
+			//å†™å…¥æ•°æ®ï¼Œä¸€å®šè®°å¾—å†™å…¥æ•°æ®ï¼Œä¸ç„¶ä½ éƒ½å¼€å§‹æ€€ç–‘ä¸–ç•Œäº†ï¼Œexcelé‡Œé¢å•¥éƒ½æ²¡æœ‰
 			workbookResult.write();
-			//×îºóÒ»²½£¬¹Ø±Õ¹¤×÷²¾
+			//æœ€åä¸€æ­¥ï¼Œå…³é—­å·¥ä½œç°¿
 			workbookResult.close();
 			
 	        workbook.close();
@@ -114,23 +114,23 @@ public class homework_1019 {
 	 /** 
      * @author 
      * @param v 
-     *            ×ö±ê×¼»¯µÄÑù±¾Êı¾İ 
+     *            åšæ ‡å‡†åŒ–çš„æ ·æœ¬æ•°æ® 
      * @param Min 
-     *            Ñù±¾Êı¾İ×îĞ¡Öµ 
+     *            æ ·æœ¬æ•°æ®æœ€å°å€¼ 
      * @param Max 
-     *            Ñù±¾Êı¾İ×î´óÖµ 
+     *            æ ·æœ¬æ•°æ®æœ€å¤§å€¼ 
      * @param newMin 
-     *            ĞÂµÄÓ³ÉäÇø¼ä×îĞ¡Öµ 
+     *            æ–°çš„æ˜ å°„åŒºé—´æœ€å°å€¼ 
      * @param newMax 
-     *            ĞÂµÄÓ³ÉäÇø¼ä×î´óÖµ 
+     *            æ–°çš„æ˜ å°„åŒºé—´æœ€å¤§å€¼ 
      * @return 
      */  
-	//×î´ó×îĞ¡¹æ·¶»¯
+	//æœ€å¤§æœ€å°è§„èŒƒåŒ–
 	public static double normalization(double v, double Min, double Max,  
             double newMin, double newMax) {  
         return (v - Min) / (Max - Min) * (newMax - newMin) + newMin;  
     }  
-	//Áã¹æ»®
+	//é›¶è§„åˆ’
 		public static double normalization_zero(double v,double averge,double cha) {  
 	        return (v - averge) / cha;  
 	    }  

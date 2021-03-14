@@ -15,7 +15,7 @@ import java.io.File;
  * Description:
  * date: 2020/10/3 21:45
  *
- * @author :乌鸦坐飞机亠
+ * @author :涔岄甫鍧愰鏈轰籂
  * @version:
  */
 public class HtmlAnalysis {
@@ -40,7 +40,7 @@ public class HtmlAnalysis {
             Elements aElem = element.getElementsByTag("a");
             String http_url = aElem.first().attr("href");
             String title = aElem.first().text();
-            String company = title.split("：")[0];
+            String company = title.split("锛�")[0];
             ORM.getInstance().insert(new ask_text(id, page, company, title, http_url, time, 0));
         } catch (Exception e) {
             System.out.println("warn!! there is a data fail to analysis in page " + page);

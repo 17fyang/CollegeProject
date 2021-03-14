@@ -1,4 +1,4 @@
-package 美团;
+package meituan;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -8,7 +8,7 @@ import java.util.Scanner;
  * Description:
  * date: 2020/9/13 11:27
  *
- * @author :乌鸦坐飞机亠
+ * @author :涔岄甫鍧愰鏈轰籂
  * @version:
  */
 public class Q05 {

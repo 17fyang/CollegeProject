@@ -11,7 +11,7 @@ public class test {
 	public static void main(String[] args) throws Exception {
 		String exe = "python";
 		String command = "E:\\python\\pycharm\\workSpace\\system\\pptToWorld.py";
-		String num1 = "E:\\python\\pycharm\\workSpace\\system\\作业3遗传算法.pptx";
+		String num1 = "E:\\python\\pycharm\\workSpace\\system\\浣滀笟3閬椾紶绠楁硶.pptx";
 		String num2 = "2";
 		String[] cmdArr = new String[] {exe,command,num1,num2};
 		Process process = Runtime.getRuntime().exec(cmdArr);

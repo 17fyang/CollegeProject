@@ -10,9 +10,9 @@ public class CLSDeal {
 	CLS cls=new CLS();
 	
 	/*
-	 * ´¦ÀíÈ¾É«Ìå½»²æµÄ·½·¨
-	 * °´ÊÊÓ¦¶È´óĞ¡Õ¼±È¾ö¶¨¿ÉÒÔ½»²æ²úÉúµÄºó´ú¸öÊı
-	 * Ê¹ÓÃº¯Êıe-e^x¾ö¶¨½»²æ¸ÅÂÊ
+	 * å¤„ç†æŸ“è‰²ä½“äº¤å‰çš„æ–¹æ³•
+	 * æŒ‰é€‚åº”åº¦å¤§å°å æ¯”å†³å®šå¯ä»¥äº¤å‰äº§ç”Ÿçš„åä»£ä¸ªæ•°
+	 * ä½¿ç”¨å‡½æ•°e-e^xå†³å®šäº¤å‰æ¦‚ç‡
 	 */
 	public String[] cross(String[] group){
 		String newGroup[]=new String[group.length*2];
@@ -23,12 +23,12 @@ public class CLSDeal {
 			String cls1=null;
 			String cls2=null;
 			double random=Math.random();
-			for(int j=0;j<group.length-1;j++){//Ëæ»ú³éµÚÒ»¸ö¸öÌå×÷ÎªÔÓ½»¶ÔÏó
+			for(int j=0;j<group.length-1;j++){//éšæœºæŠ½ç¬¬ä¸€ä¸ªä¸ªä½“ä½œä¸ºæ‚äº¤å¯¹è±¡
 				if(random<splitDouble[0])		cls1=group[fitRank[0]];
 				if(random>=splitDouble[j] &&random < splitDouble[j+1]) 	cls1=group[fitRank[j]];
 			}
 			
-			while(cls2==null || cls2==cls1) {//²»ĞèÒªÖØ¸´£¬µÚ¶ş¸ö
+			while(cls2==null || cls2==cls1) {//ä¸éœ€è¦é‡å¤ï¼Œç¬¬äºŒä¸ª
 				random=Math.random();
 				for(int j=0;j<group.length-1;j++){
 					if(random<splitDouble[0])		cls2=group[fitRank[0]];
@@ -36,27 +36,27 @@ public class CLSDeal {
 				}
 			}
 			
-			int pos = (int)(Math.random()*ModelConfig.geneNumber) + 1;	//½»²æµã
+			int pos = (int)(Math.random()*ModelConfig.geneNumber) + 1;	//äº¤å‰ç‚¹
 			String temp = cls1.substring(0, pos) + cls2.substring(pos);	
 			newGroup[i] = temp;
 		}
-		//±£ÁôÉÏÒ»´ú¸öÌå
+		//ä¿ç•™ä¸Šä¸€ä»£ä¸ªä½“
 		for(int i=group.length;i<newGroup.length;i++) newGroup[i]=group[i-group.length];
 		return newGroup;
 	}
 	/*
-	 * ´¦ÀíÈ¾É«Ìå±äÒìµÄ·½·¨
+	 * å¤„ç†æŸ“è‰²ä½“å˜å¼‚çš„æ–¹æ³•
 	 */
 	public String[] mutation(String[] group){
 		CLS cls=new CLS();
 		double[] fit = cls.fitAll(group);
-		int mFitNum = cls.mFitNum(fit);	//¼ÆËãÊÊÓ¦¶È×î´óµÄÈ¾É«ÌåĞòºÅ
+		int mFitNum = cls.mFitNum(fit);	//è®¡ç®—é€‚åº”åº¦æœ€å¤§çš„æŸ“è‰²ä½“åºå·
 		String max = group[mFitNum];
  
 		for(int i = 0; i < group.length *ModelConfig.mutationPercent; i++){
-			int n = (int) (Math.random() * ModelConfig.geneNumber * group.length );	//´Ó[0£¬GENE * group.length)Çø¼äÈ¡Ëæ»úÊı
-			int chrNum = (int) (n / ModelConfig.geneNumber);	//È¡µÃµÄÈ¾É«ÌåÊı×éÏÂ±ê
-			int gNum = (int)(n % ModelConfig.geneNumber); 	//È¡µÃµÄ»ùÒòÏÂ±ê
+			int n = (int) (Math.random() * ModelConfig.geneNumber * group.length );	//ä»[0ï¼ŒGENE * group.length)åŒºé—´å–éšæœºæ•°
+			int chrNum = (int) (n / ModelConfig.geneNumber);	//å–å¾—çš„æŸ“è‰²ä½“æ•°ç»„ä¸‹æ ‡
+			int gNum = (int)(n % ModelConfig.geneNumber); 	//å–å¾—çš„åŸºå› ä¸‹æ ‡
 			String temp = "";
 
 			if(group[chrNum].charAt(gNum) == '0' ){
@@ -70,13 +70,13 @@ public class CLSDeal {
 		return group;
 	}
 	/*
-	 * ´¦ÀíÈ¾É«ÌåÑ¡ÔñµÄ·½·¨
-	 * Ñ¡È¡Ô­È¾É«ÌåÊÊÓ¦¶ÈÇ°3/4¸öÊı¾İ£¬Ëæ»úÉú³É1/4¸öÊı¾İ
+	 * å¤„ç†æŸ“è‰²ä½“é€‰æ‹©çš„æ–¹æ³•
+	 * é€‰å–åŸæŸ“è‰²ä½“é€‚åº”åº¦å‰3/4ä¸ªæ•°æ®ï¼Œéšæœºç”Ÿæˆ1/4ä¸ªæ•°æ®
 	 */
 	public String[] RWS(String[] group){
 		group=beOnly(group);
-		String[] newGroup = new String[ModelConfig.groupNumber];//ĞÂµÄÈ¾É«Ìå×é
-		double[] fitArr = cls.fitAll(group);	//¼ÆËãÊÊÓ¦¶ÈÊı×é
+		String[] newGroup = new String[ModelConfig.groupNumber];//æ–°çš„æŸ“è‰²ä½“ç»„
+		double[] fitArr = cls.fitAll(group);	//è®¡ç®—é€‚åº”åº¦æ•°ç»„
 		int rank[]=cls.rank(fitArr);
 		int oldNumber=ModelConfig.groupNumber*3/4;
 		for(int i=0;i<oldNumber;i++) 		newGroup[i]=group[rank[i]];
@@ -84,7 +84,7 @@ public class CLSDeal {
 		return newGroup;
 	}
 	
-	//¶ÔgroupÈ¥ÖØ
+	//å¯¹groupå»é‡
 	private String[] beOnly(String[] group) {
 		Set<String> set=new HashSet<String>();
 		for(int i=0;i<group.length;i++)	 set.add(group[i]);
@@ -106,7 +106,7 @@ public class CLSDeal {
 		return temp;		
 	}
 	
-	private static double[] getSplitLocate() {//Çó³öÃ¿¸öÅÅÃû±»³éµ½µÄ¸ÅÂÊ
+	private static double[] getSplitLocate() {//æ±‚å‡ºæ¯ä¸ªæ’åè¢«æŠ½åˆ°çš„æ¦‚ç‡
 		double[] result=new double[ModelConfig.groupNumber];
 		double total=formula(1)-formula(0);
 		for(int i=0;i<ModelConfig.groupNumber;i++) {

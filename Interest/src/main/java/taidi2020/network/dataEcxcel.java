@@ -39,7 +39,7 @@ public class dataEcxcel {
 		}
 		
 		
-		//д�벢�ر�
+		//写入并关闭
 		workbook2.write();
 		workbook2.close();
 	}

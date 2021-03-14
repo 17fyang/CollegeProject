@@ -3,37 +3,37 @@ package taidi2020.network;
 import java.util.List;
 
 /*
- * ×÷Òµ¶ş£º¸ø»¨·ÖÀà£¬·´Ïò´«²¥Éñ¾­ÍøÂç
+ * ä½œä¸šäºŒï¼šç»™èŠ±åˆ†ç±»ï¼Œåå‘ä¼ æ’­ç¥ç»ç½‘ç»œ
  */
 public class Main {
-	public static int neuronLength=3;//Òşº¬²ãÊıÁ¿
-	public static double learnSpeed=0.06;//Ñ§Ï°ËÙ¶È
-	public static double activationTimes=1000;//µü´ú´ÎÊı
-	public static double resultThreshold[]= null;//½á¹ûãĞÖµ
-	public static double resultRate=0;//³É¹¦ÂÊ
+	public static int neuronLength=3;//éšå«å±‚æ•°é‡
+	public static double learnSpeed=0.06;//å­¦ä¹ é€Ÿåº¦
+	public static double activationTimes=1000;//è¿­ä»£æ¬¡æ•°
+	public static double resultThreshold[]= null;//ç»“æœé˜ˆå€¼
+	public static double resultRate=0;//æˆåŠŸç‡
 	public static void main(String[] args) throws Exception {
-		//µÚÒ»²½£ºÊı¾İ³õÊ¼»¯
+		//ç¬¬ä¸€æ­¥ï¼šæ•°æ®åˆå§‹åŒ–
 		Data data=new Data(neuronLength);
 		resultThreshold=data.initResult();
-		List<Neuron> neuronList=data.getNeuronList();//Éñ¾­Ôª¼¯ºÏ
-		List<Flower> trainList=data.getTrainList();//ÑµÁ·¼¯
-		List<Flower> testList=data.getTestList();//²âÊÔ¼¯
-		//µÚ¶ş²½£º¼¤»îº¯Êı,È¨ÖØÑµÁ·
+		List<Neuron> neuronList=data.getNeuronList();//ç¥ç»å…ƒé›†åˆ
+		List<Flower> trainList=data.getTrainList();//è®­ç»ƒé›†
+		List<Flower> testList=data.getTestList();//æµ‹è¯•é›†
+		//ç¬¬äºŒæ­¥ï¼šæ¿€æ´»å‡½æ•°,æƒé‡è®­ç»ƒ
 		Train train=new Train();
 		Draw draw=new Draw();
 		for(int i=0;i<activationTimes;i++) {
 			List<double[]> errorList=train.activationAll(trainList,neuronList);
-			draw.addErrorData(i, errorList);//¼ÇÂ¼Ñ§Ï°½ø¶ÈµãµÄÊı¾İ
+			draw.addErrorData(i, errorList);//è®°å½•å­¦ä¹ è¿›åº¦ç‚¹çš„æ•°æ®
 		}
-		//µÚÈı²½£º²âÊÔ
+		//ç¬¬ä¸‰æ­¥ï¼šæµ‹è¯•
 		for(int i=0;i<testList.size();i++) {
 			double[] result=train.test(neuronList,testList.get(i));
-			draw.addTestData(i, result);//¼ÇÂ¼µãµÄ×ø±êÊı¾İ
-			train.caculateSuccessNumber(testList.get(i),result);//Í³¼Æ³É¹¦ÂÊ
+			draw.addTestData(i, result);//è®°å½•ç‚¹çš„åæ ‡æ•°æ®
+			train.caculateSuccessNumber(testList.get(i),result);//ç»Ÿè®¡æˆåŠŸç‡
 		}
 		resultRate=train.getSuccessRate();
-		System.out.println(testList.size()+"¸öÊı¾İµÄ³É¹¦ÂÊÎª£º"+train.getSuccessRate());
-		//	»­Í¼
+		System.out.println(testList.size()+"ä¸ªæ•°æ®çš„æˆåŠŸç‡ä¸ºï¼š"+train.getSuccessRate());
+		//	ç”»å›¾
 		draw.drawAllChart();
 	}
 

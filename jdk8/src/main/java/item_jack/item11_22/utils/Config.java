@@ -4,10 +4,10 @@ import java.io.File;
 import java.util.List;
 
 public class Config {
-	private File dataDeal_source;//dataDealÊı¾İÔ´
-	private File dataDeal_aim;//dataDealÉú³ÉµÄ½á¹ûÎÄ¼ş
-	private int lineNumber;//dataDealÆ¥ÅäĞĞÊı
-	private List<String> conditionList;//É¸Ñ¡Êı¾İlist
+	private File dataDeal_source;//dataDealæ•°æ®æº
+	private File dataDeal_aim;//dataDealç”Ÿæˆçš„ç»“æœæ–‡ä»¶
+	private int lineNumber;//dataDealåŒ¹é…è¡Œæ•°
+	private List<String> conditionList;//ç­›é€‰æ•°æ®list
 	
 	public File getDataDeal_source() {
 		return dataDeal_source;

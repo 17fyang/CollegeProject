@@ -36,7 +36,7 @@ public class chartMain {
 		}
 	}
 
-	//»ñÈ¡ÖĞĞÄ¶È
+	//è·å–ä¸­å¿ƒåº¦
 	private Map<String, Double> getPowerMap(Map<String, List<Person>> map) {
 		Map<String, Double> resultMap=new HashMap<String,Double>();
 		for(String key:map.keySet()) {
@@ -50,7 +50,7 @@ public class chartMain {
 				resultMap.put(p.name, resultMap.get(p.name)+p.weight);
 			}
 		}
-		//¹éÒ»»¯´¦Àí
+		//å½’ä¸€åŒ–å¤„ç†
 		double max=0;
 		double min=99999;
 		for(double weight:resultMap.values()) {
@@ -70,7 +70,7 @@ public class chartMain {
 
 
 	public Map<String,List<Person>> getMap(Sheet sheet){
-		String match="27";//³¡´Î
+		String match="27";//åœºæ¬¡
 		Map<String,List<Person>> map=new HashMap<String,List<Person>>();
 		for(int i=1;i<sheet.getRows();i++) {
 			Cell testCell=sheet.getCell(1,i);

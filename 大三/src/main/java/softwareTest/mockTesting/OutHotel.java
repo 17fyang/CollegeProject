@@ -11,10 +11,10 @@ public class OutHotel extends Empty implements OutHotelInterface{
     	return iData.in_Out_Room(roomNo, HotelConstant.EMPTY);
     	
 //        if(isEmpty(roomNo)){
-//            return "该房间没有客人入住，退房失败！";
+//            return "璇ユ埧闂存病鏈夊浜哄叆浣忥紝閫�鎴垮け璐ワ紒";
 //        }else{
 //            mr.getRoom()[roomNo/100-1][roomNo%100-1]="EMPTY";
-//            return roomNo+"退房成功!";
+//            return roomNo+"閫�鎴挎垚鍔�!";
 //        }
     }
 }

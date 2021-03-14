@@ -6,9 +6,9 @@ import java.io.OutputStream;
 import java.net.Socket;
 
 /**
- * @author: 乌鸦坐飞机亠
+ * @author: 涔岄甫鍧愰鏈轰籂
  * @date: 2021/1/7 18:04
- * @Description: 客户端用tcp，服务端用udp，看udp报文中的内容
+ * @Description: 瀹㈡埛绔敤tcp锛屾湇鍔＄鐢╱dp锛岀湅udp鎶ユ枃涓殑鍐呭
  */
 public class TcpUdpConnectClient {
     public static final int SERVER_PORT = UdpServerDemo.PORT;

@@ -3,15 +3,15 @@ import java.util.Collections;
 import java.util.Stack;
 
 /**
- *  ËãÊı±í´ïÊ½ÇóÖµ 
- *  Ö±½Óµ÷ÓÃCalculatorµÄÀà·½·¨conversion() 
- *  ´«ÈëËãÊı±í´ïÊ½£¬½«·µ»ØÒ»¸ö¸¡µãÖµ½á¹û
- *  Èç¹û¼ÆËã¹ı³Ì´íÎó£¬½«·µ»ØÒ»¸öNaN
+ *  ç®—æ•°è¡¨è¾¾å¼æ±‚å€¼ 
+ *  ç›´æ¥è°ƒç”¨Calculatorçš„ç±»æ–¹æ³•conversion() 
+ *  ä¼ å…¥ç®—æ•°è¡¨è¾¾å¼ï¼Œå°†è¿”å›ä¸€ä¸ªæµ®ç‚¹å€¼ç»“æœ
+ *  å¦‚æœè®¡ç®—è¿‡ç¨‹é”™è¯¯ï¼Œå°†è¿”å›ä¸€ä¸ªNaN
  */
 public class Calculator {
-	private Stack<String> postfixStack = new Stack<String>();// ºó×ºÊ½Õ»
-	private Stack<Character> opStack = new Stack<Character>();// ÔËËã·ûÕ»
-	private int[] operatPriority = new int[] { 0, 3, 2, 1, -1, 1, 0, 2 };// ÔËÓÃÔËËã·ûASCIIÂë-40×öË÷ÒıµÄÔËËã·ûÓÅÏÈ¼¶
+	private Stack<String> postfixStack = new Stack<String>();// åç¼€å¼æ ˆ
+	private Stack<Character> opStack = new Stack<Character>();// è¿ç®—ç¬¦æ ˆ
+	private int[] operatPriority = new int[] { 0, 3, 2, 1, -1, 1, 0, 2 };// è¿ç”¨è¿ç®—ç¬¦ASCIIç -40åšç´¢å¼•çš„è¿ç®—ç¬¦ä¼˜å…ˆçº§
 
 	public static double conversion(String expression) {
 		double result = 0;
@@ -21,7 +21,7 @@ public class Calculator {
 			result = cal.calculate(expression);
 		} catch (Exception e) {
 			// e.printStackTrace();
-			// ÔËËã´íÎó·µ»ØNaN
+			// è¿ç®—é”™è¯¯è¿”å›NaN
 			return 0.0 / 0.0;
 		}
 		// return new String().valueOf(result);
@@ -29,10 +29,10 @@ public class Calculator {
 	}
 
 	/**
-	 * ½«±í´ïÊ½ÖĞ¸ºÊıµÄ·ûºÅ¸ü¸Ä
+	 * å°†è¡¨è¾¾å¼ä¸­è´Ÿæ•°çš„ç¬¦å·æ›´æ”¹
 	 *
 	 * @param expression
-	 *            ÀıÈç-2+-1*(-3E-2)-(-1) ±»×ªÎª ~2+~1*(~3E~2)-(~1)
+	 *            ä¾‹å¦‚-2+-1*(-3E-2)-(-1) è¢«è½¬ä¸º ~2+~1*(~3E~2)-(~1)
 	 * @return
 	 */
 	private static String transform(String expression) {
@@ -58,27 +58,27 @@ public class Calculator {
 	}
 
 	/**
-	 * °´ÕÕ¸ø¶¨µÄ±í´ïÊ½¼ÆËã
+	 * æŒ‰ç…§ç»™å®šçš„è¡¨è¾¾å¼è®¡ç®—
 	 *
 	 * @param expression
-	 *            Òª¼ÆËãµÄ±í´ïÊ½ÀıÈç:5+12*(3+5)/7
+	 *            è¦è®¡ç®—çš„è¡¨è¾¾å¼ä¾‹å¦‚:5+12*(3+5)/7
 	 * @return
 	 */
 	public double calculate(String expression) {
 		Stack<String> resultStack = new Stack<String>();
 		prepare(expression);
-		Collections.reverse(postfixStack);// ½«ºó×ºÊ½Õ»·´×ª
-		String firstValue, secondValue, currentValue;// ²ÎÓë¼ÆËãµÄµÚÒ»¸öÖµ£¬µÚ¶ş¸öÖµºÍËãÊõÔËËã·û
+		Collections.reverse(postfixStack);// å°†åç¼€å¼æ ˆåè½¬
+		String firstValue, secondValue, currentValue;// å‚ä¸è®¡ç®—çš„ç¬¬ä¸€ä¸ªå€¼ï¼Œç¬¬äºŒä¸ªå€¼å’Œç®—æœ¯è¿ç®—ç¬¦
 		while (!postfixStack.isEmpty()) {
 			currentValue = postfixStack.pop();
-			if (!isOperator(currentValue.charAt(0))) {// Èç¹û²»ÊÇÔËËã·ûÔò´æÈë²Ù×÷ÊıÕ»ÖĞ
+			if (!isOperator(currentValue.charAt(0))) {// å¦‚æœä¸æ˜¯è¿ç®—ç¬¦åˆ™å­˜å…¥æ“ä½œæ•°æ ˆä¸­
 				currentValue = currentValue.replace("~", "-");
 				resultStack.push(currentValue);
-			} else {// Èç¹ûÊÇÔËËã·ûÔò´Ó²Ù×÷ÊıÕ»ÖĞÈ¡Á½¸öÖµºÍ¸ÃÊıÖµÒ»Æğ²ÎÓëÔËËã
+			} else {// å¦‚æœæ˜¯è¿ç®—ç¬¦åˆ™ä»æ“ä½œæ•°æ ˆä¸­å–ä¸¤ä¸ªå€¼å’Œè¯¥æ•°å€¼ä¸€èµ·å‚ä¸è¿ç®—
 				secondValue = resultStack.pop();
 				firstValue = resultStack.pop();
 
-				// ½«¸ºÊı±ê¼Ç·û¸ÄÎª¸ººÅ
+				// å°†è´Ÿæ•°æ ‡è®°ç¬¦æ”¹ä¸ºè´Ÿå·
 				firstValue = firstValue.replace("~", "-");
 				secondValue = secondValue.replace("~", "-");
 
@@ -90,24 +90,24 @@ public class Calculator {
 	}
 
 	/**
-	 * Êı¾İ×¼±¸½×¶Î½«±í´ïÊ½×ª»»³ÉÎªºó×ºÊ½Õ»
+	 * æ•°æ®å‡†å¤‡é˜¶æ®µå°†è¡¨è¾¾å¼è½¬æ¢æˆä¸ºåç¼€å¼æ ˆ
 	 * 
 	 * @param expression
 	 */
 	private void prepare(String expression) {
-		opStack.push(',');// ÔËËã·û·ÅÈëÕ»µ×ÔªËØ¶ººÅ£¬´Ë·ûºÅÓÅÏÈ¼¶×îµÍ
+		opStack.push(',');// è¿ç®—ç¬¦æ”¾å…¥æ ˆåº•å…ƒç´ é€—å·ï¼Œæ­¤ç¬¦å·ä¼˜å…ˆçº§æœ€ä½
 		char[] arr = expression.toCharArray();
-		int currentIndex = 0;// µ±Ç°×Ö·ûµÄÎ»ÖÃ
-		int count = 0;// ÉÏ´ÎËãÊõÔËËã·ûµ½±¾´ÎËãÊõÔËËã·ûµÄ×Ö·ûµÄ³¤¶È±ãÓÚ»òÕßÖ®¼äµÄÊıÖµ
-		char currentOp, peekOp;// µ±Ç°²Ù×÷·ûºÍÕ»¶¥²Ù×÷·û
+		int currentIndex = 0;// å½“å‰å­—ç¬¦çš„ä½ç½®
+		int count = 0;// ä¸Šæ¬¡ç®—æœ¯è¿ç®—ç¬¦åˆ°æœ¬æ¬¡ç®—æœ¯è¿ç®—ç¬¦çš„å­—ç¬¦çš„é•¿åº¦ä¾¿äºæˆ–è€…ä¹‹é—´çš„æ•°å€¼
+		char currentOp, peekOp;// å½“å‰æ“ä½œç¬¦å’Œæ ˆé¡¶æ“ä½œç¬¦
 		for (int i = 0; i < arr.length; i++) {
 			currentOp = arr[i];
-			if (isOperator(currentOp)) {// Èç¹ûµ±Ç°×Ö·ûÊÇÔËËã·û
+			if (isOperator(currentOp)) {// å¦‚æœå½“å‰å­—ç¬¦æ˜¯è¿ç®—ç¬¦
 				if (count > 0) {
-					postfixStack.push(new String(arr, currentIndex, count));// È¡Á½¸öÔËËã·ûÖ®¼äµÄÊı×Ö
+					postfixStack.push(new String(arr, currentIndex, count));// å–ä¸¤ä¸ªè¿ç®—ç¬¦ä¹‹é—´çš„æ•°å­—
 				}
 				peekOp = opStack.peek();
-				if (currentOp == ')') {// Óöµ½·´À¨ºÅÔò½«ÔËËã·ûÕ»ÖĞµÄÔªËØÒÆ³ıµ½ºó×ºÊ½Õ»ÖĞÖ±µ½Óöµ½×óÀ¨ºÅ
+				if (currentOp == ')') {// é‡åˆ°åæ‹¬å·åˆ™å°†è¿ç®—ç¬¦æ ˆä¸­çš„å…ƒç´ ç§»é™¤åˆ°åç¼€å¼æ ˆä¸­ç›´åˆ°é‡åˆ°å·¦æ‹¬å·
 					while (opStack.peek() != '(') {
 						postfixStack.push(String.valueOf(opStack.pop()));
 					}
@@ -125,17 +125,17 @@ public class Calculator {
 				count++;
 			}
 		}
-		if (count > 1 || (count == 1 && !isOperator(arr[currentIndex]))) {// ×îºóÒ»¸ö×Ö·û²»ÊÇÀ¨ºÅ»òÕßÆäËûÔËËã·ûµÄÔò¼ÓÈëºó×ºÊ½Õ»ÖĞ
+		if (count > 1 || (count == 1 && !isOperator(arr[currentIndex]))) {// æœ€åä¸€ä¸ªå­—ç¬¦ä¸æ˜¯æ‹¬å·æˆ–è€…å…¶ä»–è¿ç®—ç¬¦çš„åˆ™åŠ å…¥åç¼€å¼æ ˆä¸­
 			postfixStack.push(new String(arr, currentIndex, count));
 		}
 
 		while (opStack.peek() != ',') {
-			postfixStack.push(String.valueOf(opStack.pop()));// ½«²Ù×÷·ûÕ»ÖĞµÄÊ£ÓàµÄÔªËØÌí¼Óµ½ºó×ºÊ½Õ»ÖĞ
+			postfixStack.push(String.valueOf(opStack.pop()));// å°†æ“ä½œç¬¦æ ˆä¸­çš„å‰©ä½™çš„å…ƒç´ æ·»åŠ åˆ°åç¼€å¼æ ˆä¸­
 		}
 	}
 
 	/**
-	 * ÅĞ¶ÏÊÇ·ñÎªËãÊõ·ûºÅ
+	 * åˆ¤æ–­æ˜¯å¦ä¸ºç®—æœ¯ç¬¦å·
 	 *
 	 * @param c
 	 * @return
@@ -145,13 +145,13 @@ public class Calculator {
 	}
 
 	/**
-	 * ÀûÓÃASCIIÂë-40×öÏÂ±êÈ¥ËãÊõ·ûºÅÓÅÏÈ¼¶
+	 * åˆ©ç”¨ASCIIç -40åšä¸‹æ ‡å»ç®—æœ¯ç¬¦å·ä¼˜å…ˆçº§
 	 *
 	 * @param cur
 	 * @param peek
 	 * @return
 	 */
-	public boolean compare(char cur, char peek) {// Èç¹ûÊÇpeekÓÅÏÈ¼¶¸ßÓÚcur£¬·µ»Øtrue£¬Ä¬ÈÏ¶¼ÊÇpeekÓÅÏÈ¼¶ÒªµÍ
+	public boolean compare(char cur, char peek) {// å¦‚æœæ˜¯peekä¼˜å…ˆçº§é«˜äºcurï¼Œè¿”å›trueï¼Œé»˜è®¤éƒ½æ˜¯peekä¼˜å…ˆçº§è¦ä½
 		boolean result = false;
 		if (operatPriority[(peek) - 40] >= operatPriority[(cur) - 40]) {
 			result = true;
@@ -160,7 +160,7 @@ public class Calculator {
 	}
 
 	/**
-	 * °´ÕÕ¸ø¶¨µÄËãÊõÔËËã·û×ö¼ÆËã
+	 * æŒ‰ç…§ç»™å®šçš„ç®—æœ¯è¿ç®—ç¬¦åšè®¡ç®—
 	 *
 	 * @param firstValue
 	 * @param secondValue

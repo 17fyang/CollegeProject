@@ -9,7 +9,7 @@ import java.sql.Statement;
  * Description:
  * date: 2020/10/3 23:07
  *
- * @author :乌鸦坐飞机亠
+ * @author :涔岄甫鍧愰鏈轰籂
  * @version:
  */
 public class DBUtil {
@@ -25,7 +25,7 @@ public class DBUtil {
             if (st != null) st.close();
             if (conn != null) conn.close();
         } catch (Exception e) {
-            System.out.println("error!!! 关闭资源失败！");
+            System.out.println("error!!! 鍏抽棴璧勬簮澶辫触锛�");
             e.printStackTrace();
         }
     }

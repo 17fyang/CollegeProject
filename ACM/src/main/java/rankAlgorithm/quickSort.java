@@ -1,16 +1,16 @@
 package rankAlgorithm;
 /*
- * ��������
+ * 快速排序
  * 
- * ������Ԫ�����￪ʼ�Ѵ�������и������С������(�������鶼����������Ԫ��)��
- * ��������ͨ���ݹ�ķ�ʽ��������Ԫ����ߵ�������ұߵ�����Ҳ�ظ�ͬ���Ĳ�����
- * ֱ������Ĵ�СΪ1����ʱÿ��Ԫ�ض����������λ�á�
+ * 从中轴元素那里开始把大的数组切割成两个小的数组(两个数组都不包含中轴元素)，
+ * 接着我们通过递归的方式，让中轴元素左边的数组和右边的数组也重复同样的操作，
+ * 直到数组的大小为1，此时每个元素都处于有序的位置。
  * 
- * ƽ��ʱ�临�Ӷȣ�O(nlogn)
- * �ʱ�临�Ӷȣ�O(n2)
- * ���ʱ�临�Ӷȣ�O(nlogn)
- * �ռ临�Ӷȣ�O(1)
- * ���ȶ�����
+ * 平均时间复杂度：O(nlogn)
+ * 最坏时间复杂度：O(n2)
+ * 最好时间复杂度：O(nlogn)
+ * 空间复杂度：O(1)
+ * 非稳定排序
  */
 public class quickSort {
 	public static void main(String[] args) {
@@ -27,7 +27,7 @@ public class quickSort {
 			if(i==0)	continue;
 			if(arr[i]<arr[i-1])	isPass=false;
 		}
-		System.out.println("\r\n\r\n��������\r\nresult:"+isPass);
+		System.out.println("\r\n\r\n快速排序\r\nresult:"+isPass);
 	}
 	static void func(int arr[]) {
 		sort(arr,0,arr.length-1);

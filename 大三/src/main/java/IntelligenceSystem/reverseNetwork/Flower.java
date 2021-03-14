@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Flower {
 	private List<Double> attributeList;
-	private int type;//ÀàĞÍ
+	private int type;//ç±»å‹
 
 	public Flower() {}
 	public Flower(List<Double> attributeList,int type) {

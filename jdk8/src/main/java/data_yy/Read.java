@@ -11,7 +11,7 @@ import com.spire.pdf.PdfPageBase;
 
 public class Read {
 	private File[] fileList;
-	//¶ÁÈ¡Ò»·İÊı¾İ
+	//è¯»å–ä¸€ä»½æ•°æ®
 	public int readOneData(String content,String[] keywords) {
 		int times=0;
 		int result[]=new int[keywords.length];
@@ -26,7 +26,7 @@ public class Read {
 		return times;
 	}
 
-	//¶ÁÈ¡¶à·İÊı¾İ
+	//è¯»å–å¤šä»½æ•°æ®
 	public int[][] readAllData(String url,String[][] keywords){
 		File file = new File(url);
 		fileList = file.listFiles();
@@ -41,11 +41,11 @@ public class Read {
 		return result;
 	}
 	
-	//ÎÄ¼ş×ªstring
+	//æ–‡ä»¶è½¬string
 	private String FileToString(File f){
-		//´´½¨PdfDocumentÊµÀı
+		//åˆ›å»ºPdfDocumentå®ä¾‹
 		PdfDocument doc= new PdfDocument();
-		//¼ÓÔØPDFÎÄ¼ş
+		//åŠ è½½PDFæ–‡ä»¶
 		doc.loadFromFile(f.getPath());
 		StringBuilder sb= new StringBuilder();
 		PdfPageBase page;
@@ -56,7 +56,7 @@ public class Read {
 		return sb.toString();
 	}
 	
-	//»ñÈ¡¹Ø¼ü×ÖÊı×é
+	//è·å–å…³é”®å­—æ•°ç»„
 	public String[][] getKeyWords(String keywordUrl) throws Exception {
 		int len=0;
 		byte[] buf=new  byte[10240];
@@ -75,7 +75,7 @@ public class Read {
 		return result;
 	}
 
-	//»ñÈ¡¹ÉÆ±³É½»Á¿½á¹û
+	//è·å–è‚¡ç¥¨æˆäº¤é‡ç»“æœ
 	public Map<String, Double> getResult(String resultUrl) throws Exception {
 		int len=0;
 		byte[] buf=new  byte[2048];

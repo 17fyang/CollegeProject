@@ -19,13 +19,13 @@ import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;  
 
 /*
- * »­Í¼Àà
+ * ç”»å›¾ç±»
  */
 public class Draw {
 	CLS cls=new CLS();
 	XYSeries series=new XYSeries("test");
 
-	//´«ÈëgroupÊı¾İ£¬×ª»»Êı¾İ¸ñÊ½
+	//ä¼ å…¥groupæ•°æ®ï¼Œè½¬æ¢æ•°æ®æ ¼å¼
 	public double[][] dataTransfer(String[] group){
 		double result[][]=new double[2][group.length];
 		for(int i=0;i<group.length;i++) {
@@ -37,14 +37,14 @@ public class Draw {
 		return result;
 	}
 	
-	//ÕÛÏßÍ¼(´«ÈëgroupÊı×é)
+	//æŠ˜çº¿å›¾(ä¼ å…¥groupæ•°ç»„)
 		public  void addGroupData(int x,String[] group) {
 			double result=0;
 			double[] fit=cls.fitAll(group);
 			for(int i=0;i<fit.length;i++) 		result+=fit[i];
 			series.add(x,result);
 		}
-	//ÕÛÏßÍ¼
+	//æŠ˜çº¿å›¾
 	public void drawLine(String name) {
 		XYSeriesCollection dataset = new XYSeriesCollection();
 		dataset.addSeries(series);
@@ -66,7 +66,7 @@ public class Draw {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
-	//É¢µãÍ¼
+	//æ•£ç‚¹å›¾
 	public void showChart(double[][] data) throws Exception {  
 
 		DefaultXYDataset xydataset = new DefaultXYDataset();  
@@ -79,7 +79,7 @@ public class Draw {
 				true, 
 				false,
 				false);  
-		ChartFrame frame = new ChartFrame("É¢µãÍ¼", chart, true);  
+		ChartFrame frame = new ChartFrame("æ•£ç‚¹å›¾", chart, true);  
 		chart.setBackgroundPaint(Color.white);    
 		chart.setBorderPaint(Color.GREEN);    
 		chart.setBorderStroke(new BasicStroke(1.5f));    
@@ -92,11 +92,11 @@ public class Draw {
 		ValueAxis va = xyplot.getDomainAxis(0);    
 		va.setAxisLineStroke(new BasicStroke(1.5f));    
 
-		va.setAxisLineStroke(new BasicStroke(1.5f)); // ×ø±êÖá´ÖÏ¸    
-		va.setAxisLinePaint(new Color(215, 215, 215)); // ×ø±êÖáÑÕÉ«    
-		xyplot.setOutlineStroke(new BasicStroke(1.5f)); // ±ß¿ò´ÖÏ¸    
-		va.setLabelPaint(new Color(10, 10, 10)); // ×ø±êÖá±êÌâÑÕÉ«    
-		va.setTickLabelPaint(new Color(102, 102, 102)); // ×ø±êÖá±ê³ßÖµÑÕÉ«    
+		va.setAxisLineStroke(new BasicStroke(1.5f)); // åæ ‡è½´ç²—ç»†    
+		va.setAxisLinePaint(new Color(215, 215, 215)); // åæ ‡è½´é¢œè‰²    
+		xyplot.setOutlineStroke(new BasicStroke(1.5f)); // è¾¹æ¡†ç²—ç»†    
+		va.setLabelPaint(new Color(10, 10, 10)); // åæ ‡è½´æ ‡é¢˜é¢œè‰²    
+		va.setTickLabelPaint(new Color(102, 102, 102)); // åæ ‡è½´æ ‡å°ºå€¼é¢œè‰²    
 		ValueAxis axis = xyplot.getRangeAxis();    
 		axis.setAxisLineStroke(new BasicStroke(1.5f));    
 
@@ -109,7 +109,7 @@ public class Draw {
 		numberaxis.setTickMarkInsideLength(2.0F);    
 		numberaxis.setTickMarkOutsideLength(0.0F);    
 		numberaxis.setAxisLineStroke(new BasicStroke(1.5f));    
-		xylineandshaperenderer.setSeriesOutlineStroke(0, new BasicStroke(2.5F));//ÉèÖÃµã´óĞ¡
+		xylineandshaperenderer.setSeriesOutlineStroke(0, new BasicStroke(2.5F));//è®¾ç½®ç‚¹å¤§å°
 
 		frame.pack();  
 		frame.setVisible(true);  

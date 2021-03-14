@@ -24,7 +24,7 @@ public class FullEventChart {
 	}
 	
 	
-	//±»ÉäÃÅ´ÎÊı,½âÎ§´ÎÊı
+	//è¢«å°„é—¨æ¬¡æ•°,è§£å›´æ¬¡æ•°
 	private void beShot(FullEvent[] full) {
 		Map<Integer,Integer> map=new HashMap<Integer,Integer>();
 		for(int i=0;i<full.length;i++) {
@@ -43,7 +43,7 @@ public class FullEventChart {
 		}
 	}
 	
-		//Éú³É½øÇòÇ°µÄÏßÍ¼
+		//ç”Ÿæˆè¿›çƒå‰çš„çº¿å›¾
 		private void dealMatches_goalLine(Match[] m,FullEvent[] f) {
 			int reCallNumber=4;
 			Draw d=new Draw();

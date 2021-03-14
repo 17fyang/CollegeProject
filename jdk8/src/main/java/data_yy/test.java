@@ -7,16 +7,16 @@ import com.spire.pdf.PdfPageBase;
 
 public class test {
 	public static void main(String[] args) {
-		String url="C:\\Users\\Administrator\\Desktop\\数据分析1216\\2017年报讨论与分析\\中国石化.pdf";
+		String url="C:\\Users\\Administrator\\Desktop\\鏁版嵁鍒嗘瀽1216\\2017骞存姤璁ㄨ涓庡垎鏋怽\涓浗鐭冲寲.pdf";
 		File f=new File(url);
 		String content=FileToString(f);
 		System.out.println(content);
 	}
-	//文件转string
+	//鏂囦欢杞瑂tring
 	private static String FileToString(File f){
-		//创建PdfDocument实例
+		//鍒涘缓PdfDocument瀹炰緥
 		PdfDocument doc= new PdfDocument();
-		//加载PDF文件
+		//鍔犺浇PDF鏂囦欢
 		doc.loadFromFile(f.getPath());
 		StringBuilder sb= new StringBuilder();
 		PdfPageBase page;

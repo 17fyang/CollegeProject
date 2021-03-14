@@ -1,4 +1,4 @@
-package 快手; ����;
+package kuaishou;
 
 
 public class Q03 {

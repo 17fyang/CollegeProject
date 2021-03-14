@@ -19,10 +19,10 @@ import java.util.concurrent.Executors;
 
 /**
  * ClassName: AskText_sh
- * Description:解析html
+ * Description:瑙ｆ瀽html
  * date: 2020/10/5 22:58
  *
- * @author :乌鸦坐飞机亠
+ * @author :涔岄甫鍧愰鏈轰籂
  * @version:
  */
 public class AskText_sh {
@@ -66,7 +66,7 @@ public class AskText_sh {
             Elements aElem = element.getElementsByTag("a");
             String http_url = HTTP_URL_PREFIX + aElem.first().attr("href");
             String title = aElem.attr("title");
-            String[] arr = title.split("[：,关于,的,公司,问询函]");
+            String[] arr = title.split("[锛�,鍏充簬,鐨�,鍏徃,闂鍑絔");
             String company = arr[0];
             int i = 0;
             while (arr[i++].equals("")) company = arr[i];

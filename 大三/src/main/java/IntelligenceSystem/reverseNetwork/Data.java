@@ -10,15 +10,15 @@ public class Data {
 	private List<Neuron> neuronList=null;
 	private List<Flower> trainList=null;
 	private List<Flower> testList=null;
-	//³õÊ¼»¯
+	//åˆå§‹åŒ–
 	public Data(String dataUrl,int neuronLength) {
 		List<Flower> preDataList;
 		try {
 			preDataList = init(dataUrl);
 			List<Flower> dataList=preDeal(preDataList);
 			neuronList=initNeuron(neuronLength);
-			trainList=splitList(dataList,0);//ÑµÁ·¼¯
-			testList=dataList;//²âÊÔ¼¯
+			trainList=splitList(dataList,0);//è®­ç»ƒé›†
+			testList=dataList;//æµ‹è¯•é›†
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -61,7 +61,7 @@ public class Data {
 		return list;
 	}
 
-	//×î´ó×îĞ¡Öµ¹æ·¶»¯¶ÔÊı¾İ½øĞĞÔ¤´¦Àí
+	//æœ€å¤§æœ€å°å€¼è§„èŒƒåŒ–å¯¹æ•°æ®è¿›è¡Œé¢„å¤„ç†
 	public List<Flower> preDeal(List<Flower> preDataList) {
 		double min[]= {999,999,999,999};
 		double max[]= {-999,-999,-999,-999};
@@ -83,7 +83,7 @@ public class Data {
 		}
 		return preDataList;
 	}
-	//Éñ¾­Ôª³õÊ¼»¯
+	//ç¥ç»å…ƒåˆå§‹åŒ–
 	public List<Neuron> initNeuron(int neuronLength) {
 		List<Neuron> list=new LinkedList<Neuron>();
 		for(int i=0;i<neuronLength;i++) {
@@ -99,7 +99,7 @@ public class Data {
 		return list;
 	}
 
-	//105¸öÑµÁ·Êı¾İ£¬45¸ö²âÊÔÊı¾İ
+	//105ä¸ªè®­ç»ƒæ•°æ®ï¼Œ45ä¸ªæµ‹è¯•æ•°æ®
 		public List<Flower> splitList(List<Flower> dataList, int type) {
 			List<Flower> list=new LinkedList<Flower>();
 			for(int i=0;i<dataList.size();i++) {

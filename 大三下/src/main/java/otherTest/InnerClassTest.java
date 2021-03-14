@@ -2,10 +2,10 @@ package otherTest;
 
 /**
  * ClassName: InnerClassTest
- * Description:内部类和外部类概念测试
+ * Description:鍐呴儴绫诲拰澶栭儴绫绘蹇垫祴璇�
  * date: 2020/8/14 23:42
  *
- * @author :乌鸦坐飞机亠
+ * @author :涔岄甫鍧愰鏈轰籂
  * @version:
  */
 public class InnerClassTest {

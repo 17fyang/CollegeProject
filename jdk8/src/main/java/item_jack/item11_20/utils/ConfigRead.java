@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class ConfigRead {
 	
-	//dataDealµÄconfigÄÚÈÝ
+	//dataDealçš„configå†…å®¹
 	public Config dataDealConfig() throws Exception {
 		File f=new File("config/item_jack/item11_20/config.properties");
 		InputStream fileIn=new FileInputStream(f);

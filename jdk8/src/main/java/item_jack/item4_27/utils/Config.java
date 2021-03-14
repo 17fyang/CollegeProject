@@ -17,9 +17,9 @@ import jxl.Workbook;
 
 public class Config {
 	private static Config config=null;
-	private Record[] sourceList;//dataDealÊı¾İÔ´
-	private List<List<Record>> lineList;//Ã¿Ò»ĞĞµÄÊı¾İÔ´£¨²»È¥ÖØ£©
-	private File dataDeal_aim;//dataDealÉú³ÉµÄ½á¹ûÎÄ¼ş
+	private Record[] sourceList;//dataDealæ•°æ®æº
+	private List<List<Record>> lineList;//æ¯ä¸€è¡Œçš„æ•°æ®æºï¼ˆä¸å»é‡ï¼‰
+	private File dataDeal_aim;//dataDealç”Ÿæˆçš„ç»“æœæ–‡ä»¶
 	public static String fileUrl="config/item_jack/item4_27/config.properties";
 	private Config() throws Exception {
 		File f=new File(fileUrl);
@@ -44,16 +44,16 @@ public class Config {
 	}
 	
 	
-	//½«Êı¾İÔ´ÎÄ¼şÖĞµÄÊı¾İÈ¡³ö£¬È¥ÖØ£¬Éú³ÉÒ»¸ölist¶ÔÏó
-	//number:Ã¿¸ö±í¸ñµÄÕæÊµÊı¾İ¸öÊı
+	//å°†æ•°æ®æºæ–‡ä»¶ä¸­çš„æ•°æ®å–å‡ºï¼Œå»é‡ï¼Œç”Ÿæˆä¸€ä¸ªlistå¯¹è±¡
+	//number:æ¯ä¸ªè¡¨æ ¼çš„çœŸå®æ•°æ®ä¸ªæ•°
 	public OriginalDataList getOriginalData(File dataDeal_source,int number) throws Exception{
-		if(!dataDeal_source.exists()) throw new Exception("ÅäÖÃÎÄ¼şÂ·¾¶´íÎó£¡£¡£¡");
+		if(!dataDeal_source.exists()) throw new Exception("é…ç½®æ–‡ä»¶è·¯å¾„é”™è¯¯ï¼ï¼ï¼");
 		Workbook workbook=Workbook.getWorkbook(dataDeal_source);
 		Sheet sheet=workbook.getSheet(0);
 		
-		Set<Record> resultSet=new HashSet<Record>();//½á¹ûSet
-		Set<Set<String>> stringSetTemp=new HashSet<Set<String>>();//È¥ÖØÓÃµ½µÄset
-		List<List<Record>> lineRecord=new ArrayList<List<Record>>();//ĞĞÊı¾İµÄÈİÆ÷
+		Set<Record> resultSet=new HashSet<Record>();//ç»“æœSet
+		Set<Set<String>> stringSetTemp=new HashSet<Set<String>>();//å»é‡ç”¨åˆ°çš„set
+		List<List<Record>> lineRecord=new ArrayList<List<Record>>();//è¡Œæ•°æ®çš„å®¹å™¨
 		for(int i=0;i<sheet.getRows();i++) {
 			List<Record> list=new LinkedList<Record>();
 			for(int j=0;j<sheet.getColumns();j++) {
@@ -67,7 +67,7 @@ public class Config {
 			}
 			if(!list.isEmpty())	lineRecord.add(list);
 		}
-		//set×ªlist
+		//setè½¬list
 		Record[] resourceList=new Record[resultSet.size()];
 		Iterator<Record> it=resultSet.iterator();
 		int i=0;
@@ -116,7 +116,7 @@ class OriginalDataList{
 		this.lineList=lineList;
 		this.sourceList=sourceList;
 	}
-	Record[] sourceList;//dataDealÊı¾İÔ´
-	List<List<Record>> lineList;//Ã¿Ò»ĞĞµÄÊı¾İÔ´£¨²»È¥ÖØ£©
+	Record[] sourceList;//dataDealæ•°æ®æº
+	List<List<Record>> lineList;//æ¯ä¸€è¡Œçš„æ•°æ®æºï¼ˆä¸å»é‡ï¼‰
 }
 

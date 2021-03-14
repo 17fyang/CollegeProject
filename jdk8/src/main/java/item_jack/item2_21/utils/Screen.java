@@ -16,16 +16,16 @@ import jxl.Sheet;
 import jxl.Workbook;
 
 /*
- * É¸Ñ¡±ê×¼£º
- * 1¡¢ÓĞÁ½ĞĞ»òÒÔÉÏµÄĞĞÖĞ£¬¶¼ÓĞÈı¸ö»òÒÔÉÏµÄÊı¾İ×é³ÉÍ¬ÑùµÄÎå¸öÊı¾İÅÅÁĞ
-*  2¡¢ÓĞÒ»ĞĞ»òÒÔÉÏµÄĞĞÖĞ£¬¶¼ÓĞÁ½¸ö»òÒÔÉÏµÄÊı¾İ×é³ÉÒ»¸öËÄ¸öÊı¾İÅÅÁĞ£¬ÕâËÄ¸öÊı¾İ¶¼ÔÚÎå¸öÊı¾İÅÅÁĞÖĞ");
-*  2.23Ôö¼ÓÌõ¼ş£º
- * É¸Ñ¡³öÀ´µÄÊı¾İÒªÔÚ±í3ÖĞ³öÏÖ3´Î»òÒÔÉÏ
- * ½á¹ûÖĞ´òÓ¡³öÔÚ±í1ÖĞµÄÁĞÎ»ÖÃ
+ * ç­›é€‰æ ‡å‡†ï¼š
+ * 1ã€æœ‰ä¸¤è¡Œæˆ–ä»¥ä¸Šçš„è¡Œä¸­ï¼Œéƒ½æœ‰ä¸‰ä¸ªæˆ–ä»¥ä¸Šçš„æ•°æ®ç»„æˆåŒæ ·çš„äº”ä¸ªæ•°æ®æ’åˆ—
+*  2ã€æœ‰ä¸€è¡Œæˆ–ä»¥ä¸Šçš„è¡Œä¸­ï¼Œéƒ½æœ‰ä¸¤ä¸ªæˆ–ä»¥ä¸Šçš„æ•°æ®ç»„æˆä¸€ä¸ªå››ä¸ªæ•°æ®æ’åˆ—ï¼Œè¿™å››ä¸ªæ•°æ®éƒ½åœ¨äº”ä¸ªæ•°æ®æ’åˆ—ä¸­");
+*  2.23å¢åŠ æ¡ä»¶ï¼š
+ * ç­›é€‰å‡ºæ¥çš„æ•°æ®è¦åœ¨è¡¨3ä¸­å‡ºç°3æ¬¡æˆ–ä»¥ä¸Š
+ * ç»“æœä¸­æ‰“å°å‡ºåœ¨è¡¨1ä¸­çš„åˆ—ä½ç½®
  */
 public class Screen {
 	private static final int conditionLength=3;
-	private static Screen screen=null;//µ¥ÀıÄ£Ê½
+	private static Screen screen=null;//å•ä¾‹æ¨¡å¼
 	public static String fileUrl=Config.fileUrl;
 	private static File[] screenFile=new File[conditionLength];
 	
@@ -60,16 +60,16 @@ public class Screen {
 	}
 	
 	/*
-	 * ½â¾öË¼Â·£º
-	 * 1¡¢¼ì²âÃ¿¸öÅÅÁĞÔÚ¸ÃĞĞÊÇ·ñÓĞÈı¸öÒÔÉÏµÄ×Ó¼¯
-	 * 2¡¢¼ì²âÃ¿¸öÅÅÁĞµÄ×ÓÅÅÁĞÔÚ¸ÃĞĞÊÇ·ñÓĞÁ½¸öÒÔÉÏµÄ×Ó¼¯
+	 * è§£å†³æ€è·¯ï¼š
+	 * 1ã€æ£€æµ‹æ¯ä¸ªæ’åˆ—åœ¨è¯¥è¡Œæ˜¯å¦æœ‰ä¸‰ä¸ªä»¥ä¸Šçš„å­é›†
+	 * 2ã€æ£€æµ‹æ¯ä¸ªæ’åˆ—çš„å­æ’åˆ—åœ¨è¯¥è¡Œæ˜¯å¦æœ‰ä¸¤ä¸ªä»¥ä¸Šçš„å­é›†
 	 */
 	private List<OutData> condition1(List<OutData> outList,File conditionFile) throws Exception {
 		List<OutData> resultList=new LinkedList<OutData>();
 		Record[][] screenList=this.getScreenData(conditionFile);
 		for(OutData data:outList) {
-			//1¡¢¼ì²âÃ¿¸öÅÅÁĞÔÚ¸ÃĞĞÊÇ·ñÓĞÈı¸öÒÔÉÏµÄ×Ó¼¯
-			List<Integer> passRow=new LinkedList<Integer>();//Âú×ãÌõ¼şµÄĞĞ
+			//1ã€æ£€æµ‹æ¯ä¸ªæ’åˆ—åœ¨è¯¥è¡Œæ˜¯å¦æœ‰ä¸‰ä¸ªä»¥ä¸Šçš„å­é›†
+			List<Integer> passRow=new LinkedList<Integer>();//æ»¡è¶³æ¡ä»¶çš„è¡Œ
 			for(int i=0;i<screenList.length;i++) {
 				int passNumber=0;
 				for(int j=0;j<screenList[i].length;j++) {
@@ -80,8 +80,8 @@ public class Screen {
 				}
 				if(passNumber>=3)		passRow.add(i);
 			}
-			//2¡¢¼ì²âÃ¿¸öÅÅÁĞµÄ×ÓÅÅÁĞÔÚ¸ÃĞĞÊÇ·ñÓĞÁ½¸öÒÔÉÏµÄ×Ó¼¯
-			List<Integer> passRow2=new LinkedList<Integer>();//Âú×ãÌõ¼şµÄĞĞ
+			//2ã€æ£€æµ‹æ¯ä¸ªæ’åˆ—çš„å­æ’åˆ—åœ¨è¯¥è¡Œæ˜¯å¦æœ‰ä¸¤ä¸ªä»¥ä¸Šçš„å­é›†
+			List<Integer> passRow2=new LinkedList<Integer>();//æ»¡è¶³æ¡ä»¶çš„è¡Œ
 			for(int i=0;i<screenList.length;i++) {
 				Iterator<String> it=data.getOutSet().iterator();
 				while(it.hasNext()) {
@@ -102,7 +102,7 @@ public class Screen {
 				}
 			}
 			
-			//Í³¼Æ´ÎÊı£¬ÅĞ¶¨ÄÜ²»ÄÜ±£Áô
+			//ç»Ÿè®¡æ¬¡æ•°ï¼Œåˆ¤å®šèƒ½ä¸èƒ½ä¿ç•™
 			boolean isPass=true;
 			if(passRow.size()<2)	isPass=false;
 			if(passRow2.isEmpty())		isPass=false;
@@ -114,7 +114,7 @@ public class Screen {
 		return resultList;
 	}
 	
-	//¸½¼ÓÌõ¼ş£ºÉ¸Ñ¡³öÀ´µÄÊı¾İÒªÔÚ±íÖĞ³öÏÖtimes´Î»òÒÔÉÏ
+	//é™„åŠ æ¡ä»¶ï¼šç­›é€‰å‡ºæ¥çš„æ•°æ®è¦åœ¨è¡¨ä¸­å‡ºç°timesæ¬¡æˆ–ä»¥ä¸Š
 	private List<OutData> condition2(List<OutData> outList,File conditionFile,int times) throws Exception {
 		List<OutData> resultList=new LinkedList<OutData>();
 		List<Record> screenList=Config.getOriginalData(conditionFile, 2);
@@ -133,13 +133,13 @@ public class Screen {
 		return resultList;
 	}
 	
-	//½«Êı¾İÔ´ÎÄ¼şÖĞµÄÊı¾İÈ¡³ö£¬È¥ÖØ£¬Éú³ÉÒ»¸ö¶şÎ¬Êı×é
+	//å°†æ•°æ®æºæ–‡ä»¶ä¸­çš„æ•°æ®å–å‡ºï¼Œå»é‡ï¼Œç”Ÿæˆä¸€ä¸ªäºŒç»´æ•°ç»„
 		private Record[][] getScreenData(File screen_table) throws Exception {
 			Workbook workbook=Workbook.getWorkbook(screen_table);
 			Sheet sheet=workbook.getSheet(0);
 			List<Record[]> resultList=new ArrayList<Record[]>();
 			for(int i=0;i<sheet.getRows();i++) {
-				Set<Set<String>> stringSetTemp=new HashSet<Set<String>>();//È¥ÖØ
+				Set<Set<String>> stringSetTemp=new HashSet<Set<String>>();//å»é‡
 				List<Record> recordList=new ArrayList<Record>();
 				for(int j=0;j<sheet.getColumns();j++) {
 					Cell cell=sheet.getCell(j,i);

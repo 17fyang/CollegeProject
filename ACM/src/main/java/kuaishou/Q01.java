@@ -1,4 +1,4 @@
-package 快手;
+package kuaishou;
 
 import java.util.Scanner;
 

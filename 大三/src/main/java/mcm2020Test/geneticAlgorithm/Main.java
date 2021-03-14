@@ -1,18 +1,18 @@
 package mcm2020Test.geneticAlgorithm;
 
 /*
- * ÒÅ´«Ëã·¨£¬×÷Òµ
+ * é—ä¼ ç®—æ³•ï¼Œä½œä¸š
  */
 public class Main {
 
 	public static void main(String[] args) throws Exception {
 		CLS cls=new CLS();
 		CLSDeal clsDeal=new CLSDeal();
-		String group[] = cls.initAll(ModelConfig.groupNumber);	//³õÊ¼»¯
+		String group[] = cls.initAll(ModelConfig.groupNumber);	//åˆå§‹åŒ–
 		for(int i = 0; i < ModelConfig.runTimes; i++){
-			group = clsDeal.cross(group);	//½»²æ
-			group = clsDeal.mutation(group);	//±äÒì
-			group = clsDeal.RWS(group); //Ñ¡Ôñ
+			group = clsDeal.cross(group);	//äº¤å‰
+			group = clsDeal.mutation(group);	//å˜å¼‚
+			group = clsDeal.RWS(group); //é€‰æ‹©
 			Draw d=new Draw();
 			d.DrawGroup(group);
 			d.dataTransfer(group);

@@ -5,7 +5,7 @@ import java.util.Stack;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /*
- * ·Çµİ¹é±éÀú¶ş²æÊ÷
+ * éé€’å½’éå†äºŒå‰æ ‘
  */
 public class searchTree {
 	public static void main(String[] args) {
@@ -30,15 +30,15 @@ public class searchTree {
 		}
 		return head;
 	}
-	//µİ¹éÊµÏÖ
+	//é€’å½’å®ç°
 	public static void func(Node head) {
 		if(head==null)	return;
-		System.out.println("µİ¹éÊµÏÖ£º"+head.value);
+		System.out.println("é€’å½’å®ç°ï¼š"+head.value);
 		func(head.leftChild);
 		func(head.rightChild);
 		
 	}
-	//·Çµİ¹é
+	//éé€’å½’
 	public static void beforeSearchTree(Node head) {
 		Stack<Node> s=new Stack<Node>();
 		Node n=head;
@@ -61,7 +61,7 @@ public class searchTree {
 				
 			}
 			
-//			Ç°ĞòºÍÖĞĞò
+//			å‰åºå’Œä¸­åº
 //			while(n!=null) {
 //				flag=false;
 //				s.add(n);

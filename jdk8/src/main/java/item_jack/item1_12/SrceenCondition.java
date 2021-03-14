@@ -1,6 +1,6 @@
 package item_jack.item1_12;
 
-//负责对条件进行筛选的类，用于配置文件控制使用条件
+//璐熻矗瀵规潯浠惰繘琛岀瓫閫夌殑绫伙紝鐢ㄤ簬閰嶇疆鏂囦欢鎺у埗浣跨敤鏉′欢
 public class SrceenCondition {
 	
 }

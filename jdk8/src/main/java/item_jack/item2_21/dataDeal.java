@@ -24,55 +24,55 @@ import jxl.write.WritableWorkbook;
 /*
  * date:2020.2.21
  * author:yf
- * detail:±íÒ»ÖĞÕıºÃÁùÌõÊı¾İ×é³ÉÒ»´ÎÎå¸öÊı¾İÅÅÁĞ£¬
- * ÓÃ±í¶şµÄÊı¾İÉ¸Ñ¡£¬Èç¹û±í¶şÖĞÂú×ãÌõ¼ş£º
- * 1¡¢ÓĞÁ½ĞĞ»òÒÔÉÏµÄĞĞÖĞ£¬¶¼ÓĞÈı¸ö»òÒÔÉÏµÄÊı¾İ×é³ÉÍ¬ÑùµÄÎå¸öÊı¾İÅÅÁĞ
- * 2¡¢ÓĞÒ»ĞĞ»òÒÔÉÏµÄĞĞÖĞ£¬¶¼ÓĞÁ½¸ö»òÒÔÉÏµÄÊı¾İ×é³ÉÒ»¸öËÄ¸öÊı¾İÅÅÁĞ£¬ÕâËÄ¸öÊı¾İ¶¼ÔÚÎå¸öÊı¾İÅÅÁĞÖĞ
+ * detail:è¡¨ä¸€ä¸­æ­£å¥½å…­æ¡æ•°æ®ç»„æˆä¸€æ¬¡äº”ä¸ªæ•°æ®æ’åˆ—ï¼Œ
+ * ç”¨è¡¨äºŒçš„æ•°æ®ç­›é€‰ï¼Œå¦‚æœè¡¨äºŒä¸­æ»¡è¶³æ¡ä»¶ï¼š
+ * 1ã€æœ‰ä¸¤è¡Œæˆ–ä»¥ä¸Šçš„è¡Œä¸­ï¼Œéƒ½æœ‰ä¸‰ä¸ªæˆ–ä»¥ä¸Šçš„æ•°æ®ç»„æˆåŒæ ·çš„äº”ä¸ªæ•°æ®æ’åˆ—
+ * 2ã€æœ‰ä¸€è¡Œæˆ–ä»¥ä¸Šçš„è¡Œä¸­ï¼Œéƒ½æœ‰ä¸¤ä¸ªæˆ–ä»¥ä¸Šçš„æ•°æ®ç»„æˆä¸€ä¸ªå››ä¸ªæ•°æ®æ’åˆ—ï¼Œè¿™å››ä¸ªæ•°æ®éƒ½åœ¨äº”ä¸ªæ•°æ®æ’åˆ—ä¸­
  * 
- * 2.23Ôö¼ÓÌõ¼ş£º
- * É¸Ñ¡³öÀ´µÄÊı¾İÒªÔÚ±í3ÖĞ³öÏÖ3´Î»òÒÔÉÏ
- * ½á¹ûÖĞ´òÓ¡³öÔÚ±í1ÖĞµÄÁĞÎ»ÖÃ
+ * 2.23å¢åŠ æ¡ä»¶ï¼š
+ * ç­›é€‰å‡ºæ¥çš„æ•°æ®è¦åœ¨è¡¨3ä¸­å‡ºç°3æ¬¡æˆ–ä»¥ä¸Š
+ * ç»“æœä¸­æ‰“å°å‡ºåœ¨è¡¨1ä¸­çš„åˆ—ä½ç½®
  * 
- * 2.26Ôö¼ÓÌõ¼ş£º
- * É¸Ñ¡³öÀ´µÄÊı¾İÒªÔÚ±í4ÖĞ³öÏÖ2´Î»òÒÔÉÏ
- * ½á¹ûÖĞ´òÓ¡³öÔÚÃ¿Ò»ĞĞabcÁĞµÄ×ÜÊıÁ¿
- * ÉèÖÃÉ¸Ñ¡Ìõ¼ş234µÄ¿ª¹Ø
+ * 2.26å¢åŠ æ¡ä»¶ï¼š
+ * ç­›é€‰å‡ºæ¥çš„æ•°æ®è¦åœ¨è¡¨4ä¸­å‡ºç°2æ¬¡æˆ–ä»¥ä¸Š
+ * ç»“æœä¸­æ‰“å°å‡ºåœ¨æ¯ä¸€è¡Œabcåˆ—çš„æ€»æ•°é‡
+ * è®¾ç½®ç­›é€‰æ¡ä»¶234çš„å¼€å…³
  */
 public class dataDeal {
 
 	public static void main(String[] args) {
 		System.out.println("item1_12");
-		System.out.println("version£º1.0");
+		System.out.println("versionï¼š1.0");
 		System.out.println("date:2020.1.12\r\n" + 
-				" * request£º±íÒ»ÖĞÕıºÃÁùÌõÊı¾İ×é³ÉÒ»´ÎÎå¸öÊı¾İÅÅÁĞ£¬\r\n" + 
-				" * ÓÃ±í¶şµÄÊı¾İÉ¸Ñ¡£¬Èç¹û±í¶şÖĞÂú×ãÌõ¼ş£º\r\n" + 
-				" * 1¡¢ÓĞÁ½ĞĞ»òÒÔÉÏµÄĞĞÖĞ£¬¶¼ÓĞÈı¸ö»òÒÔÉÏµÄÊı¾İ×é³ÉÍ¬ÑùµÄÎå¸öÊı¾İÅÅÁĞ\r\n" + 
-				" * 2¡¢ÓĞÒ»ĞĞ»òÒÔÉÏµÄĞĞÖĞ£¬¶¼ÓĞÁ½¸ö»òÒÔÉÏµÄÊı¾İ×é³ÉÒ»¸öËÄ¸öÊı¾İÅÅÁĞ£¬ÕâËÄ¸öÊı¾İ¶¼ÔÚÎå¸öÊı¾İÅÅÁĞÖĞ\r\n\n" + 
-				" * 2.23Ôö¼ÓÌõ¼ş£º\r\n" + 
-				" * É¸Ñ¡³öÀ´µÄÊı¾İÒªÔÚ±í3ÖĞ³öÏÖ3´Î»òÒÔÉÏ\r\n" + 
-				" * ½á¹ûÖĞ´òÓ¡³öÔÚ±í1ÖĞµÄÁĞÎ»ÖÃ\r\n" + 
+				" * requestï¼šè¡¨ä¸€ä¸­æ­£å¥½å…­æ¡æ•°æ®ç»„æˆä¸€æ¬¡äº”ä¸ªæ•°æ®æ’åˆ—ï¼Œ\r\n" + 
+				" * ç”¨è¡¨äºŒçš„æ•°æ®ç­›é€‰ï¼Œå¦‚æœè¡¨äºŒä¸­æ»¡è¶³æ¡ä»¶ï¼š\r\n" + 
+				" * 1ã€æœ‰ä¸¤è¡Œæˆ–ä»¥ä¸Šçš„è¡Œä¸­ï¼Œéƒ½æœ‰ä¸‰ä¸ªæˆ–ä»¥ä¸Šçš„æ•°æ®ç»„æˆåŒæ ·çš„äº”ä¸ªæ•°æ®æ’åˆ—\r\n" + 
+				" * 2ã€æœ‰ä¸€è¡Œæˆ–ä»¥ä¸Šçš„è¡Œä¸­ï¼Œéƒ½æœ‰ä¸¤ä¸ªæˆ–ä»¥ä¸Šçš„æ•°æ®ç»„æˆä¸€ä¸ªå››ä¸ªæ•°æ®æ’åˆ—ï¼Œè¿™å››ä¸ªæ•°æ®éƒ½åœ¨äº”ä¸ªæ•°æ®æ’åˆ—ä¸­\r\n\n" + 
+				" * 2.23å¢åŠ æ¡ä»¶ï¼š\r\n" + 
+				" * ç­›é€‰å‡ºæ¥çš„æ•°æ®è¦åœ¨è¡¨3ä¸­å‡ºç°3æ¬¡æˆ–ä»¥ä¸Š\r\n" + 
+				" * ç»“æœä¸­æ‰“å°å‡ºåœ¨è¡¨1ä¸­çš„åˆ—ä½ç½®\r\n" + 
 				" * \r\n" + 
-				" * 2.26Ôö¼ÓÌõ¼ş£º\r\n" + 
-				" * É¸Ñ¡³öÀ´µÄÊı¾İÒªÔÚ±í4ÖĞ³öÏÖ2´Î»òÒÔÉÏ\r\n" + 
-				" * ½á¹ûÖĞ´òÓ¡³öÔÚÃ¿Ò»ĞĞabcÁĞµÄ×ÜÊıÁ¿\r\n" + 
-				" * ÉèÖÃÉ¸Ñ¡Ìõ¼ş234µÄ¿ª¹Ø");
+				" * 2.26å¢åŠ æ¡ä»¶ï¼š\r\n" + 
+				" * ç­›é€‰å‡ºæ¥çš„æ•°æ®è¦åœ¨è¡¨4ä¸­å‡ºç°2æ¬¡æˆ–ä»¥ä¸Š\r\n" + 
+				" * ç»“æœä¸­æ‰“å°å‡ºåœ¨æ¯ä¸€è¡Œabcåˆ—çš„æ€»æ•°é‡\r\n" + 
+				" * è®¾ç½®ç­›é€‰æ¡ä»¶234çš„å¼€å…³");
 		System.out.println();
 		System.out.println();
 		try {
 			run();
-			System.out.print("Êı¾İ´¦ÀíÍê±Ï£¬");
+			System.out.print("æ•°æ®å¤„ç†å®Œæ¯•ï¼Œ");
 		}catch(Exception e) {
 			e.printStackTrace();
-			System.out.print("Êı¾İ´¦Àí³ö´í£¬");
+			System.out.print("æ•°æ®å¤„ç†å‡ºé”™ï¼Œ");
 		}
-		System.out.println("°´ÈÎÒâ¼üÍË³ö£¡");
+		System.out.println("æŒ‰ä»»æ„é”®é€€å‡ºï¼");
 		Scanner sc = new Scanner(System.in); 
 		sc.next();
 		sc.close();
 	}
 	public static void run() {
-		//µÚ¶ş²½£º½«Êı¾İÔ´ÎÄ¼şÖĞµÄÊı¾İÈ¡³ö£¬È¥ÖØ£¬Éú³ÉÒ»¸ölist¶ÔÏó
-		System.out.println("ÕıÔÚ¶ÁÈëÊı¾İÔ´ÎÄ¼ş......");
+		//ç¬¬äºŒæ­¥ï¼šå°†æ•°æ®æºæ–‡ä»¶ä¸­çš„æ•°æ®å–å‡ºï¼Œå»é‡ï¼Œç”Ÿæˆä¸€ä¸ªlistå¯¹è±¡
+		System.out.println("æ­£åœ¨è¯»å…¥æ•°æ®æºæ–‡ä»¶......");
 		Config config=null;
 		List<Record> originalList=null;
 		Screen screen=null;
@@ -81,68 +81,68 @@ public class dataDeal {
 			config=Config.getConfig();
 			originalList=config.getSourceList();
 		} catch (Exception e) {
-			System.out.println("Éú³ÉÊı¾İÔ´¶ÔÏóÊ§°Ü£¡£¡");
+			System.out.println("ç”Ÿæˆæ•°æ®æºå¯¹è±¡å¤±è´¥ï¼ï¼");
 			e.printStackTrace();
 			return;
 		}
-		System.out.println("È¥ÖØºóÊı¾İÁ¿£º"+originalList.size());
+		System.out.println("å»é‡åæ•°æ®é‡ï¼š"+originalList.size());
 
-		//µÚÈı²½£ºÊı¾İ´¦Àí£¬»ñÈ¡Âú×ãÌõ¼şµÄÅÅÁĞ
-		System.out.println("Êı¾İ´¦Àí£ºÉú³Éºò²¹ÅÅÁĞ......");
+		//ç¬¬ä¸‰æ­¥ï¼šæ•°æ®å¤„ç†ï¼Œè·å–æ»¡è¶³æ¡ä»¶çš„æ’åˆ—
+		System.out.println("æ•°æ®å¤„ç†ï¼šç”Ÿæˆå€™è¡¥æ’åˆ—......");
 		Set<Set<String>> finalSet=null;
 		try {
 			finalSet=getFirstDealResult(originalList);
 		} catch (Exception e) {
-			System.out.println("µÚÒ»´ÎÊı¾İ´¦ÀíÊ§°Ü£¡£¡");
+			System.out.println("ç¬¬ä¸€æ¬¡æ•°æ®å¤„ç†å¤±è´¥ï¼ï¼");
 			e.printStackTrace();
 			return;
 		}
-		System.out.println("Éú³Éºò²¹ÅÅÁĞ£º"+originalList.size()+"/"+originalList.size()+"......");
+		System.out.println("ç”Ÿæˆå€™è¡¥æ’åˆ—ï¼š"+originalList.size()+"/"+originalList.size()+"......");
 
-		//µÚÎå²½£º¸ù¾İ53322µÄ¹æÔòÉ¸Ñ¡ÅÅÁĞ
-		System.out.println("¿ªÊ¼¼ì²âÅÅÁĞ......");
+		//ç¬¬äº”æ­¥ï¼šæ ¹æ®53322çš„è§„åˆ™ç­›é€‰æ’åˆ—
+		System.out.println("å¼€å§‹æ£€æµ‹æ’åˆ—......");
 		List<OutData> outList=null;
 		try {
 			outList=chooseResult(originalList,finalSet);
 		} catch (Exception e) {
-			System.out.println("Êı¾İÆ¥ÅäÊ§°Ü£¡£¡");
+			System.out.println("æ•°æ®åŒ¹é…å¤±è´¥ï¼ï¼");
 			e.printStackTrace();
 			return;
 		}
-		System.out.println("¼ì²âÅÅÁĞ£º100%");
-		System.out.println("Âú×ãÅÅÁĞÊı¾İÌõÊı£º"+outList.size());
+		System.out.println("æ£€æµ‹æ’åˆ—ï¼š100%");
+		System.out.println("æ»¡è¶³æ’åˆ—æ•°æ®æ¡æ•°ï¼š"+outList.size());
 
-		//µÚÁù²½£ºÔÚ53322É¸Ñ¡µÄ»ù´¡ÉÏ¼ÌĞøÉ¸Ñ¡
-		System.out.println("¿ªÊ¼É¸Ñ¡......");
+		//ç¬¬å…­æ­¥ï¼šåœ¨53322ç­›é€‰çš„åŸºç¡€ä¸Šç»§ç»­ç­›é€‰
+		System.out.println("å¼€å§‹ç­›é€‰......");
 		List<OutData> screenList=null;
 		try {
 			screenList=screen.startScreen(outList);
 		} catch (Exception e) {
-			System.out.println("É¸Ñ¡Êı¾İÊ§°Ü£¡£¡");
+			System.out.println("ç­›é€‰æ•°æ®å¤±è´¥ï¼ï¼");
 			e.printStackTrace();
 			return;
 		}
-		System.out.println("É¸Ñ¡Íê³É......");
-		System.out.println("Âú×ãÉ¸Ñ¡±íÌõ¼şÊı¾İÌõÊı£º"+screenList.size());
+		System.out.println("ç­›é€‰å®Œæˆ......");
+		System.out.println("æ»¡è¶³ç­›é€‰è¡¨æ¡ä»¶æ•°æ®æ¡æ•°ï¼š"+screenList.size());
 
-		//µÚÆß²½£º½«½á¹ûÊı¾İĞ´»ØÎÄ¼ş
-		System.out.println("ÕıÔÚ½«Êı¾İĞ´»ØÎÄ¼ş......");
+		//ç¬¬ä¸ƒæ­¥ï¼šå°†ç»“æœæ•°æ®å†™å›æ–‡ä»¶
+		System.out.println("æ­£åœ¨å°†æ•°æ®å†™å›æ–‡ä»¶......");
 		try {
 			writeResult(screenList,config.getDataDeal_aim());
 		} catch (Exception e) {
-			System.out.println("Ğ´»ØÊı¾İÊ§°Ü£¡£¡");
+			System.out.println("å†™å›æ•°æ®å¤±è´¥ï¼ï¼");
 			e.printStackTrace();
 			return;
 		}
 	}
 
 
-	//µÚÈı²½£ºµÚÒ»´ÎÊı¾İ´¦Àí£¬µÃµ½³õ²½µÄÎåÎ»Êı×ÖÅÅÁĞ
+	//ç¬¬ä¸‰æ­¥ï¼šç¬¬ä¸€æ¬¡æ•°æ®å¤„ç†ï¼Œå¾—åˆ°åˆæ­¥çš„äº”ä½æ•°å­—æ’åˆ—
 	private static Set<Set<String>> getFirstDealResult(List<Record> originalList) throws Exception{
 		Set<Set<String>> finalSet=new HashSet<Set<String>>();
 		int listLength=originalList.size();
 		for(int i=0;i<listLength;i++) {
-			if(i%5==0)		System.out.println("Éú³Éºò²¹ÅÅÁĞ£º"+(i+1)+"/"+listLength+"......");
+			if(i%5==0)		System.out.println("ç”Ÿæˆå€™è¡¥æ’åˆ—ï¼š"+(i+1)+"/"+listLength+"......");
 			Record record1=originalList.get(i);
 			for(int j=i+1;j<listLength;j++) {
 				Record record2=originalList.get(j);
@@ -161,19 +161,19 @@ public class dataDeal {
 		return finalSet;
 	}
 
-	//µÚÎå²½£º¸ù¾İ53322µÄ¹æÔòÉ¸Ñ¡ÅÅÁĞ
+	//ç¬¬äº”æ­¥ï¼šæ ¹æ®53322çš„è§„åˆ™ç­›é€‰æ’åˆ—
 	private static List<OutData> chooseResult(List<Record> originalList, Set<Set<String>> finalSet) {
 		List<OutData> resultList=new LinkedList<OutData>();
 		Iterator<Set<String>> finalIt=finalSet.iterator();
 		int total=finalSet.size();
 		int count=0;
 		while(finalIt.hasNext()) {
-			//¼ÆÊıÊä³ö
+			//è®¡æ•°è¾“å‡º
 			count++;
 			double temp=(int)(count*1.0/total*10000)*1.0/100;
-			if(count % 1000==0)		System.out.println("¼ì²âÅÅÁĞ£º"+temp+"%");
+			if(count % 1000==0)		System.out.println("æ£€æµ‹æ’åˆ—ï¼š"+temp+"%");
 
-			//¼ÆËãÃ¿¸öÅÅÁĞµÄÔ´¸öÊı
+			//è®¡ç®—æ¯ä¸ªæ’åˆ—çš„æºä¸ªæ•°
 			Set<String> finalSingleSet=finalIt.next();
 			List<Record> recordList=new LinkedList<Record>();
 			for(int i=0;i<originalList.size();i++) {
@@ -183,7 +183,7 @@ public class dataDeal {
 				if(tempSet.size()==beforeLength)	recordList.add(originalList.get(i));
 			}
 			
-			//Èç¹ûÕıºÃÊÇÁù¸ö£¬Ôò±£Áô£¨Âú×ãÌõ¼ş1.0£©
+			//å¦‚æœæ­£å¥½æ˜¯å…­ä¸ªï¼Œåˆ™ä¿ç•™ï¼ˆæ»¡è¶³æ¡ä»¶1.0ï¼‰
 			if(recordList.size()==6) {
 				OutData out=new OutData();
 				out.setOutList(recordList);
@@ -195,14 +195,14 @@ public class dataDeal {
 		return resultList;
 	}
 
-	//µÚÆß²½£º½«½á¹ûÊı¾İĞ´»ØÎÄ¼ş
+	//ç¬¬ä¸ƒæ­¥ï¼šå°†ç»“æœæ•°æ®å†™å›æ–‡ä»¶
 	private static void writeResult(List<OutData> outList, File f) throws Exception{
 		WritableWorkbook workbook=Workbook.createWorkbook(f);
 		WritableSheet sheet=workbook.createSheet("result", 0);
 
 		for(int i=0;i<outList.size();i++) {
 			OutData out=outList.get(i);
-			//Ğ´»Ø×îÖÕÅÅÁĞ
+			//å†™å›æœ€ç»ˆæ’åˆ—
 			StringBuilder sb=new StringBuilder();
 			sb.append("(");
 			List<String> rankedList=new LinkedList<String>(out.getOutSet());
@@ -215,14 +215,14 @@ public class dataDeal {
 			Label label=new Label(0,i,sb.toString());
 			sheet.addCell(label);
 
-			//Ğ´»ØÔ­Ê¼Êı¾İ£¬ËùÔÚÎ»ÖÃ
+			//å†™å›åŸå§‹æ•°æ®ï¼Œæ‰€åœ¨ä½ç½®
 			List<Record> list=out.getOutList();
 			for(int j=0;j<list.size();j++) {
-				//Ô­Ê¼Êı¾İ
+				//åŸå§‹æ•°æ®
 				Record record=list.get(j);
 				Label label1=new Label(2+j,i,record.getDataString());
 				sheet.addCell(label1);
-				//ËùÔÚÎ»ÖÃ
+				//æ‰€åœ¨ä½ç½®
 				List<Integer> integerList=record.getLocateList();
 				Collections.sort(integerList);
 				StringBuilder sb2=new StringBuilder();
@@ -231,7 +231,7 @@ public class dataDeal {
 				sheet.addCell(label2);
 			}
 			
-			//Ğ´»ØABC×Ü¸öÊı
+			//å†™å›ABCæ€»ä¸ªæ•°
 			int number=0;
 			for(int j=0;j<list.size();j++) {
 				List<Integer> integerList=list.get(j).getLocateList();
@@ -252,7 +252,7 @@ public class dataDeal {
 			else 	sheet.setColumnView(i, 8);
 		}
 
-		//Ğ´Èë²¢¹Ø±Õ
+		//å†™å…¥å¹¶å…³é—­
 		workbook.write();
 		workbook.close();
 	}

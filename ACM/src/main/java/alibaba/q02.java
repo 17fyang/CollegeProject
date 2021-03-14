@@ -3,13 +3,13 @@ package alibaba;
 import java.util.Scanner;
 
 /*
- * °¢Àï±ÊÊÔµÚ¶şÌâ
+ * é˜¿é‡Œç¬”è¯•ç¬¬äºŒé¢˜
  * date:2020.3.25
  * author:yf
  *
  */
 public class q02 {
-    //ÎªÊ²Ã´ÄãÃÇÌâÄ¿ÖĞÊ¾ÀıµÄ2 3 6²»ÊÇµÈ²îÊıÁĞ
+    //ä¸ºä»€ä¹ˆä½ ä»¬é¢˜ç›®ä¸­ç¤ºä¾‹çš„2 3 6ä¸æ˜¯ç­‰å·®æ•°åˆ—
     public static void main(String[] args) {
         solution();
     }

@@ -1,17 +1,17 @@
 package rankAlgorithm;
 /*
- * �鲢����
+ * 归并排序
  * 
- * ͨ���ݹ�ķ�ʽ���������һֱ�ָֱ������Ĵ�СΪ 1��
- * ��ʱֻ��һ��Ԫ�أ���ô���������������ˣ�
- * ֮���ٰ����������СΪ1�ĺϲ���һ����СΪ2�ģ�
- * �ٰ�������СΪ2�ĺϲ���4�� ��.. ֱ��ȫ��С������ϲ�������
+ * 通过递归的方式将大的数组一直分割，直到数组的大小为 1，
+ * 此时只有一个元素，那么该数组就是有序的了，
+ * 之后再把两个数组大小为1的合并成一个大小为2的，
+ * 再把两个大小为2的合并成4的 ….. 直到全部小的数组合并起来。
  * 
- * ƽ��ʱ�临�Ӷȣ�O(nlogn)
- * ����ʱ�临�Ӷȣ�O(nlogn)
- * �ʱ�临�Ӷȣ�O(nlogn)
- * �ռ临�Ӷȣ�O(n)
- * �ȶ�����
+ * 平均时间复杂度：O(nlogn)
+ * 最优时间复杂度：O(nlogn)
+ * 最坏时间复杂度：O(nlogn)
+ * 空间复杂度：O(n)
+ * 稳定排序
  * 
  */
 public class mergeSort {
@@ -29,12 +29,12 @@ public class mergeSort {
 			if(i==0)	continue;
 			if(arr[i]<arr[i-1])	isPass=false;
 		}
-		System.out.println("\r\n\r\n�鲢����\r\nresult:"+isPass);
+		System.out.println("\r\n\r\n归并排序\r\nresult:"+isPass);
 	}
 	static void func(int arr[]) {
 		sort(arr,0,arr.length-1);
 	}
-	//�ݹ����
+	//递归求解
 	static void sort(int arr[],int head,int tail) {
 		if(head<tail) {
 			int mid=(tail+head)/2;

@@ -1,17 +1,17 @@
 package rankAlgorithm;
 /*
- * ������
+ * 堆排序
  * 
- * ������Ļ���˼���ǣ������������й����һ���󶥶ѣ�
- * ��ʱ���������е����ֵ���ǶѶ��ĸ��ڵ㡣
- * ������ĩβԪ�ؽ��н�������ʱĩβ��Ϊ���ֵ��
- * Ȼ��ʣ��n-1��Ԫ�����¹����һ���ѣ�������õ�n��Ԫ�صĴ�Сֵ��
- * ��˷���ִ�У����ܵõ�һ������������
+ * 堆排序的基本思想是：将待排序序列构造成一个大顶堆，
+ * 此时，整个序列的最大值就是堆顶的根节点。
+ * 将其与末尾元素进行交换，此时末尾就为最大值。
+ * 然后将剩余n-1个元素重新构造成一个堆，这样会得到n个元素的次小值。
+ * 如此反复执行，便能得到一个有序序列了
  * 
- * ���ʱ�临�Ӷȣ�O(nlogn)
- * ƽ��ʱ�临�Ӷȣ�O(nlogn)
- * ��Сʱ�临�Ӷȣ�O(nlogn)
- * �ռ临�Ӷȣ�O��(1)
+ * 最大时间复杂度：O(nlogn)
+ * 平均时间复杂度：O(nlogn)
+ * 最小时间复杂度：O(nlogn)
+ * 空间复杂度：O：(1)
  */
 public class heapSort {
 	public static void main(String[] args) {
@@ -28,7 +28,7 @@ public class heapSort {
 			if(i==0)	continue;
 			if(arr[i]<arr[i-1])	isPass=false;
 		}
-		System.out.println("\r\n\r\n������\r\nresult:"+isPass);
+		System.out.println("\r\n\r\n堆排序\r\nresult:"+isPass);
 	}
 	
 	public static void func(int arr[]) {

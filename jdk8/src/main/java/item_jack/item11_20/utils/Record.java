@@ -4,9 +4,9 @@ import java.util.List;
 import java.util.Set;
 
 public class Record {
-	private Set<String> dataSet;//Ô­Ê¼Êı¾İÖĞÈı¸öÊı×ÖµÄ¼¯ºÏ
-	private String dataString;//Ô­Ê¼Êı¾İµÄ×Ö·û´®
-	private List<Integer> locateList;//Ô­Ê¼Êı¾İËùÔÚÁĞÊı
+	private Set<String> dataSet;//åŸå§‹æ•°æ®ä¸­ä¸‰ä¸ªæ•°å­—çš„é›†åˆ
+	private String dataString;//åŸå§‹æ•°æ®çš„å­—ç¬¦ä¸²
+	private List<Integer> locateList;//åŸå§‹æ•°æ®æ‰€åœ¨åˆ—æ•°
 	public Set<String> getDataSet() {
 		return dataSet;
 	}

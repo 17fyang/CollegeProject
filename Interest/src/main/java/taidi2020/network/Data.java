@@ -10,15 +10,15 @@ import java.util.List;
 import java.util.Map;
 
 public class Data {
-	public final static String trainUrl="File/train.txt";//ÎÄ¼şµØÖ·
-	public final static String testUrl="File/test.txt";//ÎÄ¼şµØÖ·
+	public final static String trainUrl="File/train.txt";//æ–‡ä»¶åœ°å€
+	public final static String testUrl="File/test.txt";//æ–‡ä»¶åœ°å€
 	private int dataLength=0;
 	private String table="GBK";
 	private Map<String,Integer> typeMap=new HashMap<String,Integer>();
 	private List<Neuron> neuronList=null;
 	private List<Flower> trainList=null;
 	private List<Flower> testList=null;
-	//³õÊ¼»¯
+	//åˆå§‹åŒ–
 	public Data(int neuronLength) {
 		try {
 			List<Flower> trainPreList = readData(trainUrl);
@@ -68,7 +68,7 @@ public class Data {
 		return list;
 	}
 
-	//×î´ó×îĞ¡Öµ¹æ·¶»¯¶ÔÊı¾İ½øĞĞÔ¤´¦Àí
+	//æœ€å¤§æœ€å°å€¼è§„èŒƒåŒ–å¯¹æ•°æ®è¿›è¡Œé¢„å¤„ç†
 	public List<Flower> preDeal(List<Flower> preDataList) {
 		double min[]= new double[dataLength];
 		double max[]= new double[dataLength];
@@ -94,7 +94,7 @@ public class Data {
 		}
 		return preDataList;
 	}
-	//Éñ¾­Ôª³õÊ¼»¯
+	//ç¥ç»å…ƒåˆå§‹åŒ–
 	public List<Neuron> initNeuron(int neuronLength) {
 		List<Neuron> list=new LinkedList<Neuron>();
 		for(int i=0;i<neuronLength;i++) {
@@ -109,7 +109,7 @@ public class Data {
 		}
 		return list;
 	}
-	//½á¹ûãĞÖµ³õÊ¼»¯
+	//ç»“æœé˜ˆå€¼åˆå§‹åŒ–
 	public double[] initResult() {
 		double result[]=new double[typeMap.size()];
 		for(int i=0;i<result.length;i++) {

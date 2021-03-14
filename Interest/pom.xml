@@ -13,11 +13,13 @@
             <artifactId>spire.pdf</artifactId>
             <version>3.11.6</version>
         </dependency>
+
         <dependency>
             <groupId>org.apache.pdfbox</groupId>
             <artifactId>pdfbox</artifactId>
             <version>2.0.22</version>
         </dependency>
+
         <dependency>
             <groupId>jfree</groupId>
             <artifactId>jfreechart</artifactId>
@@ -28,6 +30,12 @@
             <groupId>jfree</groupId>
             <artifactId>jcommon</artifactId>
             <version>1.0.16</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sourceforge.jexcelapi</groupId>
+            <artifactId>jxl</artifactId>
+            <version>2.6.12</version>
         </dependency>
     </dependencies>
 

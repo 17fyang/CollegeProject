@@ -10,7 +10,7 @@ public class EnterPot {
 			}
 			if(num>0) {
 				num--;
-				System.out.println("²Ö¿âÖĞ¼õÉÙÁË1¸ö£¬µ±Ç°ÊıÁ¿ÊÇ"+num);
+				System.out.println("ä»“åº“ä¸­å‡å°‘äº†1ä¸ªï¼Œå½“å‰æ•°é‡æ˜¯"+num);
 			}else {
 				try {
 					num.wait();
@@ -28,7 +28,7 @@ public class EnterPot {
 			}
 			if(num<=MAX_SIZE-number) {
 				num+=number;
-				System.out.println("²Ö¿âÖĞÔö¼ÓÁË"+number+"¸ö£¬µ±Ç°ÊıÁ¿ÊÇ"+num);
+				System.out.println("ä»“åº“ä¸­å¢åŠ äº†"+number+"ä¸ªï¼Œå½“å‰æ•°é‡æ˜¯"+num);
 			}else {
 				try {
 					System.out.println();

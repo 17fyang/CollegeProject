@@ -4,28 +4,28 @@ import java.util.LinkedList;
 import java.util.List;
 
 /*
- * ´¦ÀíÈ¾É«Ìå±àÂëÇóÊÊÓ¦¶ÈµÈ²Ù×÷µÄÀà
+ * å¤„ç†æŸ“è‰²ä½“ç¼–ç æ±‚é€‚åº”åº¦ç­‰æ“ä½œçš„ç±»
  */
 public class CLS {
-	private static List<String> singleList=new LinkedList<String>();//´æ·ÅÒÑÍê³ÉµÄµã±àÂëÇ°µÄÁ´±í
-	private static List<double[]> doubleList=new LinkedList<double[]>();//´æ·ÅÒÑÍê³ÉµÄµã±àÂëºóµÄÁ´±í
-	//µ¥¸öÈ¾É«Ìå½âÂë
+	private static List<String> singleList=new LinkedList<String>();//å­˜æ”¾å·²å®Œæˆçš„ç‚¹ç¼–ç å‰çš„é“¾è¡¨
+	private static List<double[]> doubleList=new LinkedList<double[]>();//å­˜æ”¾å·²å®Œæˆçš„ç‚¹ç¼–ç åçš„é“¾è¡¨
+	//å•ä¸ªæŸ“è‰²ä½“è§£ç 
 	public double[] decode(String single){
 //		System.out.println(single.substring(0,ModelConfig.geneNumber/2));
 		long a=Long.parseLong(single.substring(0,ModelConfig.geneNumber/2),2);
 		long b=Long.parseLong(single.substring(ModelConfig.geneNumber/2,ModelConfig.geneNumber),2);
 		double[] x = {-1,-1};
-		x[0] = a * 20/ (Math.pow(2, ModelConfig.geneNumber/2) - 1)-10;	//xµÄ»ùÒò
-		x[1] = b * 20 / (Math.pow(2, ModelConfig.geneNumber/2) - 1)-10;	//yµÄ»ùÒò
+		x[0] = a * 20/ (Math.pow(2, ModelConfig.geneNumber/2) - 1)-10;	//xçš„åŸºå› 
+		x[1] = b * 20 / (Math.pow(2, ModelConfig.geneNumber/2) - 1)-10;	//yçš„åŸºå› 
 		return x;
 	}
 
-	//µ¥¸öÈ¾É«Ìå±àÂë
+	//å•ä¸ªæŸ“è‰²ä½“ç¼–ç 
 	public double[] encode(double[] single){
 		return null;
 	}
 
-	//³õÊ¼»¯Ò»ÌõÈ¾É«Ìå
+	//åˆå§‹åŒ–ä¸€æ¡æŸ“è‰²ä½“
 	public String initSingle(){
 		String res = "";
 		for(int i = 0; i < ModelConfig.geneNumber; i++){
@@ -38,7 +38,7 @@ public class CLS {
 		return res;
 	}
 
-	//³õÊ¼»¯Ò»×éÈ¾É«Ìå
+	//åˆå§‹åŒ–ä¸€ç»„æŸ“è‰²ä½“
 	public String[] initAll(int groupsize){
 		String[] iAll = new String[groupsize];
 		for(int i = 0; i < groupsize; i++){
@@ -47,8 +47,8 @@ public class CLS {
 		return iAll;
 	}
 
-	//ÊÊÓ¦¶È¼ÆËã¹«Ê½£ºsin+sin£»
-	//sin+sinÔ½´ó£¬3-sin-sinÔ½Ğ¡£¬¼´µÃµ½µÄÖµÔ½Ğ¡¸öÌåµÄÊÊÓ¦¶È¾ÍÔ½´ó
+	//é€‚åº”åº¦è®¡ç®—å…¬å¼ï¼šsin+sinï¼›
+	//sin+sinè¶Šå¤§ï¼Œ3-sin-sinè¶Šå°ï¼Œå³å¾—åˆ°çš„å€¼è¶Šå°ä¸ªä½“çš„é€‚åº”åº¦å°±è¶Šå¤§
 	public double formula(double[] x) {
 		int n=2;
 		double cheng=1;
@@ -62,10 +62,10 @@ public class CLS {
 		return cheng*-1;
 	}
 
-	//¼ÆËã¸öÌåµÄÊÊÓ¦¶È
+	//è®¡ç®—ä¸ªä½“çš„é€‚åº”åº¦
 	public double fitSingle(String str){
 		double[] x =this.decode(str);
-		//ÊÊÓ¦¶È¼ÆËã¹«Ê½
+		//é€‚åº”åº¦è®¡ç®—å…¬å¼
 		double fitness =formula(x);
 		if(doubleList.isEmpty()) {
 			doubleList.add(x);
@@ -78,12 +78,12 @@ public class CLS {
 		}
 		
 		
-		//ÅĞ¶ÏÊÇ·ñÔÚÒÑÖª×î´óÖµÖÜÎ§,ÊÇµÄ»°Ôò½µµÍÆäÊÊÓ¦¶È
+		//åˆ¤æ–­æ˜¯å¦åœ¨å·²çŸ¥æœ€å¤§å€¼å‘¨å›´,æ˜¯çš„è¯åˆ™é™ä½å…¶é€‚åº”åº¦
 //		for(int i=0;i<doubleList.size();i++) {
 //			double exitMax[]=doubleList.get(i);
 //			double distance=(exitMax[0]-x[0])*(exitMax[0]-x[0])+(exitMax[1]-x[1])*(exitMax[1]-x[1]);
 //			if(distance<ModelConfig.fitnessDistance) {
-//				if(fitness>formula(exitMax)) {//Ìæ»»µô×î´óÖµ
+//				if(fitness>formula(exitMax)) {//æ›¿æ¢æ‰æœ€å¤§å€¼
 //					doubleList.set(i, x);
 //					singleList.set(i, str);
 //				}
@@ -91,7 +91,7 @@ public class CLS {
 //			}
 //		}
 //
-//		//ÅĞ¶ÏÊÇ·ñÕÒµ½ĞÂµÄ×î´óÖµ
+//		//åˆ¤æ–­æ˜¯å¦æ‰¾åˆ°æ–°çš„æœ€å¤§å€¼
 //		if(ModelConfig.correctFitness-fitness<=ModelConfig.fitnessAccuracy) {
 //			doubleList.add(x);
 //			singleList.add(str);
@@ -99,7 +99,7 @@ public class CLS {
 		return fitness;
 	}
 
-	//ÅúÁ¿¼ÆËãÊı×éµÄÊÊÓ¦¶È
+	//æ‰¹é‡è®¡ç®—æ•°ç»„çš„é€‚åº”åº¦
 	public double[] fitAll(String str[]){
 		double [] fit = new double[str.length];
 		for(int i = 0;i < str.length; i++){
@@ -108,13 +108,13 @@ public class CLS {
 		return fit;
 	}
 
-	//ÊÊÓ¦¶È×îÖµ£¨·µ»ØĞòºÅ£©
+	//é€‚åº”åº¦æœ€å€¼ï¼ˆè¿”å›åºå·ï¼‰
 	public int mFitNum(double fit[]){
 		double m = fit[0]; 
 		int n = 0;
 		for(int i = 0;i < fit.length; i++){
 			if(fit[i] > m){
-				//×î´óÖµ
+				//æœ€å¤§å€¼
 				m = fit[i];
 				n = i;
 			}
@@ -122,23 +122,23 @@ public class CLS {
 		return n;
 	}
 
-	//ÊÊÓ¦¶È×îÖµ£¨·µ»ØÊÊÓ¦¶È£©
+	//é€‚åº”åº¦æœ€å€¼ï¼ˆè¿”å›é€‚åº”åº¦ï¼‰
 	public double mFitVal(double fit[]){
 		double m = fit[0]; 
 		for(int i = 0;i < fit.length; i++){
 			if(fit[i] > m){
-				//×î´óÖµ
+				//æœ€å¤§å€¼
 				m = fit[i];
 			}
 		}
 		return m;
 	}
 
-	//¸øÊÊÓ¦¶ÈÅÅĞò
+	//ç»™é€‚åº”åº¦æ’åº
 	public  int[] rank(double[] fit) {
 		int result[]=new int[fit.length];
 		double temp[]=new double[fit.length];
-		for(int i=0;i<fit.length;i++)	temp[i]=fit[i];//¸´ÖÆÒ»·İÊÊÓ¦¶È;
+		for(int i=0;i<fit.length;i++)	temp[i]=fit[i];//å¤åˆ¶ä¸€ä»½é€‚åº”åº¦;
 		for(int i=0;i<fit.length;i++) {
 			double max=temp[0];
 			int locate=0;

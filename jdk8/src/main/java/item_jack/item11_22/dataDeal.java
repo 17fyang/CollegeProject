@@ -25,97 +25,97 @@ import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 /*
  * date:2019-11-22
- * author:Ñî·«
- * request£º±í1ÖĞÕıºÃ6Ìõ»òÕß6ÌõÒÔÉÏµÄÊı¾İ×é³É6¸öÊı×Ö
- * ¸ù¾İÅäÖÃÎÄ¼şÖĞµÄÉ¸Ñ¡Êı¾İÉ¸Ñ¡£¬¶¼°üº¬ÕâĞ©Êı¾İÔò±£Áô
+ * author:æ¨å¸†
+ * requestï¼šè¡¨1ä¸­æ­£å¥½6æ¡æˆ–è€…6æ¡ä»¥ä¸Šçš„æ•°æ®ç»„æˆ6ä¸ªæ•°å­—
+ * æ ¹æ®é…ç½®æ–‡ä»¶ä¸­çš„ç­›é€‰æ•°æ®ç­›é€‰ï¼Œéƒ½åŒ…å«è¿™äº›æ•°æ®åˆ™ä¿ç•™
  */
 
 public class dataDeal {
 	public static void main(String[] args) {
 		System.out.println("item_1122");
-		System.out.println("version£º1.0");
+		System.out.println("versionï¼š1.0");
 		System.out.println("date:2019-11-22\r\n" + 
-				" *request£º±í1ÖĞÕıºÃ6Ìõ»òÕß6ÌõÒÔÉÏµÄÊı¾İ×é³É6¸öÊı×Ö\r\n" + 
-				" * 				  ¸ù¾İÅäÖÃÎÄ¼şÖĞµÄÉ¸Ñ¡Êı¾İÉ¸Ñ¡£¬¶¼°üº¬ÕâĞ©Êı¾İÔò±£Áô");
+				" *requestï¼šè¡¨1ä¸­æ­£å¥½6æ¡æˆ–è€…6æ¡ä»¥ä¸Šçš„æ•°æ®ç»„æˆ6ä¸ªæ•°å­—\r\n" + 
+				" * 				  æ ¹æ®é…ç½®æ–‡ä»¶ä¸­çš„ç­›é€‰æ•°æ®ç­›é€‰ï¼Œéƒ½åŒ…å«è¿™äº›æ•°æ®åˆ™ä¿ç•™");
 		System.out.println();
 		System.out.println();
 		try {
 			run();
-			System.out.print("Êı¾İ´¦ÀíÍê±Ï£¬");
+			System.out.print("æ•°æ®å¤„ç†å®Œæ¯•ï¼Œ");
 		}catch(Exception e) {
 			e.printStackTrace();
-			System.out.print("Êı¾İ´¦Àí³ö´í£¬");
+			System.out.print("æ•°æ®å¤„ç†å‡ºé”™ï¼Œ");
 		}
-		System.out.println("°´ÈÎÒâ¼üÍË³ö£¡");
+		System.out.println("æŒ‰ä»»æ„é”®é€€å‡ºï¼");
 		Scanner sc = new Scanner(System.in); 
 		sc.next();
 		sc.close();
 	}
 	public static void run() {
-		//µÚÒ»²½£º¶ÁÈ¡ÅäÖÃÎÄ¼şÖĞµÄÄÚÈİ
-		System.out.println("ÕıÔÚ¶ÁÈ¡ÅäÖÃÎÄ¼ş......");
+		//ç¬¬ä¸€æ­¥ï¼šè¯»å–é…ç½®æ–‡ä»¶ä¸­çš„å†…å®¹
+		System.out.println("æ­£åœ¨è¯»å–é…ç½®æ–‡ä»¶......");
 		ConfigRead configRead=new ConfigRead();
 		Config config=null;
 		try {
 			config=configRead.dataDealConfig();
 		} catch (Exception e) {
-			System.out.println("¶ÁÈ¡ÅäÖÃÎÄ¼şÊ§°Ü£¡£¡");
+			System.out.println("è¯»å–é…ç½®æ–‡ä»¶å¤±è´¥ï¼ï¼");
 			e.printStackTrace();
 			return;
 		}
 
-		//¶¨Òå×îÖÕµÄÅÅÁĞÊı¾İ¼¯
+		//å®šä¹‰æœ€ç»ˆçš„æ’åˆ—æ•°æ®é›†
 		Set<Set<String>> finalSet=new HashSet<Set<String>>();
 
 
-		//µÚ¶ş²½£º½«Êı¾İÔ´ÎÄ¼şÖĞµÄÊı¾İÈ¡³ö£¬È¥ÖØ£¬Éú³ÉÒ»¸ölist¶ÔÏó
-		System.out.println("ÕıÔÚ¶ÁÈëÊı¾İÔ´ÎÄ¼ş......");
+		//ç¬¬äºŒæ­¥ï¼šå°†æ•°æ®æºæ–‡ä»¶ä¸­çš„æ•°æ®å–å‡ºï¼Œå»é‡ï¼Œç”Ÿæˆä¸€ä¸ªlistå¯¹è±¡
+		System.out.println("æ­£åœ¨è¯»å…¥æ•°æ®æºæ–‡ä»¶......");
 		List<Record> originalList=null;
 		try {
 			originalList=getOriginalData(config.getDataDeal_source());
 		} catch (Exception e) {
-			System.out.println("Éú³ÉÊı¾İÔ´¶ÔÏóÊ§°Ü£¡£¡");
+			System.out.println("ç”Ÿæˆæ•°æ®æºå¯¹è±¡å¤±è´¥ï¼ï¼");
 			e.printStackTrace();
 			return;
 		}
 
-		//µÚÈı²½£ºµÚÒ»´ÎÊı¾İ´¦Àí£¬µÃµ½³õ²½µÄÎåÎ»Êı×ÖÅÅÁĞ,·µ»ØÎ´ÂúµÄÊı×ÖÅÅÁĞ
-		System.out.println("Êı¾İ´¦Àí£ºÉú³Éºò²¹ÅÅÁĞ......");
+		//ç¬¬ä¸‰æ­¥ï¼šç¬¬ä¸€æ¬¡æ•°æ®å¤„ç†ï¼Œå¾—åˆ°åˆæ­¥çš„äº”ä½æ•°å­—æ’åˆ—,è¿”å›æœªæ»¡çš„æ•°å­—æ’åˆ—
+		System.out.println("æ•°æ®å¤„ç†ï¼šç”Ÿæˆå€™è¡¥æ’åˆ—......");
 		List<Set<String>> firstDealList=null;
 		try {
 			firstDealList=getFirstDealResult(originalList,finalSet,config);
 		} catch (Exception e) {
-			System.out.println("µÚÒ»´ÎÊı¾İ´¦ÀíÊ§°Ü£¡£¡");
+			System.out.println("ç¬¬ä¸€æ¬¡æ•°æ®å¤„ç†å¤±è´¥ï¼ï¼");
 			e.printStackTrace();
 			return;
 		}
-		System.out.println("Éú³Éºò²¹ÅÅÁĞ£º"+originalList.size()+"/"+originalList.size()+"......");
+		System.out.println("ç”Ÿæˆå€™è¡¥æ’åˆ—ï¼š"+originalList.size()+"/"+originalList.size()+"......");
 		
-		//µÚÎå²½£º¸ù¾İÉ¸Ñ¡¹æÔòÉ¸Ñ¡ÅÅÁĞ£ºÂú×ãlineNumberºÍÉ¸Ñ¡Ìõ¼ş
-		System.out.println("¿ªÊ¼µÚÒ»½×¶ÎÉ¸Ñ¡......");
+		//ç¬¬äº”æ­¥ï¼šæ ¹æ®ç­›é€‰è§„åˆ™ç­›é€‰æ’åˆ—ï¼šæ»¡è¶³lineNumberå’Œç­›é€‰æ¡ä»¶
+		System.out.println("å¼€å§‹ç¬¬ä¸€é˜¶æ®µç­›é€‰......");
 		List<OutData> outList=null;
 		try {
 			outList=chooseResult(originalList,finalSet,config);
 		} catch (Exception e) {
-			System.out.println("Êı¾İÆ¥ÅäÊ§°Ü£¡£¡");
+			System.out.println("æ•°æ®åŒ¹é…å¤±è´¥ï¼ï¼");
 			e.printStackTrace();
 			return;
 		}
-		System.out.println("µÚÒ»½×¶ÎÉ¸Ñ¡£º100%");
-		System.out.println("Âú×ã"+config.getLineNumber()+"ĞĞÅÅÁĞÊı¾İÌõÊı£º"+outList.size());
+		System.out.println("ç¬¬ä¸€é˜¶æ®µç­›é€‰ï¼š100%");
+		System.out.println("æ»¡è¶³"+config.getLineNumber()+"è¡Œæ’åˆ—æ•°æ®æ¡æ•°ï¼š"+outList.size());
 		
-		//µÚÆß²½£º½«½á¹ûÊı¾İĞ´»ØÎÄ¼ş
-		System.out.println("ÕıÔÚ½«Êı¾İĞ´»ØÎÄ¼ş......");
+		//ç¬¬ä¸ƒæ­¥ï¼šå°†ç»“æœæ•°æ®å†™å›æ–‡ä»¶
+		System.out.println("æ­£åœ¨å°†æ•°æ®å†™å›æ–‡ä»¶......");
 		try {
 			writeResult(outList,config.getDataDeal_aim());
 		} catch (Exception e) {
-			System.out.println("Ğ´»ØÊı¾İÊ§°Ü£¡£¡");
+			System.out.println("å†™å›æ•°æ®å¤±è´¥ï¼ï¼");
 			e.printStackTrace();
 			return;
 		}
 	}
 
-	//µÚ¶ş²½£º½«Êı¾İÔ´ÎÄ¼şÖĞµÄÊı¾İÈ¡³ö£¬È¥ÖØ£¬Éú³ÉÒ»¸ölist¶ÔÏó
+	//ç¬¬äºŒæ­¥ï¼šå°†æ•°æ®æºæ–‡ä»¶ä¸­çš„æ•°æ®å–å‡ºï¼Œå»é‡ï¼Œç”Ÿæˆä¸€ä¸ªlistå¯¹è±¡
 	private static List<Record> getOriginalData(File dataDeal_source) throws Exception{
 		Workbook workbook=Workbook.getWorkbook(dataDeal_source);
 		Sheet sheet=workbook.getSheet(0);
@@ -163,12 +163,12 @@ public class dataDeal {
 	}
 
 	
-	//µÚÈı²½£ºµÚÒ»´ÎÊı¾İ´¦Àí£¬µÃµ½³õ²½µÄÎåÎ»Êı×ÖÅÅÁĞ
+	//ç¬¬ä¸‰æ­¥ï¼šç¬¬ä¸€æ¬¡æ•°æ®å¤„ç†ï¼Œå¾—åˆ°åˆæ­¥çš„äº”ä½æ•°å­—æ’åˆ—
 	private static List<Set<String>> getFirstDealResult(List<Record> originalList,Set<Set<String>> finalSet, Config config) throws Exception{
 		Set<Set<String>> firstResultSet=new HashSet<Set<String>>();
 		int listLength=originalList.size();
 		for(int i=0;i<listLength;i++) {
-			if(i%5==0)		System.out.println("Éú³Éºò²¹ÅÅÁĞ£º"+(i+1)+"/"+listLength+"......");
+			if(i%5==0)		System.out.println("ç”Ÿæˆå€™è¡¥æ’åˆ—ï¼š"+(i+1)+"/"+listLength+"......");
 			Record record1=originalList.get(i);
 			for(int j=i+1;j<listLength;j++) {
 				Record record2=originalList.get(j);
@@ -191,7 +191,7 @@ public class dataDeal {
 		return firstResultList;
 	}
 	
-	//µÚÎå²½£º¸ù¾İlineNumberºÍConditionÉ¸Ñ¡ÅÅÅÅÁĞ
+	//ç¬¬äº”æ­¥ï¼šæ ¹æ®lineNumberå’ŒConditionç­›é€‰æ’æ’åˆ—
 	private static List<OutData> chooseResult(List<Record> originalList, Set<Set<String>> finalSet, Config config) {
 		Set<String> conditionSet=new HashSet<String>(config.getConditionList());
 		int lineNumber=config.getLineNumber();
@@ -200,10 +200,10 @@ public class dataDeal {
 		int total=finalSet.size();
 		int count=0;
 		while(finalIt.hasNext()) {
-			//¼ÆÊıÊä³ö
+			//è®¡æ•°è¾“å‡º
 			count++;
 			double temp=(int)(count*1.0/total*10000)*1.0/100;
-			if(count % 1000==0)		System.out.println("µÚÒ»½×¶ÎÉ¸Ñ¡£º"+temp+"%");
+			if(count % 1000==0)		System.out.println("ç¬¬ä¸€é˜¶æ®µç­›é€‰ï¼š"+temp+"%");
 			
 			Set<String> finalSingleSet=finalIt.next();
 			List<Record> recordList=new LinkedList<Record>();
@@ -214,7 +214,7 @@ public class dataDeal {
 				if(tempSet.size()==beforeLength)	recordList.add(originalList.get(i));
 			}
 			
-			//ÅĞ¶ÏÊÇ·ñÂú×ãÌõ¼ş
+			//åˆ¤æ–­æ˜¯å¦æ»¡è¶³æ¡ä»¶
 			if(recordList.size()<lineNumber)		continue;
 			Set<String> testSet=new HashSet<String>(finalSingleSet);
 			int beforeLength=testSet.size();
@@ -231,7 +231,7 @@ public class dataDeal {
 	}
 
 
-	//µÚÆß²½£º½«½á¹ûÊı¾İĞ´»ØÎÄ¼ş
+	//ç¬¬ä¸ƒæ­¥ï¼šå°†ç»“æœæ•°æ®å†™å›æ–‡ä»¶
 	private static void writeResult(List<OutData> outList, File f) throws Exception{
 		WritableWorkbook workbook=Workbook.createWorkbook(f);
 		WritableSheet sheet=workbook.createSheet("result", 0);
@@ -273,7 +273,7 @@ public class dataDeal {
 		}
 		sheet.setColumnView(1, 10);
 		
-		//Ğ´Èë²¢¹Ø±Õ
+		//å†™å…¥å¹¶å…³é—­
 		workbook.write();
 		workbook.close();
 	}

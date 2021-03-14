@@ -3,10 +3,10 @@ package meituan;
 import java.util.Scanner;
 
 /*
- * ÓÐÒ»¸öºÜ¾­µäµÄÎÊÌâÊÇ£¬µ±Ç°Ê±¼äÊÇaa:bb,ÇëÎÊÈô¸É·ÖÖÓºóÊÇÊ²Ã´Ê±¼ä£¿
- * ÎÒÃÇ½ñÌìµÄÎÊÌâÊÇÒ»¸öÏà·´µÄÎÊÌâ¡£
- * ÒÑÖªÏÖÔÚµÄÊ±¿ÌÊÇÐÇÆÚxµÄyy:zzÊ±¿Ì£¬ÇëÎÊn·ÖÖÓÇ°ÊÇÖÜ¼¸£¬Ê±¼äÊÇ¶àÉÙ¡£
- * ÀýÈçÏÖÔÚÊÇÖÜÈý£¬02:10,Ôò200·ÖÖÓÖ®Ç°£¬Ó¦¸ÃÊÇÖÜ¶þ£¬22:50¡£
+ * æœ‰ä¸€ä¸ªå¾ˆç»å…¸çš„é—®é¢˜æ˜¯ï¼Œå½“å‰æ—¶é—´æ˜¯aa:bb,è¯·é—®è‹¥å¹²åˆ†é’ŸåŽæ˜¯ä»€ä¹ˆæ—¶é—´ï¼Ÿ
+ * æˆ‘ä»¬ä»Šå¤©çš„é—®é¢˜æ˜¯ä¸€ä¸ªç›¸åçš„é—®é¢˜ã€‚
+ * å·²çŸ¥çŽ°åœ¨çš„æ—¶åˆ»æ˜¯æ˜ŸæœŸxçš„yy:zzæ—¶åˆ»ï¼Œè¯·é—®nåˆ†é’Ÿå‰æ˜¯å‘¨å‡ ï¼Œæ—¶é—´æ˜¯å¤šå°‘ã€‚
+ * ä¾‹å¦‚çŽ°åœ¨æ˜¯å‘¨ä¸‰ï¼Œ02:10,åˆ™200åˆ†é’Ÿä¹‹å‰ï¼Œåº”è¯¥æ˜¯å‘¨äºŒï¼Œ22:50ã€‚
  */
 public class Q01 {
 	public static void main(String[] args) {

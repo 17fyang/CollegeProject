@@ -28,7 +28,7 @@ class huchiThread extends Thread {
     public void run() {
         while (true) {
             synchronized (m) {
-                System.out.println("ԭ����ֵ�ǣ�" + m.value + "�������ǣ�" + newInteger);
+                System.out.println("原锟斤拷锟斤拷值锟角ｏ拷" + m.value + "锟斤拷锟斤拷锟斤拷锟角ｏ拷" + newInteger);
                 m.value = newInteger;
             }
             try {

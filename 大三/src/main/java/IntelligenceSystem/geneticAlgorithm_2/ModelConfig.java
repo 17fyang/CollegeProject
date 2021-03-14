@@ -1,17 +1,17 @@
 package IntelligenceSystem.geneticAlgorithm_2;
 
 public class ModelConfig {
-	public static final int groupNumber = 50;	//È¾É«Ìå¸öÊı
-	public static final double mutationPercent = 0.15;	//±äÒì¸ÅÂÊ
-	public static final int runTimes = 500000;	//µü´ú´ÎÊı
-	public static final int accuracy = 24;	//¾«È·¶È£¬Ñ¡Ôñ¾«È·µ½Ğ¡Êıµãºó¼¸Î»
-	public static final double correctFitness=186.730909;//ÕıÈ·µÄÊÊÓ¦Öµ
-	public static final double fitnessAccuracy=0.0001;//ÊÊÓ¦¶ÈÊ¶±ğ¾«¶È
-	public static final double fitnessDistance=0.001;//µ±Ä³Ò»µãµÄºÍ×î´óÖµ¾àÀëĞ¡ÓÚÕâ¸öÊ±ºöÂÔ£¬Ò²¾ÍÊÇÇóµÃÒ»¸ö×î´óÖµÖ®ºóÏÂ´Î¾Í²»ÇóÁËµÄÒâË¼¡£
+	public static final int groupNumber = 50;	//æŸ“è‰²ä½“ä¸ªæ•°
+	public static final double mutationPercent = 0.15;	//å˜å¼‚æ¦‚ç‡
+	public static final int runTimes = 500000;	//è¿­ä»£æ¬¡æ•°
+	public static final int accuracy = 24;	//ç²¾ç¡®åº¦ï¼Œé€‰æ‹©ç²¾ç¡®åˆ°å°æ•°ç‚¹åå‡ ä½
+	public static final double correctFitness=186.730909;//æ­£ç¡®çš„é€‚åº”å€¼
+	public static final double fitnessAccuracy=0.0001;//é€‚åº”åº¦è¯†åˆ«ç²¾åº¦
+	public static final double fitnessDistance=0.001;//å½“æŸä¸€ç‚¹çš„å’Œæœ€å¤§å€¼è·ç¦»å°äºè¿™ä¸ªæ—¶å¿½ç•¥ï¼Œä¹Ÿå°±æ˜¯æ±‚å¾—ä¸€ä¸ªæœ€å¤§å€¼ä¹‹åä¸‹æ¬¡å°±ä¸æ±‚äº†çš„æ„æ€ã€‚
 	
-	//Çó³ö¾«¶È¶ÔÓ¦µÄËùĞè»ùÒòÊı
+	//æ±‚å‡ºç²¾åº¦å¯¹åº”çš„æ‰€éœ€åŸºå› æ•°
 	private static int temp = (int) ((int)Math.log(20)+ accuracy*Math.log(10) );
-	public static final int geneNumber = temp * 2;	//»ùÒòÊı
+	public static final int geneNumber = temp * 2;	//åŸºå› æ•°
 	public static int getTemp() {
 		return temp;
 	}

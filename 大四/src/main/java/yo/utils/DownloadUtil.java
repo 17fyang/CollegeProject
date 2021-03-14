@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  * Description:
  * date: 2020/10/5 16:58
  *
- * @author :乌鸦坐飞机亠
+ * @author :涔岄甫鍧愰鏈轰籂
  * @version:
  */
 public class DownloadUtil {
@@ -49,7 +49,7 @@ public class DownloadUtil {
     }
 
     /**
-     * 重复文件重命名
+     * 閲嶅鏂囦欢閲嶅懡鍚�
      *
      * @param f
      * @return

@@ -1,17 +1,17 @@
 package rankAlgorithm;
 /*
- * ��������
+ * 插入排序
  * 
- * ����������Ƶ�ʱ��������ô������Щ�Ƶ��أ�
- * һ�ּ򵥵ķ�������һ��һ�ŵ�������ÿһ���Ʋ��뵽�����Ѿ���������е��ʵ�λ�á�
- * �����Ǹ����������������ʱ��Ϊ��Ҫ����Ԫ�أ�������Ҫ�ڳ��ռ䣬
- * ����������Ԫ���ڲ���֮ǰ�������ƶ�һλ�������㷨���ǳ�֮Ϊ��������
+ * 我们在玩打牌的时候，你是怎么整理那些牌的呢？
+ * 一种简单的方法就是一张一张的来，将每一张牌插入到其他已经有序的牌中的适当位置。
+ * 当我们给无序数组做排序的时候，为了要插入元素，我们需要腾出空间，
+ * 将其余所有元素在插入之前都向右移动一位，这种算法我们称之为插入排序。
  * 
- * ƽ��ʱ�临�Ӷȣ�O(N2)
- * ���ʱ�临�Ӷȣ�O(N)
- * �ʱ�临�Ӷȣ�O(N2)
- * �ռ临�Ӷȣ�O(1)
- * �ȶ�����
+ * 平均时间复杂度：O(N2)
+ * 最好时间复杂度：O(N)
+ * 最坏时间复杂度：O(N2)
+ * 空间复杂度：O(1)
+ * 稳定排序
  */
 public class insertSort {
 	public static void main(String[] args) {
@@ -28,7 +28,7 @@ public class insertSort {
 			if(i==0)	continue;
 			if(arr[i]<arr[i-1])	isPass=false;
 		}
-		System.out.println("\r\n\r\n��������\r\nresult:"+isPass);
+		System.out.println("\r\n\r\n插入排序\r\nresult:"+isPass);
 	}
 	static void func(int arr[]) {
 		for(int i=1;i<arr.length;i++) {

@@ -3,7 +3,7 @@ package IntelligenceSystem.geneticAlgorithm_2;
 import java.util.List;
 
 /*
- * ÒÅ´«Ëã·¨£¬×÷Òµ
+ * é—ä¼ ç®—æ³•ï¼Œä½œä¸š
  */
 public class Main {
 
@@ -13,18 +13,18 @@ public class Main {
 		double x[]= {-1.4,0.8};
 		System.out.println(cls.formula(x));
 		Draw d=new Draw();
-		String group[] = cls.initAll(ModelConfig.groupNumber);	//³õÊ¼»¯
+		String group[] = cls.initAll(ModelConfig.groupNumber);	//åˆå§‹åŒ–
 		for(int i = 0; i < ModelConfig.runTimes; i++){
-			group = clsDeal.cross(group);	//½»²æ
-			group = clsDeal.mutation(group);	//±äÒì
-			group = clsDeal.RWS(group); //Ñ¡Ôñ
+			group = clsDeal.cross(group);	//äº¤å‰
+			group = clsDeal.mutation(group);	//å˜å¼‚
+			group = clsDeal.RWS(group); //é€‰æ‹©
 			d.addGroupData(i, group);
 		}
 		d.drawLine("test");
 		double draw[][]=d.dataTransfer(group);
 		d.showChart(draw);
 		
-		//Êä³ö×îÖÕ½á¹û
+		//è¾“å‡ºæœ€ç»ˆç»“æœ
 		List<double[]> resultDoubleList=CLS.getDoubleList();
 		List<String> resultStringList=CLS.getSingleList();
 		double data[][]=new double[2][resultDoubleList.size()];
@@ -33,10 +33,10 @@ public class Main {
 			data[0][i]=bestResult[0];
 			data[1][i]=bestResult[1];
 			double result=-1*cls.fitSingle(resultStringList.get(i));
-			System.out.println("x1 = "+bestResult[0]+"  "+"x2 = "+bestResult[1]+"   º¯ÊıÖµ£º"+result);
+			System.out.println("x1 = "+bestResult[0]+"  "+"x2 = "+bestResult[1]+"   å‡½æ•°å€¼ï¼š"+result);
 		}
 		d.showChart(data);
-		System.out.println("¹²ÕÒµ½Âú×ãÌõ¼şµÄµã£º"+resultDoubleList.size()+"¸ö");
+		System.out.println("å…±æ‰¾åˆ°æ»¡è¶³æ¡ä»¶çš„ç‚¹ï¼š"+resultDoubleList.size()+"ä¸ª");
 	}
 
 }

@@ -26,7 +26,7 @@ public class Draw {
 		return series;
 	}
 	
-	//根据传进来的xy坐标数据画图
+	//鏍规嵁浼犺繘鏉ョ殑xy鍧愭爣鏁版嵁鐢诲浘
 	public void drawData(XYSeries series[],String name) {
 		XYSeriesCollection dataset = new XYSeriesCollection();
 		for(int i=0;i<series.length;i++)	dataset.addSeries(series[i]);

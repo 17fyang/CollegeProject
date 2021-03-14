@@ -7,7 +7,7 @@ public class Sort {
 		
 		int result[]=insertSort(num);
 		
-		//²âÊÔ´úÂë
+		//æµ‹è¯•ä»£ç 
 		for(int i=0;i<result.length;i++)	System.out.print(num[i]+"  ");
 		System.out.println();
 		int test=result[0];
@@ -21,13 +21,13 @@ public class Sort {
 		}
 		System.out.println(isPass);
 	}
-	//²åÈëÅÅĞò£¨¶ş·Ö·¨²éÕÒ£©
+	//æ’å…¥æ’åºï¼ˆäºŒåˆ†æ³•æŸ¥æ‰¾ï¼‰
 	private static int[] insertSort2(int num[]) {
 		int temp=0;
 		return num;
 	}
 	
-	//²åÈëÅÅĞò
+	//æ’å…¥æ’åº
 	private static int[] insertSort(int num[]) {
 		int temp=0;
 		for(int i=1;i<num.length;i++) {

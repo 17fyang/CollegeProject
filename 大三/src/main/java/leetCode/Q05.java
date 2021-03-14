@@ -1,9 +1,9 @@
 package leetCode;
 
 /*
- * ¸ø¶¨Ò»¸ö×Ö·û´® s£¬ÕÒµ½ s ÖĞ×î³¤µÄ»ØÎÄ×Ó´®¡£Äã¿ÉÒÔ¼ÙÉè s µÄ×î´ó³¤¶ÈÎª 1000¡£
+ * ç»™å®šä¸€ä¸ªå­—ç¬¦ä¸² sï¼Œæ‰¾åˆ° s ä¸­æœ€é•¿çš„å›æ–‡å­ä¸²ã€‚ä½ å¯ä»¥å‡è®¾ s çš„æœ€å¤§é•¿åº¦ä¸º 1000ã€‚
  * 
- * ¶¯Ì¬¹æ»®
+ * åŠ¨æ€è§„åˆ’
  */
 public class Q05 {
 	public static void main(String[] args) {
@@ -57,7 +57,7 @@ public class Q05 {
 		}
 
 	}
-	//¶¯Ì¬¹æ»®·¨
+	//åŠ¨æ€è§„åˆ’æ³•
 	//	    public static String longestPalindrome(String s) {
 	//	    	char[] c=s.toCharArray();
 	//	    	if(c.length==1)		return s;

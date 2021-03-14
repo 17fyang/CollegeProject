@@ -24,57 +24,57 @@ public class dataDeal {
 
 	public static void main(String[] args) {
 		System.out.println("item4_27");
-		System.out.println("version£º1.0");
+		System.out.println("versionï¼š1.0");
 		System.out.println("date:2020.4.27\r\n" + 
-				"±í1ÖĞÕıºÃ6Ìõ»òÒÔÉÏÌõÊı¾İ×é³ÉÒ»´ÎÁù¸öÊı¾İÅÅÁĞ£¬¸ù¾İÃ¿¸öÊı¾İµÄÃ°ºÅºóÃæµÄÊı×ÖÅÅĞò£¬×îĞ¡µÄÅÅ1ºÅ£¬È»ºó2ºÅ¡£¡£¡£¡£¡£\r\n" + 
-				"* 1¡¢ÓĞ1ĞĞ»òÒÔÉÏµÄĞĞÖĞ£¬ÕıºÃÓĞ4¸öÊı¾İÔÚÍ¬Ò»ĞĞÉÏ\r\n" + 
-				"* 2¡¢ÓĞ1ĞĞ»òÒÔÉÏµÄĞĞÖĞ£¬ÕıºÃÓĞ3¸öÊı¾İÔÚÍ¬Ò»ĞĞÉÏ\r\n" + 
-				"* 3¡¢Õâ4¸öÊı¾İºÍ3¸öÊı¾İ±ØĞëÊÇÔÚËùÓĞÅÅĞòÖĞÅÅÔÚÇ°6Î»£¬¶øÇÒ¶¼Òª³öÏÖ¡£\r\n\r\n");
+				"è¡¨1ä¸­æ­£å¥½6æ¡æˆ–ä»¥ä¸Šæ¡æ•°æ®ç»„æˆä¸€æ¬¡å…­ä¸ªæ•°æ®æ’åˆ—ï¼Œæ ¹æ®æ¯ä¸ªæ•°æ®çš„å†’å·åé¢çš„æ•°å­—æ’åºï¼Œæœ€å°çš„æ’1å·ï¼Œç„¶å2å·ã€‚ã€‚ã€‚ã€‚ã€‚\r\n" + 
+				"* 1ã€æœ‰1è¡Œæˆ–ä»¥ä¸Šçš„è¡Œä¸­ï¼Œæ­£å¥½æœ‰4ä¸ªæ•°æ®åœ¨åŒä¸€è¡Œä¸Š\r\n" + 
+				"* 2ã€æœ‰1è¡Œæˆ–ä»¥ä¸Šçš„è¡Œä¸­ï¼Œæ­£å¥½æœ‰3ä¸ªæ•°æ®åœ¨åŒä¸€è¡Œä¸Š\r\n" + 
+				"* 3ã€è¿™4ä¸ªæ•°æ®å’Œ3ä¸ªæ•°æ®å¿…é¡»æ˜¯åœ¨æ‰€æœ‰æ’åºä¸­æ’åœ¨å‰6ä½ï¼Œè€Œä¸”éƒ½è¦å‡ºç°ã€‚\r\n\r\n");
 		try {
 			System.out.println(System.currentTimeMillis());
 			run();
 			System.out.println(System.currentTimeMillis());
-			System.out.print("Êı¾İ´¦ÀíÍê±Ï£¬");
+			System.out.print("æ•°æ®å¤„ç†å®Œæ¯•ï¼Œ");
 		}catch(Exception e) {
 			e.printStackTrace();
-			System.out.print("Êı¾İ´¦Àí³ö´í£¬");
+			System.out.print("æ•°æ®å¤„ç†å‡ºé”™ï¼Œ");
 		}
-		System.out.println("°´ÈÎÒâ¼üÍË³ö£¡");
+		System.out.println("æŒ‰ä»»æ„é”®é€€å‡ºï¼");
 		Scanner sc = new Scanner(System.in); 
 		sc.next();
 		sc.close();
 	}
 	public static void run() throws Exception {
-		//½«Êı¾İÔ´ÎÄ¼şÖĞµÄÊı¾İÈ¡³ö£¬È¥ÖØ£¬Éú³ÉÒ»¸ölist¶ÔÏó
-		System.out.println("ÕıÔÚ¶ÁÈëÊı¾İÔ´ÎÄ¼ş......");
+		//å°†æ•°æ®æºæ–‡ä»¶ä¸­çš„æ•°æ®å–å‡ºï¼Œå»é‡ï¼Œç”Ÿæˆä¸€ä¸ªlistå¯¹è±¡
+		System.out.println("æ­£åœ¨è¯»å…¥æ•°æ®æºæ–‡ä»¶......");
 		Config config=Config.getConfig();
 		Record[] originalList=config.getSourceList();
-		System.out.println("È¥ÖØºóÊı¾İÁ¿£º"+originalList.length);
+		System.out.println("å»é‡åæ•°æ®é‡ï¼š"+originalList.length);
 
-		//Êı¾İ´¦Àí£¬»ñÈ¡Âú×ãÌõ¼şµÄÅÅÁĞ
-		System.out.println("Êı¾İ´¦Àí£ºÉú³Éºò²¹ÅÅÁĞ......");
-		System.out.println("´Ë¹ı³Ì¿ÉÄÜÕ¼ÓÃ½Ï³¤Ê±¼äÇÒÃ»ÓĞÌáÊ¾£¬ÇëÄÍĞÄµÈ´ı......");
+		//æ•°æ®å¤„ç†ï¼Œè·å–æ»¡è¶³æ¡ä»¶çš„æ’åˆ—
+		System.out.println("æ•°æ®å¤„ç†ï¼šç”Ÿæˆå€™è¡¥æ’åˆ—......");
+		System.out.println("æ­¤è¿‡ç¨‹å¯èƒ½å ç”¨è¾ƒé•¿æ—¶é—´ä¸”æ²¡æœ‰æç¤ºï¼Œè¯·è€å¿ƒç­‰å¾…......");
 		Queue<Set<String>> finalSet=getFirstDealResult(originalList,5);
-		System.out.println("ºò²¹ÅÅÁĞÊı£º"+finalSet.size());
+		System.out.println("å€™è¡¥æ’åˆ—æ•°ï¼š"+finalSet.size());
 
-		//¸ù¾İ·ûºÏÒªÇóµÄ¹æÔòÉ¸Ñ¡ÅÅÁĞ
-		System.out.println("¿ªÊ¼¼ì²âÅÅÁĞ......");
+		//æ ¹æ®ç¬¦åˆè¦æ±‚çš„è§„åˆ™ç­›é€‰æ’åˆ—
+		System.out.println("å¼€å§‹æ£€æµ‹æ’åˆ—......");
 		List<List<Record>> lineList=config.getLineList();
 		finalSet=chooseResult(lineList,finalSet,5,new int[] {3,3});
-		System.out.println("Âú×ãÅÅÁĞÊı¾İÌõÊı£º"+finalSet.size());
+		System.out.println("æ»¡è¶³æ’åˆ—æ•°æ®æ¡æ•°ï¼š"+finalSet.size());
 		
-		//¸ù¾İ·ûºÏÒªÇóµÄ¹æÔòÉ¸Ñ¡ÅÅÁĞ
-		System.out.println("¿ªÊ¼Ôö¼ÓÅÅÁĞ......");
+		//æ ¹æ®ç¬¦åˆè¦æ±‚çš„è§„åˆ™ç­›é€‰æ’åˆ—
+		System.out.println("å¼€å§‹å¢åŠ æ’åˆ—......");
 		finalSet=addRanked(originalList,finalSet,6);
 		
-		//¸ù¾İ·ûºÏÒªÇóµÄ¹æÔòÉ¸Ñ¡ÅÅÁĞ
-		System.out.println("¿ªÊ¼¼ì²âÅÅÁĞ2......");
+		//æ ¹æ®ç¬¦åˆè¦æ±‚çš„è§„åˆ™ç­›é€‰æ’åˆ—
+		System.out.println("å¼€å§‹æ£€æµ‹æ’åˆ—2......");
 		List<OutData> outList=chooseResult2(lineList,finalSet);
 		lineList=null;
-		System.out.println("Âú×ãÅÅÁĞÊı¾İÌõÊı£º"+outList.size());
+		System.out.println("æ»¡è¶³æ’åˆ—æ•°æ®æ¡æ•°ï¼š"+outList.size());
 
-		//½«½á¹ûÊı¾İĞ´»ØÎÄ¼ş
-		System.out.println("ÕıÔÚ½«Êı¾İĞ´»ØÎÄ¼ş......");
+		//å°†ç»“æœæ•°æ®å†™å›æ–‡ä»¶
+		System.out.println("æ­£åœ¨å°†æ•°æ®å†™å›æ–‡ä»¶......");
 		writeResult(outList,config.getDataDeal_aim());
 	}
 	
@@ -92,12 +92,12 @@ public class dataDeal {
 		Queue<Set<String>> queue=new LinkedList<Set<String>>(set);
 		return queue;
 	}
-	//µÚÈı²½£ºµÚÒ»´ÎÊı¾İ´¦Àí£¬µÃµ½³õ²½µÄnÎ»Êı×ÖÅÅÁĞ
+	//ç¬¬ä¸‰æ­¥ï¼šç¬¬ä¸€æ¬¡æ•°æ®å¤„ç†ï¼Œå¾—åˆ°åˆæ­¥çš„nä½æ•°å­—æ’åˆ—
 	private static Queue<Set<String>> getFirstDealResult(Record[] originalList,int n) throws Exception{
 		Set<Set<String>> finalSet=new HashSet<Set<String>>();
 		Set<Set<String>> leftSet=new HashSet<Set<String>>();
 		int listLength=originalList.length;
-		//µÚÒ»ÂÖÌí¼Ó
+		//ç¬¬ä¸€è½®æ·»åŠ 
 		for(int i=0;i<listLength;i++) {
 			for(int j=i+1;j<listLength;j++) {
 				Set<String> firstSet=new HashSet<String>(originalList[i].getDataSet());
@@ -134,16 +134,16 @@ public class dataDeal {
 		return queue;
 	}
 
-	//µÚÎå²½£º¸ù¾İ¹æÔòÉ¸Ñ¡ÅÅÁĞ(ÁùÅÅÁĞ)
+	//ç¬¬äº”æ­¥ï¼šæ ¹æ®è§„åˆ™ç­›é€‰æ’åˆ—(å…­æ’åˆ—)
 		private static List<OutData> chooseResult2(List<List<Record>> lineList, Queue<Set<String>> queue) {
 			List<OutData> resultList=new ArrayList<OutData>();
 			int count=0;
 			int total=queue.size();
 			while(!queue.isEmpty()) {
-				//¼ÆÊıÊä³ö
+				//è®¡æ•°è¾“å‡º
 				count++;
 				double temp=(int)(count*1.0/total*10000)*1.0/100;
-				if(count % 1000==0)		System.out.println("¼ì²âÅÅÁĞ£º"+temp+"%");
+				if(count % 1000==0)		System.out.println("æ£€æµ‹æ’åˆ—ï¼š"+temp+"%");
 
 				Set<String> single=queue.poll();
 				List<List<Record>> satisfyList=new ArrayList<List<Record>>();
@@ -154,11 +154,11 @@ public class dataDeal {
 				OutData out=conditionScreen(satisfyList,single,6,new int[] {3,4});
 				if(out!=null)		resultList.add(out);
 			}
-			System.out.println("¼ì²âÅÅÁĞ£º100%");
+			System.out.println("æ£€æµ‹æ’åˆ—ï¼š100%");
 			return resultList;
 		}
 	
-	//µÚÎå²½£º¸ù¾İ¹æÔòÉ¸Ñ¡ÅÅÁĞ
+	//ç¬¬äº”æ­¥ï¼šæ ¹æ®è§„åˆ™ç­›é€‰æ’åˆ—
 	private static Queue<Set<String>> chooseResult(List<List<Record>> lineList, Queue<Set<String>> queue,int minLength,int[] line) {
 		Queue<Set<String>> finalSet=new LinkedList<Set<String>>();
 		
@@ -166,10 +166,10 @@ public class dataDeal {
 		int count=0;
 		int total=queue.size();
 		while(!queue.isEmpty()) {
-			//¼ÆÊıÊä³ö
+			//è®¡æ•°è¾“å‡º
 			count++;
 			double temp=(int)(count*1.0/total*10000)*1.0/100;
-			if(count % 1000==0)		System.out.println("¼ì²âÅÅÁĞ£º"+temp+"%");
+			if(count % 1000==0)		System.out.println("æ£€æµ‹æ’åˆ—ï¼š"+temp+"%");
 
 			Set<String> single=queue.poll();
 			List<List<Record>> satisfyList=new ArrayList<List<Record>>();
@@ -181,25 +181,25 @@ public class dataDeal {
 			if(out!=null)		resultList.add(out);
 			if(out!=null)		finalSet.add(single);
 		}
-		System.out.println("¼ì²âÅÅÁĞ£º100%");
+		System.out.println("æ£€æµ‹æ’åˆ—ï¼š100%");
 		return finalSet;
 	}
 
 
-	//µÚÆß²½£º½«½á¹ûÊı¾İĞ´»ØÎÄ¼ş
+	//ç¬¬ä¸ƒæ­¥ï¼šå°†ç»“æœæ•°æ®å†™å›æ–‡ä»¶
 	private static void writeResult(List<OutData> outList, File f) throws Exception{
 		WritableWorkbook workbook=Workbook.createWorkbook(f);
 		WritableSheet sheet=workbook.createSheet("result", 0);
 
-		int firstSpilt=2;//µÚÒ»ÁĞ¿Õ¸ñ
-		int secondSpilt=2;//µÚ¶şÁĞ¿Õ¸ñ
+		int firstSpilt=2;//ç¬¬ä¸€åˆ—ç©ºæ ¼
+		int secondSpilt=2;//ç¬¬äºŒåˆ—ç©ºæ ¼
 		for(int i=0;i<outList.size();i++) {
 			OutData out=outList.get(i);
-			//Ğ´»Ø×îÖÕÅÅÁĞ
+			//å†™å›æœ€ç»ˆæ’åˆ—
 			String arrange=setToString(out.getOutSet());
 			sheet.addCell(new Label(0,i,arrange));
 
-			//Ğ´»ØÔ­Ê¼Êı¾İ
+			//å†™å›åŸå§‹æ•°æ®
 			List<Record> list=out.getOutList();
 			for(int j=0;j<list.size();j++) {
 				secondSpilt=Math.max(secondSpilt, list.size()+firstSpilt+1);
@@ -208,7 +208,7 @@ public class dataDeal {
 		}
 		for(int i=0;i<outList.size();i++) {
 			OutData out=outList.get(i);
-			//Ğ´»ØÒªÇóÖĞµÄÌõ¼şÊı¾İ
+			//å†™å›è¦æ±‚ä¸­çš„æ¡ä»¶æ•°æ®
 			List<List<Record>> satisfyList=out.getSatisfyList();
 			int point=secondSpilt+1;
 			for(int j=0;j<satisfyList.size();j++) {
@@ -225,11 +225,11 @@ public class dataDeal {
 			sheet.setColumnView(i, 24);
 		}
 		sheet.setColumnView(firstSpilt-1, 8);
-		//Ğ´Èë²¢¹Ø±Õ
+		//å†™å…¥å¹¶å…³é—­
 		workbook.write();
 		workbook.close();
 	}
-	//°ÑsetÖĞµÄÅÅĞòÕûÀí³ÉÊä³ö¸ñÊ½
+	//æŠŠsetä¸­çš„æ’åºæ•´ç†æˆè¾“å‡ºæ ¼å¼
 	private static String setToString(Set<String> set) {
 		StringBuilder sb=new StringBuilder();
 		sb.append("(");
@@ -243,11 +243,11 @@ public class dataDeal {
 		return sb.toString();
 	}
 	
-	//Ìõ¼şÉ¸Ñ¡
+	//æ¡ä»¶ç­›é€‰
 	private static OutData conditionScreen(List<List<Record>> satisfyList,Set<String> set, int minLength,int[] line) {
-		if(satisfyList.size()<2)	return null;//ÖÁÉÙÌõ¼ş×ÜÊıÒªÂú×ã
+		if(satisfyList.size()<2)	return null;//è‡³å°‘æ¡ä»¶æ€»æ•°è¦æ»¡è¶³
 		List<Record> list=new LinkedList<Record>();
-		//µÚÒ»´Î¼ì²â£¬ÌŞ³ı²»Âú×ãÈı¸ö»òÕßËÄ¸öµÄĞĞ£¬Í³¼Ærecord×Ü¸öÊı
+		//ç¬¬ä¸€æ¬¡æ£€æµ‹ï¼Œå‰”é™¤ä¸æ»¡è¶³ä¸‰ä¸ªæˆ–è€…å››ä¸ªçš„è¡Œï¼Œç»Ÿè®¡recordæ€»ä¸ªæ•°
 		for(int i=0;i<satisfyList.size();i++) {
 			List<Record> single=satisfyList.get(i);
 			for(Record record : single) {
@@ -260,7 +260,7 @@ public class dataDeal {
 
 		List<Record>  rankedList=sortRecord(list);
 		List<Record>  tempList=new LinkedList<Record>(rankedList.subList(0, minLength));
-		//µÚ¶ş´Î¼ì²â£ºÁôÏÂÈ«²¿ÅÅÇ°nµÄ
+		//ç¬¬äºŒæ¬¡æ£€æµ‹ï¼šç•™ä¸‹å…¨éƒ¨æ’å‰nçš„
 		for(int i=0;i<satisfyList.size();i++) {
 			List<Record> single=satisfyList.get(i);
 			for(int j=0;j<single.size();j++) {
@@ -270,7 +270,7 @@ public class dataDeal {
 				}
 			}
 		}
-		//µÚÈı´Î¼ì²â£º¼ì²éÊÇ·ñÕ¼Âú
+		//ç¬¬ä¸‰æ¬¡æ£€æµ‹ï¼šæ£€æŸ¥æ˜¯å¦å æ»¡
 		List<Record>  testList=new LinkedList<Record>();
 		for(int i=0;i<satisfyList.size();i++) {
 			List<Record> single=satisfyList.get(i);
@@ -279,15 +279,15 @@ public class dataDeal {
 			}
 		}
 
-		if(testList.size()!=minLength)	return null;//Ã»ÓĞÕ¼Âú
+		if(testList.size()!=minLength)	return null;//æ²¡æœ‰å æ»¡
 		int number[]= {0,0};
 		for(List<Record> single:satisfyList) {
 			if(single.size()==line[0])	number[0]++;
 			if(single.size()==line[1])	number[1]++;
 		}
-		if(number[0]==0 || number[1]==0)	return null;//Ã»ÓĞÂú×ãµÚÒ»µÚ¶ş¸öÌõ¼ş
+		if(number[0]==0 || number[1]==0)	return null;//æ²¡æœ‰æ»¡è¶³ç¬¬ä¸€ç¬¬äºŒä¸ªæ¡ä»¶
 
-		//satisfyListÅÅĞò
+		//satisfyListæ’åº
 		List<List<Record>> rankTempList=new LinkedList<List<Record>>();
 		for(List<Record> l : satisfyList)		if(l.size()==line[0])	rankTempList.add(l);
 		for(List<Record> l : satisfyList)		if(l.size()==line[1])	rankTempList.add(l);
@@ -301,14 +301,14 @@ public class dataDeal {
 	}
 	
 	
-	//¼ì²âÒ»¸ö¼¯ºÏÖĞÊÇ·ñ°üº¬
+	//æ£€æµ‹ä¸€ä¸ªé›†åˆä¸­æ˜¯å¦åŒ…å«
 	private static boolean containsRecord(List<Record> list,Record r) {
 		for(Record record : list) {
 			if(record.getDataSet().equals(r.getDataSet()))	return true;
 		}
 		return false;
 	}
-	//¶ÔÒ»¸ö¼¯ºÏÅÅĞò
+	//å¯¹ä¸€ä¸ªé›†åˆæ’åº
 	private static List<Record> sortRecord(List<Record> list) {
 		for(int i=0;i<list.size();i++) {
 			for(int j=1;j<list.size()-i;j++) {
@@ -321,7 +321,7 @@ public class dataDeal {
 		}
 		return list;
 	}
-	//¸ø¶¨Ò»¸ö´óÅÅÁĞºÍĞ¡ÅÅÁĞµÄÁ´±í£¬·µ»ØÒ»¸öÁ´±í£¬ÀïÃæµÄÔªËØ¶¼ÊÇ´óÅÅÁĞµÄ×Ó¼¯
+	//ç»™å®šä¸€ä¸ªå¤§æ’åˆ—å’Œå°æ’åˆ—çš„é“¾è¡¨ï¼Œè¿”å›ä¸€ä¸ªé“¾è¡¨ï¼Œé‡Œé¢çš„å…ƒç´ éƒ½æ˜¯å¤§æ’åˆ—çš„å­é›†
 	private static List<Record> sonRecord(Set<String> father,List<Record> son){
 		List<Record> sonList=new LinkedList<Record>();
 		for(Record record : son) {

@@ -17,7 +17,7 @@ public class Draw {
 	XYSeries errorSeries=new XYSeries("error");
 	List<XYSeries[]> seriesList=new LinkedList<XYSeries[]>();
 	public Draw() {
-		//Í¼±í³õÊ¼»¯
+		//å›¾è¡¨åˆå§‹åŒ–
 		for(int i=0;i<resultThreshold.length;i++) {
 			XYSeries series[]=new XYSeries[2];
 			series[0]=new XYSeries("00");
@@ -25,37 +25,37 @@ public class Draw {
 			seriesList.add(series);
 		}
 	}
-	//Í³¼ÆÎó²îÊı¾İ
+	//ç»Ÿè®¡è¯¯å·®æ•°æ®
 	public void addErrorData(int x,List<double[]> errorList) {
 		double errorSum=getErrorSum(errorList);
 		errorSeries.add(x, errorSum);
 	}
-	//Í³¼Æ²âÊÔ½á¹ûÊı¾İ
+	//ç»Ÿè®¡æµ‹è¯•ç»“æœæ•°æ®
 	public void addTestData(int x,double[] testResult) {
 		for(int i=0;i<seriesList.size();i++) {
 			seriesList.get(i)[0].add(x, testResult[i]);
 			seriesList.get(i)[1].add(x, resultThreshold[i]);
 		}
 	}
-	//»æÖÆÎó²î±í
+	//ç»˜åˆ¶è¯¯å·®è¡¨
 	public void drawErrorChart() {
 		XYSeries[] seriesArr= {errorSeries};
 		drawData(seriesArr,"error");
 	}
-	//»æÖÆ²âÊÔ½á¹û±í
+	//ç»˜åˆ¶æµ‹è¯•ç»“æœè¡¨
 	public void drawTestChart() {
 		for(int i=0;i<seriesList.size();i++) {
 			XYSeries[] seriesArr= seriesList.get(i);
 			drawData(seriesArr,"result"+i);
 		}
 	}
-	//»æÖÆÁ½¸ö±í
+	//ç»˜åˆ¶ä¸¤ä¸ªè¡¨
 	public void drawAllChart() {
 		drawErrorChart();
 		drawTestChart();
 	}
 	
-	//¸ù¾İ´«½øÀ´µÄxy×ø±êÊı¾İ»­Í¼
+	//æ ¹æ®ä¼ è¿›æ¥çš„xyåæ ‡æ•°æ®ç”»å›¾
 	public void drawData(XYSeries series[],String name) {
 		XYSeriesCollection dataset = new XYSeriesCollection();
 		for(int i=0;i<series.length;i++)	dataset.addSeries(series[i]);

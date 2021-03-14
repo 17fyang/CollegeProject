@@ -27,21 +27,21 @@ public class Main {
 	private static String SubtToString(Subt subt) {
 		StringBuilder sb=new StringBuilder();
 		
-		sb.append("±‡∫≈£∫"+subt.getSid()+"\r\n");
+		sb.append("ÁºñÂè∑Ôºö"+subt.getSid()+"\r\n");
 		String s1=TimeToString(subt.getBegin());
 		String s2=TimeToString(subt.getEnd());
-		sb.append(" ±º‰£∫"+s1+" to "+s2+"\r\n");
+		sb.append("Êó∂Èó¥Ôºö"+s1+" to "+s2+"\r\n");
 		String temp[]=subt.getContent().split("\r\n");
 		String content="";
 		for(int i=0;i<temp.length;i++) content=content.concat(temp[i]);
-		sb.append("ƒ⁄»›£∫"+content+"\r\n");
+		sb.append("ÂÜÖÂÆπÔºö"+content+"\r\n");
 		return sb.toString();
 	}
 	private static String TimeToString(Time2 time) {
 		StringBuilder sb=new StringBuilder();
-		sb.append(time.getHour()+" ±");
-		sb.append(time.getMinute()+"∑÷");
-		sb.append(time.getSecond()+"√Î");
+		sb.append(time.getHour()+"Êó∂");
+		sb.append(time.getMinute()+"ÂàÜ");
+		sb.append(time.getSecond()+"Áßí");
 		sb.append(time.getMsecond()+"`");
 		return sb.toString();
 		

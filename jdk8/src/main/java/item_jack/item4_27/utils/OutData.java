@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.Set;
 
 public class OutData {
-	private Set<String> outSet;//ÅÅÁĞÖĞµÄÊı¾İ
-	private List<Record> outList;//Ô´ÎÄ¼şÖĞµÄÊı¾İ
+	private Set<String> outSet;//æ’åˆ—ä¸­çš„æ•°æ®
+	private List<Record> outList;//æºæ–‡ä»¶ä¸­çš„æ•°æ®
 	private List<List<Record>> satisfyList;
 	public Set<String> getOutSet() {
 		return outSet;

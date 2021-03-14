@@ -8,7 +8,7 @@ import java.util.List;
  * Description:
  * date: 2020/7/11 10:34
  *
- * @author :乌鸦坐飞机亠
+ * @author :涔岄甫鍧愰鏈轰籂
  * @version:
  */
 public class ListClone {
@@ -16,7 +16,7 @@ public class ListClone {
         new ListClone().classClone();
     }
 
-    //常量克隆
+    //甯搁噺鍏嬮殕
     public void finalClone(){
         ArrayList<Integer> list=new ArrayList<>();
         list.add(1);
@@ -26,7 +26,7 @@ public class ListClone {
         System.out.println(list.size());
         System.out.println(list2.size());
     }
-    //变量克隆
+    //鍙橀噺鍏嬮殕
     public void classClone(){
         ArrayList<StudentClone> list=new ArrayList<>();
         list.add(new StudentClone(10));

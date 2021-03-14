@@ -5,9 +5,9 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 
 /**
- * @author: 乌鸦坐飞机亠
+ * @author: 涔岄甫鍧愰鏈轰籂
  * @date: 2021/1/7 18:09
- * @Description: udp客户端的demo
+ * @Description: udp瀹㈡埛绔殑demo
  */
 public class UdpClientDemo {
     public static final int SERVER_PORT = UdpServerDemo.PORT;

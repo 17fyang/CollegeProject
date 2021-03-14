@@ -1,13 +1,13 @@
 package data_yy;
 
 public class Main {
-    private final static String DataUrl = "C:\\Users\\Administrator\\Desktop\\Êı¾İ·ÖÎö1216\\2017Äê±¨ÌÖÂÛÓë·ÖÎö";
+    private final static String DataUrl = "C:\\Users\\Administrator\\Desktop\\æ•°æ®åˆ†æ1216\\2017å¹´æŠ¥è®¨è®ºä¸åˆ†æ";
     private final static String ResultUrl = "File/resu5lt.txt";
 
     public static void main(String[] args) throws Exception {
         Read r = new Read();
         Draw d = new Draw();
-        String[] keywords = {"ÎÄ¼ş", "Ä¿Â¼"};
+        String[] keywords = {"æ–‡ä»¶", "ç›®å½•"};
         int data[][] = r.readAllData(DataUrl, keywords);
         double result = r.readOneResult(ResultUrl);
 //		data=new int[2];

@@ -8,15 +8,15 @@ import java.net.Socket;
  * Description:
  * date: 2020/6/14 1:00
  *
- * @author :乌鸦坐飞机亠
+ * @author :涔岄甫鍧愰鏈轰籂
  * @version:
  */
 public class baiduClient {
     public static void main(String[] args) throws IOException {
-        //建立连接
+        //寤虹珛杩炴帴
         Socket socket = new Socket("www.baidu.com", 80);
-        //获取地址
-        System.out.println("百度ip地址为："+socket.getInetAddress().getHostAddress());
-        System.out.println("2017101081 杨帆");
+        //鑾峰彇鍦板潃
+        System.out.println("鐧惧害ip鍦板潃涓猴細"+socket.getInetAddress().getHostAddress());
+        System.out.println("2017101081 鏉ㄥ竼");
     }
 }

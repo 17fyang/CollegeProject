@@ -18,8 +18,8 @@ import jxl.Workbook;
 
 public class Config {
 	private static Config config=null;
-	private List<Record> sourceList;//dataDealÊı¾İÔ´
-	private File dataDeal_aim;//dataDealÉú³ÉµÄ½á¹ûÎÄ¼ş
+	private List<Record> sourceList;//dataDealæ•°æ®æº
+	private File dataDeal_aim;//dataDealç”Ÿæˆçš„ç»“æœæ–‡ä»¶
 	public static String fileUrl="config/item_jack/item2_21/config.properties";
 	private Config() throws Exception {
 		File f=new File(fileUrl);
@@ -44,8 +44,8 @@ public class Config {
 	}
 
 
-	//½«Êı¾İÔ´ÎÄ¼şÖĞµÄÊı¾İÈ¡³ö£¬È¥ÖØ£¬Éú³ÉÒ»¸ölist¶ÔÏó
-	//number:Ã»¸ö±í¸ñµÄÕæÊµÊı¾İ¸öÊı
+	//å°†æ•°æ®æºæ–‡ä»¶ä¸­çš„æ•°æ®å–å‡ºï¼Œå»é‡ï¼Œç”Ÿæˆä¸€ä¸ªlistå¯¹è±¡
+	//number:æ²¡ä¸ªè¡¨æ ¼çš„çœŸå®æ•°æ®ä¸ªæ•°
 	public static List<Record> getOriginalData(File dataDeal_source,int number) throws Exception{
 		Workbook workbook=Workbook.getWorkbook(dataDeal_source);
 		Sheet sheet=workbook.getSheet(0);

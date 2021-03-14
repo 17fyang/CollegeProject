@@ -5,9 +5,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Main {
-	private final static String DataUrl="C:\\Users\\Administrator\\Desktop\\Êı¾İ·ÖÎö1216\\2017Äê±¨ÌÖÂÛÓë·ÖÎö";
-	private final static String KeywordUrl="C:\\Users\\Administrator\\Desktop\\Êı¾İ·ÖÎö1216\\key.txt";
-	private final static String resultUrl="C:\\Users\\Administrator\\Desktop\\Êı¾İ·ÖÎö1216\\¹ÉÆ±.txt";
+	private final static String DataUrl="C:\\Users\\Administrator\\Desktop\\æ•°æ®åˆ†æ1216\\2017å¹´æŠ¥è®¨è®ºä¸åˆ†æ";
+	private final static String KeywordUrl="C:\\Users\\Administrator\\Desktop\\æ•°æ®åˆ†æ1216\\key.txt";
+	private final static String resultUrl="C:\\Users\\Administrator\\Desktop\\æ•°æ®åˆ†æ1216\\è‚¡ç¥¨.txt";
 	public static void main(String[] args){
 		Read r=new Read();
 		String[][] keywords=null;

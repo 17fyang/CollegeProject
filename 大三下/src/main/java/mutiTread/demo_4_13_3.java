@@ -39,7 +39,7 @@ class CountThread extends Thread {
                 }
                 m.notifyAll();
                 m.value++;
-                System.out.println(name + "�����ˣ�" + m.value);
+                System.out.println(name + "锟斤拷锟斤拷锟剿ｏ拷" + m.value);
             }
         }
 

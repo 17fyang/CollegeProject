@@ -25,7 +25,7 @@ public class TypeChart {
 // 		dealMatches_xy(m,d);
 	}
 	
-	//¿ØÇòÂÊ
+	//æ§çƒç‡
 	private void ballControlling(Data[] d) {
 		Data[][] splitData=this.splitData(d);
 		String team="Huskies";
@@ -36,18 +36,18 @@ public class TypeChart {
 			double totalTimes=0;
 			double max=0;
 			for(int j=1;j<splitData[i].length;j++) {
-				if(splitData[i][j].getEventTime()<lastTime) {//ÉÏÏÂ°ë³¡
+				if(splitData[i][j].getEventTime()<lastTime) {//ä¸Šä¸‹åŠåœº
 					lastTime=splitData[i][j].getEventTime();
 					lastTeam=team;
 					max=splitData[i][j-1].getEventTime();
 					continue;
 				}
-				if(splitData[i][j].getTeamID().equals(lastTeam))	continue;//ÇòÈ¨Ã»±ä
+				if(splitData[i][j].getTeamID().equals(lastTeam))	continue;//çƒæƒæ²¡å˜
 				
-				if(!splitData[i][j].getTeamID().equals(team)) {//ÇòÈ¨¸øÁË¶Ô·½¶Ó
+				if(!splitData[i][j].getTeamID().equals(team)) {//çƒæƒç»™äº†å¯¹æ–¹é˜Ÿ
 					totalTimes+=splitData[i][j].getEventTime()-lastTime;
 					lastTime=splitData[i][j].getEventTime();
-				}else {//ÇòÈ¨¸øÁËÎÒÃÇ¶Ó
+				}else {//çƒæƒç»™äº†æˆ‘ä»¬é˜Ÿ
 					lastTime=splitData[i][j].getEventTime();
 				}
 				lastTeam=splitData[i][j].getTeamID();
@@ -60,7 +60,7 @@ public class TypeChart {
 		
 	}
 	
-	//Çø·Ö³öÃ¿Ò»³¡µÄdata
+	//åŒºåˆ†å‡ºæ¯ä¸€åœºçš„data
 	private Data[][] splitData(Data[] d){
 		Data result[][]=new Data[38][];
 		int match=1;
@@ -88,11 +88,11 @@ public class TypeChart {
 	}
 	
 	
-	//´«Çò´ÎÊı»òsmartpass´ÎÊı
+	//ä¼ çƒæ¬¡æ•°æˆ–smartpassæ¬¡æ•°
 	private void passTimes(Data[] d) {
 		Map<Integer,Integer> map=new HashMap<Integer,Integer>();
 		for(int i=0;i<d.length;i++) {
-			if(!d[i].getEventSubType().equals("Smart pass"))	continue;//¹Ø¼ü´«Çò
+			if(!d[i].getEventSubType().equals("Smart pass"))	continue;//å…³é”®ä¼ çƒ
 			if(!d[i].getTeamID().equals("Huskies"))	continue;
 			int matchId=d[i].getMatchID();
 			if(map.get(matchId)==null)	map.put(matchId	,1);
@@ -107,7 +107,7 @@ public class TypeChart {
 		}
 	}
 	
-	//Éú³ÉÏßÍ¼
+	//ç”Ÿæˆçº¿å›¾
 	private void dealMatches_line(Match[] m,Data[] d) {
 		for(int i=0;i<1;i++) {
 			Draw draw=new Draw();
@@ -124,7 +124,7 @@ public class TypeChart {
 			draw.drawData(series, "test");
 		}
 	}
-	//×ø±ê´¦Àí£¬Éú³ÉÏß×ø±ê
+	//åæ ‡å¤„ç†ï¼Œç”Ÿæˆçº¿åæ ‡
 		private List<XYSeries> CoordinateProcessing_line(Match match,List<Data[]> list) {
 			List<XYSeries> SeriesList=new ArrayList<XYSeries>(list.size());
 			for(Data[] data:list) {
@@ -133,7 +133,7 @@ public class TypeChart {
 			return SeriesList;
 		}
 	
-	//Éú³ÉµãÍ¼
+	//ç”Ÿæˆç‚¹å›¾
 	private void dealMatches_xy(Match[] m,Data[] d) {
 		for(int i=35;i<36;i++) {
 			DealResult result=this.readData(d, m[i].getMatchID());
@@ -142,7 +142,7 @@ public class TypeChart {
 			CoordinateProcessing(m[i],result.getManyCooperation());
 		}
 	}
-	//×ø±ê´¦Àí£¬Éú³É×ø±ê
+	//åæ ‡å¤„ç†ï¼Œç”Ÿæˆåæ ‡
 	private void CoordinateProcessing(Match match,List<Data[]> list) {
 		for(Data[] data:list) {
 			for(int i=0;i<1;i++) {
@@ -163,7 +163,7 @@ public class TypeChart {
 	private void dealMatches(Match[] m,Data[] d) {
 		for(int i=0;i<m.length;i++) {
 			DealResult result=this.readData(d, m[i].getMatchID());
-//			System.out.print("µÚ"+m[i].getMatchID()+"³¡±ÈÈü£º");
+//			System.out.print("ç¬¬"+m[i].getMatchID()+"åœºæ¯”èµ›ï¼š");
 			System.out.print(result.getTwoCooperation().size()+"    ");
 			System.out.print(result.getThreeCooperation().size()+"    ");
 			System.out.print(result.getManyCooperation().size()+"    ");

@@ -18,15 +18,15 @@ public class DP implements IData{
 		if(name.equals(HotelConstant.EMPTY)) {
 			if(roomNo(roomNo)==0) {
 				rooms[(roomNo/100)-1][(roomNo%100)-1]=name;
-				return roomNo+"ÍË·¿³É¹¦£¡";
+				return roomNo+"é€€æˆ¿æˆåŠŸï¼";
 			}else
-				return "¸Ã·¿¼äÃ»ÓĞ¿ÍÈËÈë×¡£¬ÍË·¿Ê§°Ü£¡";
+				return "è¯¥æˆ¿é—´æ²¡æœ‰å®¢äººå…¥ä½ï¼Œé€€æˆ¿å¤±è´¥ï¼";
 		}else {
 			if(roomNo(roomNo)==0)
-				return "¸Ã·¿¼äÒÑ¾­ÓĞ¿ÍÈËÈë×¡£¡";
+				return "è¯¥æˆ¿é—´å·²ç»æœ‰å®¢äººå…¥ä½ï¼";
 			else {
 				rooms[(roomNo/100)-1][(roomNo%100)-1]=name;
-				return name+"³É¹¦Èë×¡£¡"+roomNo+"·¿¼ä£¡";
+				return name+"æˆåŠŸå…¥ä½ï¼"+roomNo+"æˆ¿é—´ï¼";
 			}
 		}
 	}

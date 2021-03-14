@@ -2,25 +2,25 @@ package mcm2020Test.geneticAlgorithm;
 
 
 /*
- * ´¦ÀíÈ¾É«Ìå±àÂëÇóÊÊÓ¦¶ÈµÈ²Ù×÷µÄÀà
+ * å¤„ç†æŸ“è‰²ä½“ç¼–ç æ±‚é€‚åº”åº¦ç­‰æ“ä½œçš„ç±»
  */
 public class CLS {
-	private int trainTimes=10000;//ÑµÁ·Êı¾İ¼¯¸öÊı
+	private int trainTimes=10000;//è®­ç»ƒæ•°æ®é›†ä¸ªæ•°
 	public static final double radius=1.7;//service radius
 	private double intensiveProportion=0.8;
 	private double fitProportion=0.1;
 
-	//µ¥¸öÈ¾É«Ìå½âÂë
+	//å•ä¸ªæŸ“è‰²ä½“è§£ç 
 	public double[] decode(String single){
 		Long a=Long.parseLong(single.substring(0,ModelConfig.geneNumber/2),2);
 		Long b=Long.parseLong(single.substring(ModelConfig.geneNumber/2,ModelConfig.geneNumber),2);
 		double[] x = {-1,-1};
-		x[0] = a * (4.3 - 0) / (Math.pow(2, ModelConfig.geneNumber/2) - 1);	//xµÄ»ùÒò
-		x[1] = b * (5.8 - 0) / (Math.pow(2, ModelConfig.geneNumber/2) - 1);	//yµÄ»ùÒò
+		x[0] = a * (4.3 - 0) / (Math.pow(2, ModelConfig.geneNumber/2) - 1);	//xçš„åŸºå› 
+		x[1] = b * (5.8 - 0) / (Math.pow(2, ModelConfig.geneNumber/2) - 1);	//yçš„åŸºå› 
 		return x;
 	}
 
-	//³õÊ¼»¯Ò»ÌõÈ¾É«Ìå
+	//åˆå§‹åŒ–ä¸€æ¡æŸ“è‰²ä½“
 	public String initSingle(){
 		String res = "";
 		for(int i = 0; i < ModelConfig.geneNumber; i++){
@@ -33,7 +33,7 @@ public class CLS {
 		return res;
 	}
 
-	//³õÊ¼»¯Ò»×éÈ¾É«Ìå
+	//åˆå§‹åŒ–ä¸€ç»„æŸ“è‰²ä½“
 	public String[] initAll(int groupsize){
 		String[] iAll = new String[groupsize];
 		for(int i = 0; i < groupsize; i++){
@@ -42,15 +42,15 @@ public class CLS {
 		return iAll;
 	}
 
-	//ÅúÁ¿¼ÆËãÊı×éµÄÊÊÓ¦¶È
+	//æ‰¹é‡è®¡ç®—æ•°ç»„çš„é€‚åº”åº¦
 	public TestResult fitAll(String str[]){
 		double coord[][]=new double[str.length][];
 		for(int i=0;i<coord.length;i++) {
 			coord[i]=this.decode(str[i]);
 		}
 
-		int fitTimes[]=new int[coord.length];//²âÊÔÊı¾İÔÚÄ³È¾É«Ìå·¶Î§ÄÚ´ÎÊı
-		int coverTimes=0;//²âÊÔÊı¾İ×¼È·´ÎÊı
+		int fitTimes[]=new int[coord.length];//æµ‹è¯•æ•°æ®åœ¨æŸæŸ“è‰²ä½“èŒƒå›´å†…æ¬¡æ•°
+		int coverTimes=0;//æµ‹è¯•æ•°æ®å‡†ç¡®æ¬¡æ•°
 		for(int i=0;i<trainTimes;i++) {
 			double newCls[]=this.decode(this.initSingle());
 			boolean isCover=false;
@@ -78,7 +78,7 @@ public class CLS {
 		}
 		double coverage=coverTimes*1.0/trainTimes;
 		double fitness[]=new double[coord.length];
-		//ÊÊÓ¦¶È¼ÆËãÓ°ÏìÒòËØÓĞÃÜ¼¯³Ì¶ÈºÍÃüÖĞÂÊ
+		//é€‚åº”åº¦è®¡ç®—å½±å“å› ç´ æœ‰å¯†é›†ç¨‹åº¦å’Œå‘½ä¸­ç‡
 		for(int i=0;i<fitness.length;i++) {
 			double fitProperty=fitTimes[i]*1.0/trainTimes;
 			double intensiveProperty=intensiveNumber[i]*1.0/coord.length*-1;
@@ -89,22 +89,22 @@ public class CLS {
 
 		return new TestResult(coverage,fitness,rank);
 	}
-	//·µ»ØÊÇ·ñÔÚÈ¦ÄÚ
+	//è¿”å›æ˜¯å¦åœ¨åœˆå†…
 	private boolean inDistance(double distance) {
 		return distance*distance<radius*radius;
 	}
-	//·µ»Ø¾àÀëµÄÆ½·½
+	//è¿”å›è·ç¦»çš„å¹³æ–¹
 	private double distance(double[] x,double[] y) {
 		return (x[0]-y[0])*(x[0]-y[0])+(x[1]-y[1])*(x[1]-y[1]);
 	}
 
-	//ÊÊÓ¦¶È×îÖµ£¨·µ»ØĞòºÅ£©
+	//é€‚åº”åº¦æœ€å€¼ï¼ˆè¿”å›åºå·ï¼‰
 	public int mFitNum(double fit[]){
 		double m = fit[0]; 
 		int n = 0;
 		for(int i = 0;i < fit.length; i++){
 			if(fit[i] > m){
-				//×î´óÖµ
+				//æœ€å¤§å€¼
 				m = fit[i];
 				n = i;
 			}
@@ -112,23 +112,23 @@ public class CLS {
 		return n;
 	}
 
-	//ÊÊÓ¦¶È×îÖµ£¨·µ»ØÊÊÓ¦¶È£©
+	//é€‚åº”åº¦æœ€å€¼ï¼ˆè¿”å›é€‚åº”åº¦ï¼‰
 	public double mFitVal(double fit[]){
 		double m = fit[0]; 
 		for(int i = 0;i < fit.length; i++){
 			if(fit[i] > m){
-				//×î´óÖµ
+				//æœ€å¤§å€¼
 				m = fit[i];
 			}
 		}
 		return m;
 	}
 
-	//¸øÊÊÓ¦¶ÈÅÅĞò
+	//ç»™é€‚åº”åº¦æ’åº
 	public  int[] rank(double[] fit) {
 		int result[]=new int[fit.length];
 		double temp[]=new double[fit.length];
-		for(int i=0;i<fit.length;i++)	temp[i]=fit[i];//¸´ÖÆÒ»·İÊÊÓ¦¶È;
+		for(int i=0;i<fit.length;i++)	temp[i]=fit[i];//å¤åˆ¶ä¸€ä»½é€‚åº”åº¦;
 		for(int i=0;i<fit.length;i++) {
 			double max=temp[0];
 			int locate=0;

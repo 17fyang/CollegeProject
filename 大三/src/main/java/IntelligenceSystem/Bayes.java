@@ -6,7 +6,7 @@ import java.util.List;
 public class Bayes {
 
 	public static void main(String[] args) {
-		//½¨Á¢ÑµÁ·¼¯
+		//å»ºç«‹è®­ç»ƒé›†
 		List<PersonInfo> trainList=new LinkedList<PersonInfo>();
 		trainList.add(new PersonInfo(0,6,180,12));
 		trainList.add(new PersonInfo(0,5.92,190,11));
@@ -17,20 +17,20 @@ public class Bayes {
 		trainList.add(new PersonInfo(1,5.42,130,7));
 		trainList.add(new PersonInfo(1,5.75,150,9));
 
-		//ÑµÁ·Ä£ĞÍ
+		//è®­ç»ƒæ¨¡å‹
 		PersonModel maleModel=getModel(trainList,0);
 		PersonModel femaleModel=getModel(trainList,1);
 
 		
-		//¼ÆËã½á¹û
+		//è®¡ç®—ç»“æœ
 		PersonInfo person=new PersonInfo(-1,6,130,8);
 		double maleResult=getResult(maleModel,person);
 		double femaleResult=getResult(femaleModel,person);
-		System.out.println("Å®ĞÔ¸ÅÂÊ£º"+femaleResult*10000);
-		System.out.println("ÄĞĞÔ¸ÅÂÊ£º"+maleResult*10000);
+		System.out.println("å¥³æ€§æ¦‚ç‡ï¼š"+femaleResult*10000);
+		System.out.println("ç”·æ€§æ¦‚ç‡ï¼š"+maleResult*10000);
 	}
 
-	//ÓÃÕıÌ¬·Ö²¼¼ÆËã³öÄ£ĞÍÔ¤²â½á¹û
+	//ç”¨æ­£æ€åˆ†å¸ƒè®¡ç®—å‡ºæ¨¡å‹é¢„æµ‹ç»“æœ
 	private static double getResult(PersonModel model, PersonInfo person) {
 		double footResult=countProbability(model.foot.average,model.foot.variance,person.foot);
 		double heightResult=countProbability(model.height.average,model.height.variance,person.height);
@@ -44,21 +44,21 @@ public class Bayes {
 		double weightSum=0;
 		double footSum=0;
 		int sexLength=0;
-		for(int i=0;i<m;i++){//ÇóºÍ
+		for(int i=0;i<m;i++){//æ±‚å’Œ
 			if(trainList.get(i).sex!=sex)	continue;
 			heightSum+=trainList.get(i).height;
 			weightSum+=trainList.get(i).weight;
 			footSum+=trainList.get(i).foot;
 			sexLength++;
 		}
-		double heightAve=heightSum/sexLength;//ÇóÆ½¾ùÖµ
-		double weightAve=weightSum/sexLength;//ÇóÆ½¾ùÖµ
-		double footAve=footSum/sexLength;//ÇóÆ½¾ùÖµ
+		double heightAve=heightSum/sexLength;//æ±‚å¹³å‡å€¼
+		double weightAve=weightSum/sexLength;//æ±‚å¹³å‡å€¼
+		double footAve=footSum/sexLength;//æ±‚å¹³å‡å€¼
 
 		double heightVar=0;
 		double weightVar=0;
 		double footVar=0;
-		for(int i=0;i<m;i++){//Çó·½²î
+		for(int i=0;i<m;i++){//æ±‚æ–¹å·®
 			if(trainList.get(i).sex!=sex)	continue;
 			heightVar+=(trainList.get(i).height-heightAve)*(trainList.get(i).height-heightAve);
 			weightVar+=(trainList.get(i).weight-weightAve)*(trainList.get(i).weight-weightAve);
@@ -78,7 +78,7 @@ public class Bayes {
 		return personModel;
 	}
 
-	// ¼ÆËã¸ÅÂÊ
+	// è®¡ç®—æ¦‚ç‡
 	private static double countProbability(double mean, double veriance, double test) {
 		double probability = 0;
 		probability = Math.pow(Math.E, -Math.pow(test - mean, 2) / (2 * veriance)) / (Math.sqrt(2 * Math.PI * veriance));

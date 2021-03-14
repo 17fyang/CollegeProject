@@ -14,7 +14,7 @@ import java.net.URL;
 
 public class Read {
 	
-    //¶ÁÈ¡Ò»·İÊı¾İ
+    //è¯»å–ä¸€ä»½æ•°æ®
     public int[] readOneData(File f, String[] keywords) throws Exception {
         String content = this.FileToString(f);
         System.out.println(content);
@@ -37,7 +37,7 @@ public class Read {
         return 1;
     }
 
-    //¶ÁÈ¡¶à·İÊı¾İ
+    //è¯»å–å¤šä»½æ•°æ®
     public int[][] readAllData(String url, String[] keywords) throws Exception {
         File file = new File(url);
         File[] fileList = file.listFiles();
@@ -46,7 +46,7 @@ public class Read {
         return result;
     }
 
-    //¶ÁÈ¡¶à·İ¹ÉÆ±½á¹û
+    //è¯»å–å¤šä»½è‚¡ç¥¨ç»“æœ
     public double[] readAllResult(String[] url) {
         double result[] = new double[url.length];
         for (int i = 0; i < url.length; i++) result[i] = readOneResult(url[i]);
@@ -69,13 +69,13 @@ public class Read {
         return null;
     }
 
-    //ÎÄ¼ş×ªstring
+    //æ–‡ä»¶è½¬string
     private String FileToString(File f) throws Exception {
 //		getTextFromPDF(f.getPath());
 //		if(1==1)	return "ok";
-        //´´½¨PdfDocumentÊµÀı
+        //åˆ›å»ºPdfDocumentå®ä¾‹
         PdfDocument doc = new PdfDocument();
-        //¼ÓÔØPDFÎÄ¼ş
+        //åŠ è½½PDFæ–‡ä»¶
         doc.loadFromFile(f.getPath());
         StringBuilder sb = new StringBuilder();
 
@@ -90,23 +90,23 @@ public class Read {
 
 
     public static void getTextFromPDF(String file) throws Exception {
-        boolean sort = false;  // ÊÇ·ñÅÅĞò  
-        String pdfFile = file;  // pdfÎÄ¼şÃû  
-        String textFile = null;  // ÊäÈëÎÄ±¾ÎÄ¼şÃû³Æ  
-        String encoding = "UTF-8";  // ±àÂë·½Ê½  
-        int startPage = 1;  // ¿ªÊ¼ÌáÈ¡Ò³Êı  
-        int endPage = Integer.MAX_VALUE;  // ½áÊøÌáÈ¡Ò³Êı  
-        Writer output = null;  // ÎÄ¼şÊäÈëÁ÷£¬Éú³ÉÎÄ±¾ÎÄ¼ş  
-        PDDocument document = null;  // ÄÚ´æÖĞ´æ´¢µÄPDF Document  
+        boolean sort = false;  // æ˜¯å¦æ’åº  
+        String pdfFile = file;  // pdfæ–‡ä»¶å  
+        String textFile = null;  // è¾“å…¥æ–‡æœ¬æ–‡ä»¶åç§°  
+        String encoding = "UTF-8";  // ç¼–ç æ–¹å¼  
+        int startPage = 1;  // å¼€å§‹æå–é¡µæ•°  
+        int endPage = Integer.MAX_VALUE;  // ç»“æŸæå–é¡µæ•°  
+        Writer output = null;  // æ–‡ä»¶è¾“å…¥æµï¼Œç”Ÿæˆæ–‡æœ¬æ–‡ä»¶  
+        PDDocument document = null;  // å†…å­˜ä¸­å­˜å‚¨çš„PDF Document  
         try {
             try {
-                // Ê×ÏÈµ±×÷Ò»¸öURLÀ´×°ÔØÎÄ¼ş£¬Èç¹ûµÃµ½Òì³£ÔÙ´Ó±¾µØÎÄ¼şÏµÍ³//È¥×°ÔØÎÄ¼ş  
+                // é¦–å…ˆå½“ä½œä¸€ä¸ªURLæ¥è£…è½½æ–‡ä»¶ï¼Œå¦‚æœå¾—åˆ°å¼‚å¸¸å†ä»æœ¬åœ°æ–‡ä»¶ç³»ç»Ÿ//å»è£…è½½æ–‡ä»¶  
                 URL url = new URL(pdfFile);
-                //×¢Òâ²ÎÊıÒÑ²»ÊÇÒÔÇ°°æ±¾ÖĞµÄURL.¶øÊÇFile¡£  
+                //æ³¨æ„å‚æ•°å·²ä¸æ˜¯ä»¥å‰ç‰ˆæœ¬ä¸­çš„URL.è€Œæ˜¯Fileã€‚  
                 document = PDDocument.load(new File(pdfFile));
-                // »ñÈ¡PDFµÄÎÄ¼şÃû  
+                // è·å–PDFçš„æ–‡ä»¶å  
                 String fileName = url.getFile();
-                // ÒÔÔ­À´PDFµÄÃû³ÆÀ´ÃüÃûĞÂ²úÉúµÄtxtÎÄ¼ş  
+                // ä»¥åŸæ¥PDFçš„åç§°æ¥å‘½åæ–°äº§ç”Ÿçš„txtæ–‡ä»¶  
                 if (fileName.length() > 4) {
                     File outputFile = new File(fileName.substring(0, fileName
                             .length() - 4)
@@ -114,34 +114,34 @@ public class Read {
                     textFile = outputFile.getName();
                 }
             } catch (MalformedURLException e) {
-                // Èç¹û×÷ÎªURL×°ÔØµÃµ½Òì³£Ôò´ÓÎÄ¼şÏµÍ³×°ÔØ  
-                //×¢Òâ²ÎÊıÒÑ²»ÊÇÒÔÇ°°æ±¾ÖĞµÄURL.¶øÊÇFile¡£  
+                // å¦‚æœä½œä¸ºURLè£…è½½å¾—åˆ°å¼‚å¸¸åˆ™ä»æ–‡ä»¶ç³»ç»Ÿè£…è½½  
+                //æ³¨æ„å‚æ•°å·²ä¸æ˜¯ä»¥å‰ç‰ˆæœ¬ä¸­çš„URL.è€Œæ˜¯Fileã€‚  
                 document = PDDocument.load(new File(pdfFile));
                 if (pdfFile.length() > 4) {
                     textFile = pdfFile.substring(0, pdfFile.length() - 4)
                             + ".txt";
                 }
             }
-            // ÎÄ¼şÊäÈëÁ÷£¬Ğ´ÈëÎÄ¼şµ¹textFile  
+            // æ–‡ä»¶è¾“å…¥æµï¼Œå†™å…¥æ–‡ä»¶å€’textFile  
             output = new OutputStreamWriter(new FileOutputStream(textFile), encoding);
-            // PDFTextStripperÀ´ÌáÈ¡ÎÄ±¾  
+            // PDFTextStripperæ¥æå–æ–‡æœ¬  
             PDFTextStripper stripper = null;
             stripper = new PDFTextStripper();
-            // ÉèÖÃÊÇ·ñÅÅĞò  
+            // è®¾ç½®æ˜¯å¦æ’åº  
             stripper.setSortByPosition(sort);
-            // ÉèÖÃÆğÊ¼Ò³  
+            // è®¾ç½®èµ·å§‹é¡µ  
             stripper.setStartPage(startPage);
-            // ÉèÖÃ½áÊøÒ³  
+            // è®¾ç½®ç»“æŸé¡µ  
             stripper.setEndPage(endPage);
-            // µ÷ÓÃPDFTextStripperµÄwriteTextÌáÈ¡²¢Êä³öÎÄ±¾  
+            // è°ƒç”¨PDFTextStripperçš„writeTextæå–å¹¶è¾“å‡ºæ–‡æœ¬  
             stripper.writeText(document, output);
         } finally {
             if (output != null) {
-                // ¹Ø±ÕÊä³öÁ÷  
+                // å…³é—­è¾“å‡ºæµ  
                 output.close();
             }
             if (document != null) {
-                // ¹Ø±ÕPDF Document  
+                // å…³é—­PDF Document  
                 document.close();
             }
         }

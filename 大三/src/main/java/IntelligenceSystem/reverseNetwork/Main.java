@@ -3,36 +3,36 @@ package IntelligenceSystem.reverseNetwork;
 import java.util.List;
 
 /*
- * ×÷Òµ¶ş£º¸ø»¨·ÖÀà£¬·´Ïò´«²¥Éñ¾­ÍøÂç
+ * ä½œä¸šäºŒï¼šç»™èŠ±åˆ†ç±»ï¼Œåå‘ä¼ æ’­ç¥ç»ç½‘ç»œ
  */
 public class Main {
-	public final static String dataUrl="File/IntelligenceSystem/data.txt";//ÎÄ¼şµØÖ·
-	public final static int neuronLength=20;//Òşº¬²ãÊıÁ¿
-	public final static double learnSpeed=0.1;//Ñ§Ï°ËÙ¶È
-	public final static double activationTimes=2000;//µü´ú´ÎÊı
-	public final static double resultThreshold[]= {Math.random()-0.5,Math.random()-0.5,Math.random()-0.5};//½á¹ûãĞÖµ
+	public final static String dataUrl="File/IntelligenceSystem/data.txt";//æ–‡ä»¶åœ°å€
+	public final static int neuronLength=20;//éšå«å±‚æ•°é‡
+	public final static double learnSpeed=0.1;//å­¦ä¹ é€Ÿåº¦
+	public final static double activationTimes=2000;//è¿­ä»£æ¬¡æ•°
+	public final static double resultThreshold[]= {Math.random()-0.5,Math.random()-0.5,Math.random()-0.5};//ç»“æœé˜ˆå€¼
 	
 	public static void main(String[] args) throws Exception {
 		Data data=new Data(dataUrl,neuronLength);
 		Draw draw=new Draw();
 		Train train=new Train();
-		//µÚÒ»²½£ºÊı¾İ³õÊ¼»¯
-		List<Neuron> neuronList=data.getNeuronList();//Éñ¾­Ôª¼¯ºÏ
-		List<Flower> trainList=data.getTrainList();//ÑµÁ·¼¯
-		List<Flower> testList=data.getTestList();//²âÊÔ¼¯
-		//µÚ¶ş²½£º¼¤»îº¯Êı,È¨ÖØÑµÁ·
+		//ç¬¬ä¸€æ­¥ï¼šæ•°æ®åˆå§‹åŒ–
+		List<Neuron> neuronList=data.getNeuronList();//ç¥ç»å…ƒé›†åˆ
+		List<Flower> trainList=data.getTrainList();//è®­ç»ƒé›†
+		List<Flower> testList=data.getTestList();//æµ‹è¯•é›†
+		//ç¬¬äºŒæ­¥ï¼šæ¿€æ´»å‡½æ•°,æƒé‡è®­ç»ƒ
 		for(int i=0;i<activationTimes;i++) {
 			List<double[]> errorList=train.activationAll(trainList,neuronList);
-			draw.addErrorData(i, errorList);//¼ÇÂ¼Ñ§Ï°½ø¶ÈµãµÄÊı¾İ
+			draw.addErrorData(i, errorList);//è®°å½•å­¦ä¹ è¿›åº¦ç‚¹çš„æ•°æ®
 		}
-		//µÚÈı²½£º²âÊÔ
+		//ç¬¬ä¸‰æ­¥ï¼šæµ‹è¯•
 		for(int i=0;i<testList.size();i++) {
 			double[] result=train.test(neuronList,testList.get(i));
-			draw.addTestData(i, result);//¼ÇÂ¼µãµÄ×ø±êÊı¾İ
-			train.caculateSuccessNumber(testList.get(i),result);//Í³¼Æ³É¹¦ÂÊ
+			draw.addTestData(i, result);//è®°å½•ç‚¹çš„åæ ‡æ•°æ®
+			train.caculateSuccessNumber(testList.get(i),result);//ç»Ÿè®¡æˆåŠŸç‡
 		}
-		System.out.println(testList.size()+"¸öÊı¾İµÄ³É¹¦ÂÊÎª£º"+train.getSuccessRate());
-		//»­Í¼
+		System.out.println(testList.size()+"ä¸ªæ•°æ®çš„æˆåŠŸç‡ä¸ºï¼š"+train.getSuccessRate());
+		//ç”»å›¾
 		draw.drawAllChart();
 	}
 

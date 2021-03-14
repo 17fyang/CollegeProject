@@ -5,17 +5,17 @@ public class homework_1018 {
 		
 	}
 	
-	//Í¶±£ÈË²âÊÔÓÃÀı
+	//æŠ•ä¿äººæµ‹è¯•ç”¨ä¾‹
 	public static void work1() {
 		int age[]= {6,4,2};
 		int gender[]= {5,3};
 		int marry[]= {5,3};
 		int number[]={-1,-2,-3};
 		
-		String ageString[]= {"20-39","40-59","ÆäËû"};
-		String genderString[]= {"ÄĞ","Å®"};
-		String marryString[]= {"ÒÑ»é","Î´»é"};
-		String numberString[]= {"1-2ÈË","3-4ÈË","ÎåÈË¼°ÒÔÉÏ"};
+		String ageString[]= {"20-39","40-59","å…¶ä»–"};
+		String genderString[]= {"ç”·","å¥³"};
+		String marryString[]= {"å·²å©š","æœªå©š"};
+		String numberString[]= {"1-2äºº","3-4äºº","äº”äººåŠä»¥ä¸Š"};
 		
 		for(int i1=0;i1<3;i1++) {
 			for(int i2=0;i2<2;i2++) {

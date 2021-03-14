@@ -15,13 +15,13 @@ public class Print extends JFrame{
 		jp.setLayout(null);
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setTitle("×ÖÄ»Êä³ö");
+		this.setTitle("å­—å¹•è¾“å‡º");
 		this.setResizable(false);
 		this.setBounds(200, 30, 800, 680);
 		this.setVisible(true);
 		
 		ta = new JTextArea();
-		ta.setFont(new Font("ËÎÌå",Font.BOLD,25));
+		ta.setFont(new Font("å®‹ä½“",Font.BOLD,25));
 		ta.setBackground(jp.getBackground());
 		ta.setBounds(150, 480, 450, 80);
 		

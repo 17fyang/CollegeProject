@@ -5,12 +5,12 @@ package yo.utils;
  * Description:
  * date: 2020/10/5 16:35
  *
- * @author :乌鸦坐飞机亠
+ * @author :涔岄甫鍧愰鏈轰籂
  * @version:
  */
 public class PathUtil {
     public static PathUtil instance = new PathUtil();
-    private static String resource = "E://杨帆/Y/graduation/";
+    private static String resource = "E://鏉ㄥ竼/Y/graduation/";
 
 //    static {
 //        try {

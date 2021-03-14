@@ -19,12 +19,12 @@ import jxl.Sheet;
 import jxl.Workbook;
 
 public class Screen {
-	private static Screen screen=null;//µ¥ÀıÄ£Ê½
-	private List<Record> conditionList1=null;//1¡¢Õâ5¸öÊı×ÖÍ¬Ê±°üº¬±í2ÖĞ3ÌõÊı¾İ
-	private List<Record> conditionList2=null;//2¡¢Õâ¸öÊı×ÖµÄ53·ûºÏ±í3ÖĞµÄÄ³Ò»ÌõÊı¾İ
-	private List<Record> conditionList3=null;//3¡¢ÆäÖĞ³öÏÖ3´ÎºÍ3´ÎµÄÄÇ¸öÊı×Ö£¬±ØĞëÔÚ±í4ÖĞ
-	private List<Record> conditionList4=null;//4¡¢³öÏÖ3´ÎºÍ2´ÎµÄÄÇ¸öÊı×Ö£¬²»ÄÜ³öÏÖÔÚ±í5ÖĞ
-	private List<Record> conditionList5=null;//5¡¢Õâ¸öÊı×ÖµÄÁ½¸ö53¶¼·ûºÏ±í6ÖĞµÄÄ³2ÌõÊı¾İ
+	private static Screen screen=null;//å•ä¾‹æ¨¡å¼
+	private List<Record> conditionList1=null;//1ã€è¿™5ä¸ªæ•°å­—åŒæ—¶åŒ…å«è¡¨2ä¸­3æ¡æ•°æ®
+	private List<Record> conditionList2=null;//2ã€è¿™ä¸ªæ•°å­—çš„53ç¬¦åˆè¡¨3ä¸­çš„æŸä¸€æ¡æ•°æ®
+	private List<Record> conditionList3=null;//3ã€å…¶ä¸­å‡ºç°3æ¬¡å’Œ3æ¬¡çš„é‚£ä¸ªæ•°å­—ï¼Œå¿…é¡»åœ¨è¡¨4ä¸­
+	private List<Record> conditionList4=null;//4ã€å‡ºç°3æ¬¡å’Œ2æ¬¡çš„é‚£ä¸ªæ•°å­—ï¼Œä¸èƒ½å‡ºç°åœ¨è¡¨5ä¸­
+	private List<Record> conditionList5=null;//5ã€è¿™ä¸ªæ•°å­—çš„ä¸¤ä¸ª53éƒ½ç¬¦åˆè¡¨6ä¸­çš„æŸ2æ¡æ•°æ®
 	public static String fileUrl=Config.fileUrl;
 	
 	
@@ -51,13 +51,13 @@ public class Screen {
 		return screen;
 	}
 	
-	//¿ªÊ¼É¸Ñ¡
+	//å¼€å§‹ç­›é€‰
 	public  List<OutData> startScreen(List<OutData> outList){
 		List<OutData> screenResultList=new LinkedList<OutData>();
 		for(int i=0;i<outList.size();i++) {
-			if(i%5==0)		System.out.println("µÚ¶ş½×¶ÎÉ¸Ñ¡£º"+i+"/"+outList.size()+"......");
+			if(i%5==0)		System.out.println("ç¬¬äºŒé˜¶æ®µç­›é€‰ï¼š"+i+"/"+outList.size()+"......");
 			OutData out=outList.get(i);
-			//ÌáÈ¡³ö5¡¢3¡¢2µÄ¼¯ºÏ
+			//æå–å‡º5ã€3ã€2çš„é›†åˆ
 			List<Record> recordList=out.getOutList();
 			Map<String,Integer> map=new HashMap<String,Integer>();
 			for(int j=0;j<recordList.size();j++) {
@@ -77,7 +77,7 @@ public class Screen {
 				if(entry.getValue()==3)		threeSet.add(entry.getKey());
 				if(entry.getValue()==2)		twoSet.add(entry.getKey());
 			}
-			//1¡¢É¸Ñ¡Îå¸öÊı×ÖÖĞº¬ÓĞ±í2ÖĞÈıÌõ;
+			//1ã€ç­›é€‰äº”ä¸ªæ•°å­—ä¸­å«æœ‰è¡¨2ä¸­ä¸‰æ¡;
 			if(this.conditionList1!=null) {
 				int match=0;
 				for(int j=0;j<this.conditionList1.size();j++) {
@@ -89,8 +89,8 @@ public class Screen {
 				if(match<3)	continue;
 			}
 			
-			//2¡¢Õâ¸öÊı×ÖµÄ53·ûºÏ±í3ÖĞµÄÄ³Ò»ÌõÊı¾İ
-			//ÓÉÓÚthreesetÖĞ¹Ì¶¨ÓĞÁ½¸öÊı¾İ£¬ËùÒÔÈç¹ûÁ½¸öHashsetÖØºÏÖ®ºó³¤¶È¼ÓÒ»ËµÃ÷°üº¬ÆäÖĞÒ»¸ö
+			//2ã€è¿™ä¸ªæ•°å­—çš„53ç¬¦åˆè¡¨3ä¸­çš„æŸä¸€æ¡æ•°æ®
+			//ç”±äºthreesetä¸­å›ºå®šæœ‰ä¸¤ä¸ªæ•°æ®ï¼Œæ‰€ä»¥å¦‚æœä¸¤ä¸ªHashseté‡åˆä¹‹åé•¿åº¦åŠ ä¸€è¯´æ˜åŒ…å«å…¶ä¸­ä¸€ä¸ª
 			if(this.conditionList2!=null) {
 				int match=0;
 				for(int j=0;j<this.conditionList2.size();j++) {
@@ -104,7 +104,7 @@ public class Screen {
 				if(match<1)	continue;
 			}
 			
-			//3¡¢ÆäÖĞ³öÏÖ3´ÎµÄÄÇ¸öÊı×Ö£¬±ØĞëÔÚ±í4ÖĞ
+			//3ã€å…¶ä¸­å‡ºç°3æ¬¡çš„é‚£ä¸ªæ•°å­—ï¼Œå¿…é¡»åœ¨è¡¨4ä¸­
 			if(this.conditionList3!=null) {
 				int match=0;
 				for(int j=0;j<this.conditionList3.size();j++) {
@@ -115,7 +115,7 @@ public class Screen {
 				}
 				if(match<1)		continue;
 			}
-			//4¡¢³öÏÖ3´ÎºÍ2´ÎµÄÄÇ¸öÊı×Ö£¬²»ÄÜ³öÏÖÔÚ±í5ÖĞ
+			//4ã€å‡ºç°3æ¬¡å’Œ2æ¬¡çš„é‚£ä¸ªæ•°å­—ï¼Œä¸èƒ½å‡ºç°åœ¨è¡¨5ä¸­
 			if(this.conditionList4!=null) {
 				int match=0;
 				for(int j=0;j<this.conditionList4.size();j++) {
@@ -128,12 +128,12 @@ public class Screen {
 				}
 				if(match>0)		continue;
 			}
-			//5¡¢Õâ¸öÊı×ÖµÄÁ½¸ö53¶¼·ûºÏ±í6ÖĞµÄÄ³2ÌõÊı¾İ
+			//5ã€è¿™ä¸ªæ•°å­—çš„ä¸¤ä¸ª53éƒ½ç¬¦åˆè¡¨6ä¸­çš„æŸ2æ¡æ•°æ®
 			if(this.conditionList5!=null) {
 				int match=0;
 				for(int j=0;j<this.conditionList5.size();j++) {
-					Set<String> set1=new HashSet<String>(fiveSet);//µÚÒ»¸ö53
-					Set<String> set2=new HashSet<String>(fiveSet);//µÚ¶ş¸ö53
+					Set<String> set1=new HashSet<String>(fiveSet);//ç¬¬ä¸€ä¸ª53
+					Set<String> set2=new HashSet<String>(fiveSet);//ç¬¬äºŒä¸ª53
 					Iterator<String> it=threeSet.iterator();
 					set1.add(it.next());
 					set2.add(it.next());
@@ -156,7 +156,7 @@ public class Screen {
 		return screenResultList;
 	}
 	
-	//½«Êı¾İÔ´ÎÄ¼şÖĞµÄÊı¾İÈ¡³ö£¬È¥ÖØ£¬Éú³ÉÒ»¸ölist¶ÔÏó
+	//å°†æ•°æ®æºæ–‡ä»¶ä¸­çš„æ•°æ®å–å‡ºï¼Œå»é‡ï¼Œç”Ÿæˆä¸€ä¸ªlistå¯¹è±¡
 		private  static List<Record> getScreenData(File screen_table) throws Exception {
 			Workbook workbook=Workbook.getWorkbook(screen_table);
 			Sheet sheet=workbook.getSheet(0);

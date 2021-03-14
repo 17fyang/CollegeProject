@@ -5,16 +5,16 @@ public class EnterPot {
 	
 	public void getAndPut(int number) {
 		if(product<number*-1) {
-			System.out.println("¿â´æ²»×ã£¡");
+			System.out.println("åº“å­˜ä¸è¶³ï¼");
 			return;
 		}
 		
-		String s="²úÆ·ÊýÁ¿±ä¶¯£º"+number+",¿â´æÊ£Óà£º";
+		String s="äº§å“æ•°é‡å˜åŠ¨ï¼š"+number+",åº“å­˜å‰©ä½™ï¼š";
 		this.product=this.product+number;
 		System.out.println(s.concat(String.valueOf(product)));
 		
 //		StringBuffer s=new StringBuffer();
-//		s.append("²úÆ·ÊýÁ¿±ä¶¯£º"+number+",¿â´æÊ£Óà£º");
+//		s.append("äº§å“æ•°é‡å˜åŠ¨ï¼š"+number+",åº“å­˜å‰©ä½™ï¼š");
 //		this.product=this.product+number;
 //		s.append(product);
 //		System.out.println(s);

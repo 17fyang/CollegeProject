@@ -20,7 +20,7 @@ public class caculate {
 
 
     public caculate(int itemCount, int threadCount) {
-        //�����̳߳ض���
+        //锟斤拷锟斤拷锟竭程池讹拷锟斤拷
         ExecutorService threadPool = Executors.newFixedThreadPool(threadCount);
         List<Future<Double>> lstResult = new LinkedList<>();
         for (int i = 1; i <= threadCount; i++) {

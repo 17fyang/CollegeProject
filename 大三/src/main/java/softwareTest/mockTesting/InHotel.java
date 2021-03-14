@@ -19,9 +19,9 @@ public class InHotel extends Empty implements InHotelInterface{
 //        room = roomNo % 100 - 1;
 //        if (isEmpty(roomNo)) {
 //            mr.getRoom()[roomNo / 100 - 1][room] = name;
-//            return name = "成功入住" + roomNo + "房间!";
+//            return name = "鎴愬姛鍏ヤ綇" + roomNo + "鎴块棿!";
 //        } else {
-//            return "该房间已经有客人入住!";
+//            return "璇ユ埧闂村凡缁忔湁瀹汉鍏ヤ綇!";
 //        }
     }
 

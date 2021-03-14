@@ -12,7 +12,7 @@ import item_jack.item5_2.utils.Record;
 
 public class check {
 	public static void main(String[] args) throws Exception {
-		System.out.println("½á¹û¼¯Í¬²½³É¹¦...");
+		System.out.println("ç»“æœé›†åŒæ­¥æˆåŠŸ...");
 		List<Line> lineList=Config.getConfig().getLineList();
 		Record[] originalList=Config.getConfig().getSourceList();
 		Set<String> set=new HashSet<String>();
@@ -38,7 +38,7 @@ public class check {
 	}
 	
 	
-	//¶ÔÒ»¸ö¼¯ºÏÅÅĞò
+	//å¯¹ä¸€ä¸ªé›†åˆæ’åº
 		private static void sortRecord(List<Record> list) {
 			for(int i=0;i<list.size();i++) {
 				for(int j=1;j<list.size()-i;j++) {
@@ -52,7 +52,7 @@ public class check {
 		}
 	
 	
-	//¸ø¶¨Ò»¸ö´óÅÅÁĞºÍĞ¡ÅÅÁĞµÄÁ´±í£¬·µ»ØÒ»¸öÁ´±í£¬ÀïÃæµÄÔªËØ¶¼ÊÇ´óÅÅÁĞµÄ×Ó¼¯
+	//ç»™å®šä¸€ä¸ªå¤§æ’åˆ—å’Œå°æ’åˆ—çš„é“¾è¡¨ï¼Œè¿”å›ä¸€ä¸ªé“¾è¡¨ï¼Œé‡Œé¢çš„å…ƒç´ éƒ½æ˜¯å¤§æ’åˆ—çš„å­é›†
 		private static List<Record> sonRecord(Set<String> father,Line son){
 			List<Record> sonList=new LinkedList<Record>();
 			for(Record record : son.getData()) {
