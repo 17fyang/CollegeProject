@@ -5,8 +5,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import util.FileUtil;
 import yo.domain.ask_text;
-import yo.utils.FileUtil;
 
 import java.io.File;
 
@@ -26,7 +26,7 @@ public class HtmlAnalysis {
         File[] fileList = folder.listFiles();
 //        analysisOnePage(fileList[0], 1);
         for (File f : fileList) {
-            int page = FileUtil.getInstance().getPageByName(f.getName());
+            int page = FileUtil.getPageByName(f.getName());
             analysisOnePage(f, page);
         }
     }
@@ -50,7 +50,7 @@ public class HtmlAnalysis {
     }
 
     public static void analysisOnePage(File f, int page) throws Exception {
-        String content = FileUtil.getInstance().readTxt(f);
+        String content = FileUtil.readTxt(f);
         Document document = Jsoup.parse(content);
         Elements dataListElem = document.body().getElementsByClass("item-title clearfix");
         for (Element e : dataListElem) {

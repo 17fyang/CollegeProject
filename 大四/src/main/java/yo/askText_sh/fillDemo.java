@@ -1,8 +1,7 @@
 package yo.askText_sh;
 
-import yo.askText.ORM;
+import util.JdbcUtil;
 
-import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -17,10 +16,9 @@ import java.sql.Statement;
  */
 public class fillDemo {
     public static void main(String[] args) throws SQLException {
-        DataSource dataSource = ORM.getInstance().getDs();
         String sql = "select id,page from ask_text_sh";
         int[] arr = new int[1797];
-        Statement st = dataSource.getConnection().createStatement();
+        Statement st = JdbcUtil.getConnection().createStatement();
         ResultSet rs = st.executeQuery(sql);
         while (rs.next()) {
             int id = rs.getInt(1);

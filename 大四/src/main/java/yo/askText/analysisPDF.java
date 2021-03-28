@@ -1,6 +1,6 @@
 package yo.askText;
 
-import yo.utils.PathUtil;
+import util.PathUtil;
 
 import java.io.File;
 

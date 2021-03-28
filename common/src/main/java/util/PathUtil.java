@@ -1,11 +1,11 @@
-package yo.utils;
+package util;
 
 /**
  * ClassName: PathUtil
  * Description:
  * date: 2020/10/5 16:35
  *
- * @author :涔岄甫鍧愰鏈轰籂
+ * @author :乌鸦坐飞机亠
  * @version:
  */
 public class PathUtil {

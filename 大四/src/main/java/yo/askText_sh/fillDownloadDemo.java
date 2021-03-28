@@ -1,9 +1,9 @@
 package yo.askText_sh;
 
+import util.FileUtil;
 import yo.askText.ORM;
 import yo.askText.PDFDownloadTask;
 import yo.domain.ask_text;
-import yo.utils.FileUtil;
 
 import java.io.File;
 import java.util.Arrays;
@@ -47,7 +47,7 @@ public class fillDownloadDemo {
     }
 
     private static void analysisLog() throws Exception {
-        String log = FileUtil.getInstance().readTxt(new File(logPath));
+        String log = FileUtil.readTxt(new File(logPath));
         String[] arr = log.split("\r\n");
         boolean[] flag = new boolean[17952];
         for (String s : arr) {

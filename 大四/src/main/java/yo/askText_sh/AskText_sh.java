@@ -4,9 +4,9 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import util.FileUtil;
 import yo.askText.ORM;
 import yo.domain.ask_text;
-import yo.utils.FileUtil;
 
 import java.io.File;
 import java.sql.SQLException;
@@ -35,7 +35,7 @@ public class AskText_sh {
         File[] fileList = folder.listFiles();
         ExecutorService executor = Executors.newFixedThreadPool(10);
         for (File f : fileList) {
-            int page = FileUtil.getInstance().getPageByName(f.getName());
+            int page = FileUtil.getPageByName(f.getName());
             if (!set.contains(page)) continue;
             System.out.println(page);
             executor.execute(() -> {
@@ -51,7 +51,7 @@ public class AskText_sh {
     }
 
     private static void analysisOnePage(File f, int page) throws Exception {
-        String content = FileUtil.getInstance().readTxt(f);
+        String content = FileUtil.readTxt(f);
         Document document = Jsoup.parse(content);
         Elements dataListElem = document.body().getElementsByTag("dl");
         for (Element e : dataListElem) {
