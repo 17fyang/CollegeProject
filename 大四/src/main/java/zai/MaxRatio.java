@@ -17,7 +17,7 @@ import static zai.RatioSplit.OUTPUT_EXCEL;
  * @Description:找出每个段的最大值
  */
 public class MaxRatio {
-    public static final String OUTPUT_FILE = "C:\\Users\\Administrator\\Desktop\\zai\\max_ratio.xlsx";
+    public static final String OUTPUT_FILE = "C:\\Users\\Administrator\\Desktop\\zai\\max_ratio_0.1.xlsx";
 
     public static void main(String[] args) {
 
