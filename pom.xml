@@ -7,6 +7,9 @@
     <groupId>com.stu</groupId>
     <artifactId>CollegeProject</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>BlueTooth</module>
+    </modules>
     <packaging>pom</packaging>
 
 
