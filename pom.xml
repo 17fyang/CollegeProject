@@ -9,6 +9,17 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>BlueTooth</module>
+        <module>ACM</module>
+        <module>ballGame</module>
+        <module>common</module>
+        <module>fastStep</module>
+        <module>Interest</module>
+        <module>jdk8</module>
+        <module>keyWord</module>
+        <module>LibraryDemo</module>
+        <module>大三</module>
+        <module>大三下</module>
+        <module>大四</module>
     </modules>
     <packaging>pom</packaging>
 
