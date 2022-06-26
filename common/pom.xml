@@ -60,11 +60,11 @@
     <repositories>
         <repository>
             <id>com.e-iceblue</id>
-            <url>http://repo.e-iceblue.cn/repository/maven-public/</url>
+            <url>https://repo.e-iceblue.cn/repository/maven-public/</url>
         </repository>
         <repository>
             <id>OSGeo Repository</id>
-            <url>http://download.osgeo.org/webdav/geotools/</url>
+            <url>https://download.osgeo.org/webdav/geotools/</url>
         </repository>
 
     </repositories>
